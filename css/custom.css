@@ -1,0 +1,49 @@
+.custom-control.custom-checkbox {
+  display: flex;
+  align-items: baseline;
+}
+.custom-control.custom-checkbox input{}
+.custom-control.custom-checkbox label{
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+#coffee-homepage #services .service-block p,
+#coffee-homepage #services .service-block,
+#coffee-homepage #services .service-block .fa.service-icon-border{color: #fff !important;}
+
+#coming-soon-page .input-group .btn {height: 43px;border-radius: 0 6px 6px 0;}
+.accordion-page .accordion-1 .card button.btn{box-shadow: unset;}
+.accordion-page .accordion-2 .card button.btn.collapsed{border: 0;}
+.cart-list li .total {
+  border-radius: 0;
+}
+.cart-list li .item-img {
+  /* float: right; */
+  /* margin-top: 24%; */
+}
+.dish-list-text {
+  min-height: unset;
+  max-height: unset;
+}
+.btn.close {
+  float: right;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+}
+.form-profile-img .custom-file {
+  height: auto;
+}
+.custom-form .input-group-text {
+  height: 100%;
+}
+.faq-form .input-group-prepend .btn {
+  background-color: #f0f0f0;
+}
+
+.btn-orange:hover{opacity: 0.8 !important;}
+.btn-block{width: 100%;}
