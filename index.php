@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <title>Restaurant</title>
+    <?php include 'includes/header.php'; ?>
+</head>
+
+<body class="page-body">
+
+    <!--====== LOADER =====-->
+    <div class="loader"></div>
+
+
+    <!--============ SIDE-NAV =============-->
+    <div class="sidenav-content">
+        <div id="mySidenav" class="sidenav">
+            <div id="web-name">
+                <h2><span><i class="far fa-star"></i></span> <br /> <span>Res</span>taurant</h2>
+                <ul class="main-menu-social list-inline list-unstyled text-center">
+                    <li class="list-inline-item"><a href="#"><span><i class="fab fa-facebook-f"></i></span></a></li>
+                    <li class="list-inline-item"><a href="#"><span><i class="fab fa-pinterest"></i></span></a></li>
+                    <li class="list-inline-item"><a href="#"><span><i class="fab fa-dribbble"></i></span></a></li>
+                    <li class="list-inline-item"><a href="#"><span><i class="fab fa-google-plus-g"></i></span></a></li>
+                </ul>
+            </div><!-- end web-name -->
+
+            <div id="main-menu">
+                <div class="sidenav-closebtn">
+                    <button class="btn btn-default" id="sidenav-close">&times;</button>
+                </div><!-- end sidenav-closebtn -->
+
+                <div class="list-group">
+                    <a href="#homepage-links" class="list-group-item active" data-bs-toggle="collapse"><span><i
+                                class="fa fa-home sidebar-icon"></i></span>Homepages<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="homepage-links" data-bs-parent="#main-menu">
+                        <a href="#" class="list-group-item active">Restaurant</a>
+                        <a href="pizza.html" class="list-group-item">Pizza</a>
+                        <a href="bakery.html" class="list-group-item">Bakery</a>
+                        <a href="coffee.html" class="list-group-item">Coffee</a>
+                        <a href="fast-food.html" class="list-group-item">Fast Food</a>
+                        <a href="ice-parlour.html" class="list-group-item">Ice Parlour</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#menu-links" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-utensils sidebar-icon"></i></span>Menu<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="menu-links" data-bs-parent="#main-menu">
+                        <a href="menu-grid.html" class="list-group-item">Menu Grid</a>
+                        <a href="menu-list.html" class="list-group-item">Menu List</a>
+                        <a href="menu-detail.html" class="list-group-item">Menu Detail</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#chef-links" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-users sidebar-icon"></i></span>Chef<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="chef-links" data-bs-parent="#main-menu">
+                        <a href="chef-1.html" class="list-group-item">Chef 1</a>
+                        <a href="chef-2.html" class="list-group-item">Chef 2</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="reservation.html" class="list-group-item"><span><i
+                                class="fa fa-pencil-alt sidebar-icon"></i></span>Reservation</a>
+
+                    <a href="#gallery-links" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-images sidebar-icon"></i></span>Gallery<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="gallery-links" data-bs-parent="#main-menu">
+                        <a href="gallery-1-column.html" class="list-group-item">Gallery 1-Column</a>
+                        <a href="gallery-2-columns.html" class="list-group-item">Gallery 2-Columns</a>
+                        <a href="gallery-masonry.html" class="list-group-item">Gallery Masonry</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#user-links" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-user sidebar-icon"></i></span>User<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="user-links" data-bs-parent="#main-menu">
+                        <a href="user-profile.html" class="list-group-item">User Profile</a>
+                        <a href="edit-profile.html" class="list-group-item">Edit Profile</a>
+                        <a href="reset-password.html" class="list-group-item">Reset Password</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#shop-links" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-shopping-cart sidebar-icon"></i></span>Shop<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="shop-links" data-bs-parent="#main-menu">
+                        <a href="shopping-cart.html" class="list-group-item">Shopping Cart</a>
+                        <a href="checkout.html" class="list-group-item">Checkout</a>
+                        <a href="order-history.html" class="list-group-item">Order History</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#features-links" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-puzzle-piece sidebar-icon"></i></span>Features<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu mega-sub-menu" id="features-links" data-bs-parent="#main-menu">
+                        <a href="#header-style-links" class="list-group-item" data-bs-toggle="collapse">Header<span><i
+                                    class="fa fa-caret-down arrow"></i></span></a>
+                        <div class="collapse sub-menu mega-sub-menu-links" id="header-style-links">
+                            <a href="feature-header-1.html" class="list-group-item">Header 1</a>
+                            <a href="feature-header-2.html" class="list-group-item">Header 2</a>
+                            <a href="feature-header-3.html" class="list-group-item">Header 3</a>
+                        </div>
+                        <a href="#page-title-style-links" class="list-group-item" data-bs-toggle="collapse">Page
+                            Title<span><i class="fa fa-caret-down arrow"></i></span></a>
+                        <div class="collapse sub-menu mega-sub-menu-links" id="page-title-style-links">
+                            <a href="feature-page-cover-1.html" class="list-group-item">Page Cover 1</a>
+                            <a href="feature-page-cover-2.html" class="list-group-item">Page Cover 2</a>
+                            <a href="feature-page-cover-3.html" class="list-group-item">Page Cover 3</a>
+                            <a href="feature-page-cover-4.html" class="list-group-item">Page Cover 4</a>
+                            <a href="feature-page-cover-5.html" class="list-group-item">Page Cover 5</a>
+                        </div>
+                        <a href="#footer-style-links" class="list-group-item" data-bs-toggle="collapse">Footer<span><i
+                                    class="fa fa-caret-down arrow"></i></span></a>
+                        <div class="collapse sub-menu mega-sub-menu-links" id="footer-style-links">
+                            <a href="feature-footer-1.html" class="list-group-item">Footer 1</a>
+                            <a href="feature-footer-2.html" class="list-group-item">Footer 2</a>
+                            <a href="feature-footer-3.html" class="list-group-item">Footer 3</a>
+                        </div>
+                        <a href="#form-style-links" class="list-group-item" data-bs-toggle="collapse">Forms<span><i
+                                    class="fa fa-caret-down arrow"></i></span></a>
+                        <div class="collapse sub-menu mega-sub-menu-links" id="form-style-links">
+                            <a href="login-1.html" class="list-group-item">Login 1</a>
+                            <a href="login-2.html" class="list-group-item">Login 2</a>
+                            <a href="register-1.html" class="list-group-item">Register 1</a>
+                            <a href="register-2.html" class="list-group-item">Register 2</a>
+                            <a href="forget-password-1.html" class="list-group-item">Forget Password 1</a>
+                            <a href="forget-password-2.html" class="list-group-item">Forget Password 2</a>
+                        </div>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#components-links" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-clone sidebar-icon"></i></span>Components<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="components-links" data-bs-parent="#main-menu">
+                        <a href="components-notifications.html" class="list-group-item">Notifications</a>
+                        <a href="components-toasts.html" class="list-group-item">Toast</a>
+                        <a href="components-dialog-box.html" class="list-group-item">Dialog Box</a>
+                        <a href="components-alert-boxes.html" class="list-group-item">Alert Box</a>
+                        <a href="components-action-sheets.html" class="list-group-item">Action Sheets</a>
+                        <a href="components-modal.html" class="list-group-item">Modas</a>
+                        <a href="components-panels.html" class="list-group-item">Panels</a>
+                        <a href="components-list-view.html" class="list-group-item">List View</a>
+                        <a href="components-multiple-list-view.html" class="list-group-item">Multiple List View</a>
+                        <a href="components-timeline.html" class="list-group-item">Timeline</a>
+                        <a href="components-accordian.html" class="list-group-item">Accordian</a>
+                        <a href="components-badges.html" class="list-group-item">Badges</a>
+                        <a href="components-buttons.html" class="list-group-item">Buttons</a>
+                        <a href="components-cards.html" class="list-group-item">Cards</a>
+                        <a href="components-carousel.html" class="list-group-item">Carousel</a>
+                        <a href="components-chips.html" class="list-group-item">Chips</a>
+                        <a href="components-icons.html" class="list-group-item">Icons</a>
+                        <a href="components-pagination.html" class="list-group-item">Paginations</a>
+                        <a href="components-progress-bar.html" class="list-group-item">Progressbar</a>
+                        <a href="components-tables-.html" class="list-group-item">Tables </a>
+                        <a href="components-tooltips-popovers.html" class="list-group-item">Tooltips</a>
+                        <a href="components-typography.html" class="list-group-item">Typography</a>
+                        <a href="components-grid.html" class="list-group-item">Grid</a>
+                        <a href="components-back-to-top.html" class="list-group-item">Back to Top</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#pages-links" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-clone sidebar-icon"></i></span>Pages<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="pages-links" data-bs-parent="#main-menu">
+                        <a href="about-1.html" class="list-group-item">About Us 1</a>
+                        <a href="about-2.html" class="list-group-item">About Us 2</a>
+                        <a href="services-1.html" class="list-group-item">Services 1</a>
+                        <a href="services-2.html" class="list-group-item">Services 2</a>
+                        <a href="testimonials-1.html" class="list-group-item">Testimonials 1</a>
+                        <a href="testimonials-2.html" class="list-group-item">Testimonials 2</a>
+                        <a href="error-page-1.html" class="list-group-item">Error Page 1</a>
+                        <a href="error-page-2.html" class="list-group-item">Error Page 2</a>
+                        <a href="coming-soon-1.html" class="list-group-item">Coming Soon 1</a>
+                        <a href="coming-soon-2.html" class="list-group-item">Coming Soon 2</a>
+                        <a href="blog.html" class="list-group-item">Blog List</a>
+                        <a href="blog-detail.html" class="list-group-item">Blog Detail</a>
+                        <a href="pricing-1.html" class="list-group-item">Pricing 1</a>
+                        <a href="pricing-2.html" class="list-group-item">Pricing 2</a>
+                        <a href="faq-1.html" class="list-group-item">FAQ 1</a>
+                        <a href="faq-2.html" class="list-group-item">FAQ 2</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#navigation-links" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-list-ul sidebar-icon"></i></span>Navigations<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="navigation-links" data-bs-parent="#main-menu">
+                        <a href="#" class="list-group-item">Sidebar Navigation</a>
+                        <a href="javascript:void(0)" id="sidenav-2-open" class="list-group-item">Sidebar Navigation
+                            2</a>
+                        <a href="javascript:void(0)" id="fullscr-open" class="list-group-item">FullScreen Navigation</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#contact-links" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-phone sidebar-icon"></i></span>Contact Us<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="contact-links" data-bs-parent="#main-menu">
+                        <a href="contact-1.html" class="list-group-item">Contact Us 1</a>
+                        <a href="contact-2.html" class="list-group-item">Contact Us 2</a>
+                    </div><!-- end sub-menu -->
+
+                </div><!-- end list-group -->
+            </div><!-- end main-menu -->
+        </div><!-- end mySidenav -->
+    </div><!-- end sidenav-content -->
+
+
+    <!--============ SIDE-NAV-2 =============-->
+    <div class="sidenav-content">
+        <div class="sidenav-2 sidenav-pane">
+            <div class="sidenav-2-top clearfix">
+                <ul class="list-inline list-unstyled">
+                    <li class="list-inline-item float-start">
+                        <h4><span><i class="far fa-star"></i></span><span>Res</span>taurant</h4>
+                    </li>
+                    <li class="list-inline-item float-end"><button class="btn btn-default"
+                            id="sidenav-2-close">&times;</button></li>
+                </ul>
+            </div><!-- end web-name -->
+
+            <div class="sidenav-2-user text-center">
+                <img src="images/user-profile.jpg" class="img-fluid rounded-circle" alt="user-profile" />
+                <h3>James Anderson</h3>
+            </div><!-- end user-prf-sidebar-img -->
+
+            <div class="white-menu">
+
+                <div class="list-group">
+                    <a href="#homepage-links-2" class="list-group-item active" data-bs-toggle="collapse"><span><i
+                                class="fa fa-home sidebar-icon"></i></span>Homepages<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="homepage-links-2" data-bs-parent=".white-menu">
+                        <a href="#" class="list-group-item active">Restaurant</a>
+                        <a href="pizza.html" class="list-group-item">Pizza</a>
+                        <a href="bakery.html" class="list-group-item">Bakery</a>
+                        <a href="coffee.html" class="list-group-item">Coffee</a>
+                        <a href="fast-food.html" class="list-group-item">Fast Food</a>
+                        <a href="ice-parlour.html" class="list-group-item">Ice Parlour</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#menu-links-2" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-utensils sidebar-icon"></i></span>Menu<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="menu-links-2" data-bs-parent=".white-menu">
+                        <a href="menu-grid.html" class="list-group-item">Menu Grid</a>
+                        <a href="menu-list.html" class="list-group-item">Menu List</a>
+                        <a href="menu-detail.html" class="list-group-item">Menu Detail</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#chef-links-2" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-users sidebar-icon"></i></span>Chef<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="chef-links-2" data-bs-parent=".white-menu">
+                        <a href="chef-1.html" class="list-group-item">Chef 1</a>
+                        <a href="chef-2.html" class="list-group-item">Chef 2</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="reservation.html" class="list-group-item"><span><i
+                                class="fa fa-pencil-alt sidebar-icon"></i></span>Reservation</a>
+
+                    <a href="#gallery-links-2" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-images sidebar-icon"></i></span>Gallery<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="gallery-links-2" data-bs-parent=".white-menu">
+                        <a href="gallery-1-column.html" class="list-group-item">Gallery 1-Column</a>
+                        <a href="gallery-2-columns.html" class="list-group-item">Gallery 2-Columns</a>
+                        <a href="gallery-masonry.html" class="list-group-item">Gallery Masonry</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#user-links-2" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-user sidebar-icon"></i></span>User<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="user-links-2" data-bs-parent=".white-menu">
+                        <a href="user-profile.html" class="list-group-item">User Profile</a>
+                        <a href="edit-profile.html" class="list-group-item">Edit Profile</a>
+                        <a href="reset-password.html" class="list-group-item">Reset Password</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#shop-links-2" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-shopping-cart sidebar-icon"></i></span>Shop<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="shop-links-2" data-bs-parent=".white-menu">
+                        <a href="shopping-cart.html" class="list-group-item">Shopping Cart</a>
+                        <a href="checkout.html" class="list-group-item">Checkout</a>
+                        <a href="order-history.html" class="list-group-item">Order History</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#features-links-2" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-puzzle-piece sidebar-icon"></i></span>Features<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu mega-sub-menu" id="features-links-2" data-bs-parent=".white-menu">
+                        <a href="#header-style-links-2" class="list-group-item" data-bs-toggle="collapse">Header<span><i
+                                    class="fa fa-caret-down arrow"></i></span></a>
+                        <div class="collapse sub-menu mega-sub-menu-links" id="header-style-links-2">
+                            <a href="feature-header-1.html" class="list-group-item">Header 1</a>
+                            <a href="feature-header-2.html" class="list-group-item">Header 2</a>
+                            <a href="feature-header-3.html" class="list-group-item">Header 3</a>
+                        </div>
+                        <a href="#page-title-style-links-2" class="list-group-item" data-bs-toggle="collapse">Page
+                            Title<span><i class="fa fa-caret-down arrow"></i></span></a>
+                        <div class="collapse sub-menu mega-sub-menu-links" id="page-title-style-links-2">
+                            <a href="feature-page-cover-1.html" class="list-group-item">Page Cover 1</a>
+                            <a href="feature-page-cover-2.html" class="list-group-item">Page Cover 2</a>
+                            <a href="feature-page-cover-3.html" class="list-group-item">Page Cover 3</a>
+                            <a href="feature-page-cover-4.html" class="list-group-item">Page Cover 4</a>
+                            <a href="feature-page-cover-5.html" class="list-group-item">Page Cover 5</a>
+                        </div>
+                        <a href="#footer-style-links-2" class="list-group-item" data-bs-toggle="collapse">Footer<span><i
+                                    class="fa fa-caret-down arrow"></i></span></a>
+                        <div class="collapse sub-menu mega-sub-menu-links" id="footer-style-links-2">
+                            <a href="feature-footer-1.html" class="list-group-item">Footer 1</a>
+                            <a href="feature-footer-2.html" class="list-group-item">Footer 2</a>
+                            <a href="feature-footer-3.html" class="list-group-item">Footer 3</a>
+                        </div>
+                        <a href="#form-style-links-2" class="list-group-item" data-bs-toggle="collapse">Forms<span><i
+                                    class="fa fa-caret-down arrow"></i></span></a>
+                        <div class="collapse sub-menu mega-sub-menu-links" id="form-style-links-2">
+                            <a href="login-1.html" class="list-group-item">Login 1</a>
+                            <a href="login-2.html" class="list-group-item">Login 2</a>
+                            <a href="register-1.html" class="list-group-item">Register 1</a>
+                            <a href="register-2.html" class="list-group-item">Register 2</a>
+                            <a href="forget-password-1.html" class="list-group-item">Forget Password 1</a>
+                            <a href="forget-password-2.html" class="list-group-item">Forget Password 2</a>
+                        </div>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#components-links" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-clone sidebar-icon"></i></span>Components<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="components-links" data-bs-parent="#main-menu">
+                        <a href="components-notifications.html" class="list-group-item">Notifications</a>
+                        <a href="components-toasts.html" class="list-group-item">Toast</a>
+                        <a href="components-dialog-box.html" class="list-group-item">Dialog Box</a>
+                        <a href="components-alert-boxes.html" class="list-group-item">Alert Box</a>
+                        <a href="components-action-sheets.html" class="list-group-item">Action Sheets</a>
+                        <a href="components-modal.html" class="list-group-item">Modas</a>
+                        <a href="components-panels.html" class="list-group-item">Panels</a>
+                        <a href="components-list-view.html" class="list-group-item">List View</a>
+                        <a href="components-multiple-list-view.html" class="list-group-item">Multiple List View</a>
+                        <a href="components-timeline.html" class="list-group-item">Timeline</a>
+                        <a href="components-accordian.html" class="list-group-item">Accordian</a>
+                        <a href="components-badges.html" class="list-group-item">Badges</a>
+                        <a href="components-buttons.html" class="list-group-item">Buttons</a>
+                        <a href="components-cards.html" class="list-group-item">Cards</a>
+                        <a href="components-carousel.html" class="list-group-item">Carousel</a>
+                        <a href="components-chips.html" class="list-group-item">Chips</a>
+                        <a href="components-icons.html" class="list-group-item">Icons</a>
+                        <a href="components-pagination.html" class="list-group-item">Paginations</a>
+                        <a href="components-progress-bar.html" class="list-group-item">Progressbar</a>
+                        <a href="components-tables-.html" class="list-group-item">Tables </a>
+                        <a href="components-tooltips-popovers.html" class="list-group-item">Tooltips</a>
+                        <a href="components-typography.html" class="list-group-item">Typography</a>
+                        <a href="components-grid.html" class="list-group-item">Grid</a>
+                        <a href="components-back-to-top.html" class="list-group-item">Back to Top</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#pages-links-2" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-clone sidebar-icon"></i></span>Pages<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="pages-links-2" data-bs-parent=".white-menu">
+                        <a href="about-1.html" class="list-group-item">About Us 1</a>
+                        <a href="about-2.html" class="list-group-item">About Us 2</a>
+                        <a href="services-1.html" class="list-group-item">Services 1</a>
+                        <a href="services-2.html" class="list-group-item">Services 2</a>
+                        <a href="testimonials-1.html" class="list-group-item">Testimonials 1</a>
+                        <a href="testimonials-2.html" class="list-group-item">Testimonials 2</a>
+                        <a href="error-page-1.html" class="list-group-item">Error Page 1</a>
+                        <a href="error-page-2.html" class="list-group-item">Error Page 2</a>
+                        <a href="coming-soon-1.html" class="list-group-item">Coming Soon 1</a>
+                        <a href="coming-soon-2.html" class="list-group-item">Coming Soon 2</a>
+                        <a href="blog.html" class="list-group-item">Blog List</a>
+                        <a href="blog-detail.html" class="list-group-item">Blog Detail</a>
+                        <a href="pricing-1.html" class="list-group-item">Pricing 1</a>
+                        <a href="pricing-2.html" class="list-group-item">Pricing 2</a>
+                        <a href="faq-1.html" class="list-group-item">FAQ 1</a>
+                        <a href="faq-2.html" class="list-group-item">FAQ 2</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#navigation-links-2" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-list-ul sidebar-icon"></i></span>Navigations<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="navigation-links-2" data-bs-parent=".white-menu">
+                        <a href="javascript:void(0)" class="sidenav-open list-group-item">Sidebar Navigation</a>
+                        <a href="#" class="list-group-item">Sidebar Navigation 2</a>
+                        <a href="javascript:void(0)" class="fullscr-open list-group-item">FullScreen Navigation</a>
+                    </div><!-- end sub-menu -->
+
+                    <a href="#contact-links-2" class="list-group-item" data-bs-toggle="collapse"><span><i
+                                class="fa fa-phone sidebar-icon"></i></span>Contact Us<span><i
+                                class="fa fa-caret-down arrow"></i></span></a>
+                    <div class="collapse sub-menu" id="contact-links-2" data-bs-parent=".white-menu">
+                        <a href="contact-1.html" class="list-group-item">Contact Us 1</a>
+                        <a href="contact-2.html" class="list-group-item">Contact Us 2</a>
+                    </div><!-- end sub-menu -->
+
+                </div><!-- end list-group -->
+            </div><!-- end main-menu -->
+        </div><!-- end mySidenav -->
+    </div><!-- end sidenav-content -->
+
+
+    <!--=============== FULLSCR-NAV ==============-->
+    <?php include 'includes/fullscreen_nav.php'; ?>
+
+    <!--================ SHOPPING-CART ==============-->
+    <?php include 'includes/shopping_cart.php'; ?>
+
+    <!--============== USER-PROFILE-SIDEBAR =============-->
+    <?php include 'includes/user_profile_sidebar.php'; ?>
+
+
+    <div class="canvas">
+
+        <div class="overlay-black"></div>
+
+        <!--========= HEADER =========-->
+        <div class="header">
+            <div class="fixed-header">
+                <div class="container-fluid">
+                    <div class="header-logo">
+                        <a href="#">
+                            <h4><span><i class="far fa-star"></i>Res</span>taurant</h4>
+                        </a>
+                    </div><!-- end header-logo -->
+
+                    <div class="header-links">
+                        <ul class="list-unstyled list-inline">
+
+                            <li class="list-inline-item shopping-cart"><a href="javascript:void(0)"
+                                    id="shc-side-open"><span><i class="fa fa-shopping-cart"></i></span><span
+                                        class="cart-badge">2</span></a></li>
+                            <li class="list-inline-item user-link"><a href="javascript:void(0)"
+                                    id="usr-side-open"><span><i class="fa fa-user"></i></span></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)" id="sidenav-open"><span><i
+                                            class="fa fa-bars"></i></span></a></li>
+                        </ul>
+                    </div><!-- end header-links -->
+                </div><!-- end container-fluid -->
+            </div><!-- end fixed-header -->
+        </div><!-- end header -->
+
+
+        <!--=========== SLIDER ==========-->
+        <div class="flexslider" id="slider">
+            <ul class="slides">
+
+                <li class="item-1"
+                    style="background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/restaurant-slider-1.jpg'); background-size:cover;">
+                    <div class="container text-center meta">
+                        <p>Delicious Place</p>
+                        <h1>Its Time to Taste</h1>
+                        <button class="btn btn-orange btn-radius">Read More</button>
+                    </div>
+                </li><!-- end item-1 -->
+
+                <li class="item-2"
+                    style="background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/restaurant-slider-2.jpg'); background-size:cover;">
+                    <div class="container text-center meta">
+                        <p>Delicious Place</p>
+                        <h1>Its Time to Taste</h1>
+                        <button class="btn btn-orange btn-radius">Read More</button>
+                    </div>
+                </li><!-- end item-2 -->
+
+            </ul>
+        </div><!-- end flexslider -->
+
+
+        <!--======= BANNER-1 ========-->
+        <section id="banner-1">
+            <div class="container-fluid  text-center overlay section-padding">
+                <ul class="list-unstyled">
+                    <li><span><i class="far fa-clock"></i>Mon - Fri :</span> 10:00 am - 11:00 pm</li>
+                    <li><span><i class="far fa-clock"></i>Sat - Sun :</span> 11:00 am - 08:00 pm</li>
+                </ul>
+            </div><!-- end container-fluid -->
+        </section><!-- end banner-1 -->
+
+
+        <!--=============== ABOUT-US ===============-->
+        <section id="about-us" class="section-padding">
+            <div class="container-fluid text-center">
+                <h3 class="page-heading">About Us</h3>
+                <hr class="page-heading-line" />
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit faucibus mattis. Donec
+                    pharetra odio convalli. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit
+                    faucibus mattis. Donec pharetra odio convalli.</p>
+            </div><!-- end container-fluid -->
+        </section><!-- end about-us -->
+
+
+        <!--=============== SERVICES ===============-->
+        <section id="services" class="section-padding">
+            <div class="container-fluid">
+
+                <div class="owl-carousel owl-theme" id="owl-services">
+                    <div class="item">
+                        <div class="service-block">
+                            <span><i class="fa fa-thumbs-up"></i></span>
+                            <h4>Quality Serve</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div><!-- end service-block -->
+                    </div><!-- end item -->
+
+                    <div class="item">
+                        <div class="service-block">
+                            <span><i class="fa fa-user"></i></span>
+                            <h4>Best Chefs</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div><!-- end service-block -->
+                    </div><!-- end item -->
+
+                    <div class="item">
+                        <div class="service-block">
+                            <span><i class="fa fa-rocket"></i></span>
+                            <h4>Free Deilvery</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div><!-- end service-block -->
+                    </div><!-- end item -->
+
+                    <div class="item">
+                        <div class="service-block">
+                            <span><i class="fa fa-building"></i></span>
+                            <h4>Clean Spot</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div><!-- end service-block -->
+                    </div><!-- end item -->
+                </div><!-- end owl-services -->
+
+            </div><!-- end container -->
+        </section><!-- end services -->
+
+
+        <!--============= MENU ============-->
+        <section class="menu section-padding">
+            <div class="container-fluid text-center">
+                <h3 class="page-heading">Delicious Menu</h3>
+                <hr class="page-heading-line" />
+                <ul class="nav nav-tabs justify-content-center">
+                    <li class="nav-item"><a class="nav-link active" href="#breakfast-dishes"
+                            data-bs-toggle="tab">Breakfast</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#lunch-dishes" data-bs-toggle="tab">Lunch</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dinner-dishes" data-bs-toggle="tab">Dinner</a></li>
+                </ul>
+
+                <div class="tab-content">
+
+                    <div id="breakfast-dishes" class="tab-pane active">
+                        <div class="owl-carousel owl-theme owl-menu">
+                            <div>
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-breakfast-1.png"
+                                                class="img-fluid" alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Breakfast-1</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-breakfast-2.png"
+                                                class="img-fluid" alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Breakfast-2</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+                            </div>
+
+                            <div>
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-breakfast-3.png"
+                                                class="img-fluid" alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Breakfast-3</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-breakfast-4.png"
+                                                class="img-fluid" alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Breakfast-4</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+                            </div>
+
+                            <div>
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-breakfast-5.png"
+                                                class="img-fluid" alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Breakfast-5</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-breakfast-6.png"
+                                                class="img-fluid" alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Breakfast-6</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+                            </div>
+                        </div><!-- end owl-menu -->
+                    </div><!-- end breakfast-dishes -->
+
+                    <div id="lunch-dishes" class="tab-pane fade">
+                        <div class="owl-carousel owl-theme owl-menu">
+                            <div>
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-lunch-1.png" class="img-fluid"
+                                                alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Lunch-1</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-lunch-2.png" class="img-fluid"
+                                                alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Lunch-2</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+                            </div>
+
+                            <div>
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-lunch-3.png" class="img-fluid"
+                                                alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Lunch-3</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-lunch-4.png" class="img-fluid"
+                                                alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Lunch-4</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+                            </div>
+
+                            <div>
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-lunch-5.png" class="img-fluid"
+                                                alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Lunch-5</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-lunch-6.png" class="img-fluid"
+                                                alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Lunch-6</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+                            </div>
+                        </div><!-- end owl-menu -->
+                    </div><!-- end lunch-dishes -->
+
+                    <div id="dinner-dishes" class="tab-pane fade">
+                        <div class="owl-carousel owl-theme owl-menu">
+                            <div>
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-breakfast-1.png"
+                                                class="img-fluid" alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Dinner-1</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-breakfast-2.png"
+                                                class="img-fluid" alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Dinner-2</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+                            </div>
+
+                            <div>
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-breakfast-3.png"
+                                                class="img-fluid" alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Dinner-3</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-breakfast-4.png"
+                                                class="img-fluid" alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Dinner-4</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+                            </div>
+
+                            <div>
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-breakfast-5.png"
+                                                class="img-fluid" alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Dinner-5</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+
+                                <div class="grid">
+                                    <div class="dish-list">
+                                        <a href="menu-detail.html"><img src="images/dish-breakfast-6.png"
+                                                class="img-fluid" alt="dish-menu" /></a>
+                                        <div class="dish-list-text">
+                                            <h4><a href="menu-detail.html">Dinner-6</a></h4>
+                                            <h5>$45</h5>
+                                            <p>Lorem ipsum, Dolor</p>
+                                            <button class="btn">Add to cart<span><i
+                                                        class="fa fa-shopping-cart"></i></span></button>
+                                        </div><!-- end dish-list-text -->
+                                    </div><!-- end dish-list -->
+                                </div><!-- end grid -->
+                            </div>
+                        </div><!-- end owl-menu -->
+                    </div><!-- end dinner-dishes -->
+
+                </div><!-- end tab-content -->
+            </div><!-- end container-fluid -->
+        </section><!-- end menu -->
+
+
+        <!--=============== TESTIMONIAL ===============-->
+        <section id="testimonial" class="section-padding text-white">
+            <div class="container-fluid">
+                <h3 class="page-heading white-heading">Testimonials</h3>
+                <hr class="page-heading-line white-line" />
+                <div class="owl-carousel owl-theme" id="owl-testimonial">
+
+                    <div class="item">
+                        <div class="review-block">
+                            <div class="reviewer-text">
+                                <ul class="list-unstyled list-inline star-rating">
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                </ul>
+
+                                <blockquote class="blockquote"> Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.
+                                    <footer class="blockquote-footer">Andrew</footer>
+                                </blockquote>
+                            </div><!-- end reviewer-text -->
+
+                            <div class="reviewer-img">
+                                <img src="images/reviewer-1.jpg" alt="reviewer-image" class="rounded-circle">
+                            </div><!-- end reviewer-img -->
+                        </div><!-- end review-block -->
+                    </div><!-- end item -->
+
+                    <div class="item">
+                        <div class="review-block">
+                            <div class="reviewer-text">
+                                <ul class="list-unstyled list-inline star-rating">
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                </ul>
+
+                                <blockquote> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua ut enim ad.
+                                    <footer class="blockquote-footer">Andrew</footer>
+                                </blockquote>
+                            </div><!-- end reviewer-text -->
+
+                            <div class="reviewer-img">
+                                <img src="images/reviewer-2.jpg" alt="reviewer-image" class="rounded-circle">
+                            </div><!-- end reviewer-img -->
+                        </div><!-- end review-block -->
+                    </div><!-- end item -->
+
+                    <div class="item">
+                        <div class="review-block">
+                            <div class="reviewer-text">
+                                <ul class="list-unstyled list-inline star-rating">
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                </ul>
+
+                                <blockquote> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua ut enim ad.
+                                    <footer class="blockquote-footer">Andrew</footer>
+                                </blockquote>
+                            </div><!-- end reviewer-text -->
+
+                            <div class="reviewer-img">
+                                <img src="images/reviewer-3.jpg" alt="reviewer-image" class="rounded-circle">
+                            </div><!-- end reviewer-img -->
+                        </div><!-- end review-block -->
+                    </div><!-- end item -->
+
+                    <div class="item">
+                        <div class="review-block">
+                            <div class="reviewer-text">
+                                <ul class="list-unstyled list-inline star-rating">
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                    <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
+                                </ul>
+
+                                <blockquote> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua ut enim ad.
+                                    <footer class="blockquote-footer">Andrew</footer>
+                                </blockquote>
+                            </div><!-- end reviewer-text -->
+
+                            <div class="reviewer-img">
+                                <img src="images/reviewer-4.jpg" alt="reviewer-image" class="rounded-circle">
+                            </div><!-- end reviewer-img -->
+                        </div><!-- end review-block -->
+                    </div><!-- end item -->
+
+                </div><!-- end owl-testimonial -->
+            </div><!-- end container-fluid -->
+        </section><!-- end testimonial -->
+
+        <!--=============== FOOTER ===============-->
+        <?php include 'includes/footer.php'; ?>
+
+    </div><!-- end canvas -->
+
+
+    <!-- Page Scripts Starts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-5.3.2.min.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/custom-navigation.js"></script>
+    <script src="js/custom-flex.js"></script>
+    <script src="js/custom-owl.js"></script>
+    <!-- Page Scripts Ends -->
+
+</body>
+
+</html>
