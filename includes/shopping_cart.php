@@ -44,7 +44,7 @@
         <div class="cart-info text-end">
             <h4>Item(s) : <span>2</span></h4>
             <h4>Total Price: <span>$90.00</span></h4>
-            <a href="shopping-cart.html" class="btn btn-black">View Cart</a>
-            <a href="checkout.html" class="btn btn-orange">Checkout</a>
+            <a href="shopping-cart.php" class="btn btn-black">View Cart</a>
+            <a href="checkout.php" class="btn btn-orange">Checkout</a>
         </div><!-- end cart-info -->
     </div><!-- shopping-cart-sidebar -->
