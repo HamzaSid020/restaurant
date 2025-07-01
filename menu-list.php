@@ -43,6 +43,7 @@
 
 
         <!--=================== PAGE-WRAPPER ================-->
+        <?php include 'includes/menu_functions.php'; ?>
         <section class="page-wrapper innerpage-section-padding">
             <div id="menu-page" class="menu-list">
                 <div class="container-fluid text-center menu">
@@ -60,267 +61,15 @@
                     <div class="tab-content">
 
                         <div id="breakfast-dishes" class="tab-pane active">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-breakfast-1.png"
-                                                class="img-fluid" alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Breakfast-1</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-breakfast-2.png"
-                                                class="img-fluid" alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Breakfast-2</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-breakfast-3.png"
-                                                class="img-fluid" alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Breakfast-3</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-breakfast-4.png"
-                                                class="img-fluid" alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Breakfast-4</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-breakfast-5.png"
-                                                class="img-fluid" alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Breakfast-5</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-breakfast-6.png"
-                                                class="img-fluid" alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Breakfast-6</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-                            </ul>
+                            <?php echo renderMenuCategory('breakfast'); ?>
                         </div><!-- end breakfast-dishes -->
 
                         <div id="lunch-dishes" class="tab-pane fade">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-lunch-1.png" class="img-fluid"
-                                                alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Lunch-1</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-lunch-2.png" class="img-fluid"
-                                                alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Lunch-2</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-lunch-3.png" class="img-fluid"
-                                                alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Lunch-3</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-lunch-4.png" class="img-fluid"
-                                                alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Lunch-4</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-lunch-5.png" class="img-fluid"
-                                                alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Lunch-5</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-lunch-6.png" class="img-fluid"
-                                                alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Lunch-6</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-                            </ul>
+                            <?php echo renderMenuCategory('lunch'); ?>
                         </div><!-- end lunch-dishes -->
 
                         <div id="dinner-dishes" class="tab-pane fade">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-dinner-1.png" class="img-fluid"
-                                                alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Dinner-1</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-dinner-2.png" class="img-fluid"
-                                                alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Dinner-2</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-dinner-3.png" class="img-fluid"
-                                                alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Dinner-3</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-dinner-4.png" class="img-fluid"
-                                                alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Dinner-4</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-dinner-5.png" class="img-fluid"
-                                                alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Dinner-5</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-
-                                <li>
-                                    <div class="dish-list">
-                                        <a href="menu-detail.html"><img src="images/dish-dinner-6.png" class="img-fluid"
-                                                alt="dish-menu" /></a>
-                                        <div class="dish-list-text">
-                                            <h4><a href="menu-detail.html">Dinner-6</a></h4>
-                                            <h5>$45</h5>
-                                            <p>Lorem ipsum, Dolor</p>
-                                            <button class="btn">Add to cart<span><i
-                                                        class="fa fa-shopping-cart"></i></span></button>
-                                        </div><!-- end dish-list-text -->
-                                    </div><!-- end dish-list -->
-                                </li>
-                            </ul>
+                            <?php echo renderMenuCategory('dinner'); ?>
                         </div><!-- end dinner-dishes -->
 
                     </div><!-- end tab-content -->
@@ -330,28 +79,8 @@
 
 
         <!--=============== FOOTER ===============-->
-        <section id="footer" class="section-padding">
-            <div class="container-fluid text-center">
-                <h3><span><i class="far fa-star"></i>Res</span>taurant</h3>
-                <ul class="footer-contact list-unstyled">
-                    <li><span><i class="fa fa-map-marker-alt"></i></span>Street # 3, Lorem ipsum dolor , California.
-                    </li>
-                    <li><span><i class="fa fa-envelope"></i></span>info@starrestaurant.com</li>
-                    <li><span><i class="fa fa-phone"></i></span>+123 1234 123456</li>
-                </ul>
-
-                <ul class="footer-social list-unstyled list-inline">
-                    <li class="list-inline-item"><a href="#"><span><i class="fab fa-facebook-f"></i></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span><i class="fab fa-instagram"></i></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span><i class="fab fa-pinterest"></i></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span><i class="fab fa-twitter"></i></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span><i class="fab fa-dribbble"></i></span></a></li>
-                </ul>
-                <p class="copyright">© 2018 <a href="#"><span><i class="far fa-star"></i></span>Restaurant</a>. All
-                    rights reserved.</p>
-            </div><!-- end container-fluid -->
-        </section><!-- end footer -->
-
+        <?php include 'includes/footer.php'; ?>
+        
     </div><!-- end canvas -->
 
 

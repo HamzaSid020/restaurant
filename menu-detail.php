@@ -45,6 +45,19 @@
 
 
         <!--=================== PAGE-WRAPPER ================-->
+        <?php 
+        include 'includes/menu_functions.php';
+        
+        // Get menu item ID from URL parameter
+        $item_id = isset($_GET['id']) ? (int)$_GET['id'] : 1;
+        $menu_item = getMenuItemDetails($item_id);
+        
+        // If menu item not found, redirect to menu list
+        if (!$menu_item) {
+            header('Location: menu-list.php');
+            exit;
+        }
+        ?>
         <section class="page-wrapper innerpage-section-padding">
             <div id="menu-detail-page">
                 <div class="container-fluid">
@@ -52,28 +65,28 @@
                         <div class="menu-title">
                             <div class="menu-name">
                                 <p>Product Name</p>
-                                <h3>Breakfast-3</h3>
+                                <h3><?php echo htmlspecialchars($menu_item['name']); ?></h3>
                             </div>
                             <div class="menu-price">
                                 <p>Price</p>
-                                <h3>$45</h3>
+                                <h3>$<?php echo number_format($menu_item['price'], 2); ?></h3>
                             </div>
                         </div><!-- end menu-title -->
 
                         <ul id="menu-gallery" class="gallery list-unstyled cS-hidden menu-gallery text-center">
-                            <li data-thumb="images/dish-breakfast-3.png">
+                            <li data-thumb="<?php echo htmlspecialchars($menu_item['image']); ?>">
                                 <div class="p-img">
-                                    <img src="images/dish-breakfast-3.png" alt="menu-detail-img" />
+                                    <img src="<?php echo htmlspecialchars($menu_item['image']); ?>" alt="<?php echo htmlspecialchars($menu_item['name']); ?>" />
                                 </div>
                             </li>
-                            <li data-thumb="images/dish-breakfast-3.png">
+                            <li data-thumb="<?php echo htmlspecialchars($menu_item['image']); ?>">
                                 <div class="p-img">
-                                    <img src="images/dish-breakfast-3.png" alt="menu-detail-img" />
+                                    <img src="<?php echo htmlspecialchars($menu_item['image']); ?>" alt="<?php echo htmlspecialchars($menu_item['name']); ?>" />
                                 </div>
                             </li>
-                            <li data-thumb="images/dish-breakfast-3.png">
+                            <li data-thumb="<?php echo htmlspecialchars($menu_item['image']); ?>">
                                 <div class="p-img">
-                                    <img src="images/dish-breakfast-3.png" alt="menu-detail-img" />
+                                    <img src="<?php echo htmlspecialchars($menu_item['image']); ?>" alt="<?php echo htmlspecialchars($menu_item['name']); ?>" />
                                 </div>
                             </li>
                         </ul>
@@ -86,10 +99,8 @@
                                 <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
                                 <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
                             </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit faucibus
-                                mattis. Donec pharetra odio convalli. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit.</p>
-                            <button class="btn btn-orange">Add to cart <span><i
+                            <p><?php echo htmlspecialchars($menu_item['description']); ?></p>
+                            <button class="btn btn-orange" data-item-id="<?php echo $menu_item['id']; ?>">Add to cart <span><i
                                         class="fa fa-shopping-cart"></i></span></button>
                         </div><!-- end menu-info -->
 
