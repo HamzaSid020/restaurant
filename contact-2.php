@@ -2,7 +2,7 @@
 <html lang="zxx">
 
 <head>
-    <title>Register</title>
+    <title>Contact Us 2</title>
     <?php include 'includes/head.php'; ?>
 </head>
 
@@ -19,14 +19,13 @@
     <?php include 'includes/side_nav2.php'; ?>
 
     <!--=============== FULLSCR-NAV ==============-->
-   <?php include 'includes/fullscreen_nav.php'; ?>
+    <?php include 'includes/fullscreen_nav.php'; ?>
 
     <!--================ SHOPPING-CART ==============-->
     <?php include 'includes/shopping_cart.php'; ?>
 
     <!--============== USER-PROFILE-SIDEBAR =============-->
     <?php include 'includes/user_profile_sidebar.php'; ?>
-
 
     <div class="canvas">
 
@@ -59,70 +58,67 @@
         </div><!-- end header -->
 
 
-        <!--========= PAGE-COVER =========-->
-        <div class="page-cover">
-            <div class="container-fluid">
-                <h3><span class="cover-left-icon float-start"><i class="fa fa-user-plus"></i></span>Register<span
-                        class="cover-right-icon float-end"><i class="fa fa-user-plus"></i></span></h3>
-            </div><!-- end container-fluid -->
-        </div><!-- end page-cover -->
+        <iframe class="map mb-0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6509729.487836256!2d-123.77686152799836!3d37.1864783963941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia!5e0!3m2!1sen!2s!4v1490695907554"
+            allowfullscreen></iframe>
 
 
-        <!--=================== PAGE-WRAPPER ================-->
+        <!--======================== PAGE-WRAPPER ===================-->
         <section class="page-wrapper innerpage-section-padding">
-            <div id="register-page">
+            <div id="contact-page-2">
                 <div class="container-fluid text-center">
-                    <div class="innerpage-heading">
-                        <h3>Register Now</h3>
+
+                    <div class="contact-block-2">
+                        <h4><span><i class="fa fa-map-marker-alt"></i></span>Find Us</h4>
+                        <p>St. 14, Block D, Lorem Ipsum, California.</p>
+                    </div><!-- end contact-block-2 -->
+
+                    <div class="contact-block-2">
+                        <h4><span><i class="fa fa-phone"></i></span>Call Us</h4>
+                        <p>+123 12345 123456</p>
+                        <p>+123 12345 123457</p>
+                    </div><!-- end contact-block-2 -->
+
+                    <div class="contact-block-2">
+                        <h4><span><i class="fa fa-envelope"></i></span>Email Us</h4>
+                        <p>info@loremipsum.com</p>
+                        <p>support@loremipsum.com</p>
+                    </div><!-- end contact-block-2 -->
+
+                    <div class="innerpage-heading mt-5">
+                        <h3>Send Message</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit faucibus mattis.
                         </p>
                     </div><!-- end innerpage-heading -->
 
-                    <form class="custom-form">
+                    <form class="custom-form" id="contact-form" name="contact-form" method="post">
                         <div class="form-group">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Name" required />
-                                <div class="input-group-append">
-                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
-                                </div>
-                            </div>
+                            <input type="text" class="form-control" placeholder="Name" name="txt_name" id="txt_name" />
                         </div>
 
                         <div class="form-group">
-                            <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Email" required />
-                                <div class="input-group-append">
-                                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
-                                </div>
-                            </div>
+                            <input type="email" class="form-control" placeholder="Email" name="txt_email"
+                                id="txt_email" />
                         </div>
 
                         <div class="form-group">
-                            <div class="input-group">
-                                <input type="password" class="form-control" placeholder="Password" required />
-                                <div class="input-group-append">
-                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                                </div>
-                            </div>
+                            <input type="text" class="form-control" placeholder="Phone" name="txt_phone"
+                                id="txt_phone" />
                         </div>
 
                         <div class="form-group">
-                            <div class="input-group">
-                                <input type="password" class="form-control" placeholder="Confirm Password" required />
-                                <div class="input-group-append">
-                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                                </div>
-                            </div>
+                            <input type="text" class="form-control" placeholder="Subject" name="txt_subject"
+                                id="txt_subject" />
                         </div>
-
-                        <button class="btn btn-orange btn-radius">Register</button>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" name="txt_message"
+                                id="txt_message"></textarea>
+                        </div>
+                        <div class="col-sm-12 text-center" id="result_msg"></div>
+                        <button class="btn btn-orange btn-radius" name="submit" id="submit">Submit</button>
                     </form>
-
-                    <div class="form-page-links">
-                        <p>Already Have An Account ? <a href="login.html">Login Now</a></p>
-                    </div><!-- end form-page-links -->
                 </div><!-- end container-fluid -->
-            </div><!-- end register-page -->
+            </div><!-- end contact-page-2 -->
         </section><!-- end page-wrapper -->
 
 
@@ -130,12 +126,16 @@
         <?php include 'includes/footer.php'; ?>
 
     </div><!-- end canvas -->
-    
+
+
     <!-- Page Scripts Starts -->
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-5.3.2.min.js"></script>
     <script src="js/custom-navigation.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/custom-validation.js"></script>
+
     <!-- Page Scripts Ends -->
 
 </body>

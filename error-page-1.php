@@ -2,7 +2,7 @@
 <html lang="zxx">
 
 <head>
-    <title>User Profile</title>
+    <title>Error-404</title>
     <?php include 'includes/head.php'; ?>
 </head>
 
@@ -19,14 +19,13 @@
     <?php include 'includes/side_nav2.php'; ?>
 
     <!--=============== FULLSCR-NAV ==============-->
-    <?php include 'includes/fullscreen_nav.php'; ?>
+<?php include 'includes/fullscreen_nav.php'; ?>
 
     <!--================ SHOPPING-CART ==============-->
     <?php include 'includes/shopping_cart.php'; ?>
 
     <!--============== USER-PROFILE-SIDEBAR =============-->
     <?php include 'includes/user_profile_sidebar.php'; ?>
-
     <div class="canvas">
 
         <div class="overlay-black"></div>
@@ -61,64 +60,23 @@
         <!--========= PAGE-COVER =========-->
         <div class="page-cover">
             <div class="container-fluid">
-                <h3><span class="cover-left-icon float-start"><i class="fa fa-user"></i></span>User Profile<span
-                        class="cover-right-icon float-end"><i class="fa fa-user"></i></span></h3>
+                <h3><span class="cover-left-icon float-start"><i class="fa fa-exclamation-triangle"></i></span>Error
+                    Page<span class="cover-right-icon float-end"><i class="fa fa-exclamation-triangle"></i></span>
+                </h3>
             </div><!-- end container-fluid -->
         </div><!-- end page-cover -->
 
 
         <!--=================== PAGE-WRAPPER ================-->
         <section class="page-wrapper innerpage-section-padding">
-            <div id="user-profile-page">
-                <div class="container-fluid  text-center">
-                    <div id="user-profile-img">
-                        <img src="images/user-profile.jpg" class="img-fluid rounded-circle" alt="user-img" />
-                    </div>
-                    <div class="innerpage-heading user-profile-heading">
-                        <h3><span>James</span> Anderson</h3>
-                        <hr />
-                    </div><!-- end innerpage-heading -->
-
-                    <div class="edit-link text-end">
-                        <a href="edit-profile.php"><span><i class="fa fa-pencil-alt"></i></span>Edit Profile</a>
-                    </div><!-- end edit-link -->
-
-                    <div class="table-responsive text-start">
-                        <table class="table table-hover table-striped">
-                            <tbody>
-                                <tr>
-                                    <td>Full Name</td>
-                                    <td>James Anderson</td>
-                                </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td>jamesand@lorem.com</td>
-                                </tr>
-                                <tr>
-                                    <td>Phone Number</td>
-                                    <td>+123 12345 45678</td>
-                                </tr>
-                                <tr>
-                                    <td>Country</td>
-                                    <td>Canada</td>
-                                </tr>
-                                <tr>
-                                    <td>State / Region</td>
-                                    <td>Ontario</td>
-                                </tr>
-                                <tr>
-                                    <td>Postal Code</td>
-                                    <td>00000</td>
-                                </tr>
-                                <tr>
-                                    <td>Address</td>
-                                    <td>Lorem Ipsum 56, Canada.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div><!-- end table-responsive -->
+            <div id="error-page">
+                <div class="container-fluid text-center">
+                    <h2>4<span>0</span>4<span class="h2-shape"></span></h2>
+                    <h4>Page Not Found</h4>
+                    <p>Sorry, we couldn't find the page you're looking for.</p>
+                    <a href="#" class="btn btn-orange">Go Back</a>
                 </div><!-- end container-fluid -->
-            </div><!-- end user-profile-page -->
+            </div><!-- end error-page -->
         </section><!-- end page-wrapper -->
 
 
