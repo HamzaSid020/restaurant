@@ -2,7 +2,7 @@
 <html lang="zxx">
 
 <head>
-    <title>Checkout</title>
+    <title>Contact Us</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
@@ -22,9 +22,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/orange.css">
     <link rel="stylesheet" href="css/custom.css">
-
-    <!--Date-Picker Stylesheet-->
-    <link rel="stylesheet" href="css/datepicker.css">
 </head>
 
 <body class="page-body">
@@ -102,12 +99,12 @@
                         <a href="reset-password.html" class="list-group-item">Reset Password</a>
                     </div><!-- end sub-menu -->
 
-                    <a href="#shop-links" class="list-group-item active" data-bs-toggle="collapse"><span><i
+                    <a href="#shop-links" class="list-group-item" data-bs-toggle="collapse"><span><i
                                 class="fa fa-shopping-cart sidebar-icon"></i></span>Shop<span><i
                                 class="fa fa-caret-down arrow"></i></span></a>
                     <div class="collapse sub-menu" id="shop-links" data-bs-parent="#main-menu">
                         <a href="shopping-cart.html" class="list-group-item">Shopping Cart</a>
-                        <a href="#" class="list-group-item active">Checkout</a>
+                        <a href="checkout.html" class="list-group-item">Checkout</a>
                         <a href="order-history.html" class="list-group-item">Order History</a>
                     </div><!-- end sub-menu -->
 
@@ -212,11 +209,11 @@
                         <a href="javascript:void(0)" id="fullscr-open" class="list-group-item">FullScreen Navigation</a>
                     </div><!-- end sub-menu -->
 
-                    <a href="#contact-links" class="list-group-item" data-bs-toggle="collapse"><span><i
+                    <a href="#contact-links" class="list-group-item active" data-bs-toggle="collapse"><span><i
                                 class="fa fa-phone sidebar-icon"></i></span>Contact Us<span><i
                                 class="fa fa-caret-down arrow"></i></span></a>
                     <div class="collapse sub-menu" id="contact-links" data-bs-parent="#main-menu">
-                        <a href="contact-1.html" class="list-group-item">Contact Us 1</a>
+                        <a href="#" class="list-group-item active">Contact Us 1</a>
                         <a href="contact-2.html" class="list-group-item">Contact Us 2</a>
                     </div><!-- end sub-menu -->
 
@@ -297,12 +294,12 @@
                         <a href="reset-password.html" class="list-group-item">Reset Password</a>
                     </div><!-- end sub-menu -->
 
-                    <a href="#shop-links-2" class="list-group-item active" data-bs-toggle="collapse"><span><i
+                    <a href="#shop-links-2" class="list-group-item" data-bs-toggle="collapse"><span><i
                                 class="fa fa-shopping-cart sidebar-icon"></i></span>Shop<span><i
                                 class="fa fa-caret-down arrow"></i></span></a>
                     <div class="collapse sub-menu" id="shop-links-2" data-bs-parent=".white-menu">
                         <a href="shopping-cart.html" class="list-group-item">Shopping Cart</a>
-                        <a href="#" class="list-group-item active">Checkout</a>
+                        <a href="checkout.html" class="list-group-item">Checkout</a>
                         <a href="order-history.html" class="list-group-item">Order History</a>
                     </div><!-- end sub-menu -->
 
@@ -406,11 +403,11 @@
                         <a href="javascript:void(0)" class="fullscr-open list-group-item">FullScreen Navigation</a>
                     </div><!-- end sub-menu -->
 
-                    <a href="#contact-links-2" class="list-group-item" data-bs-toggle="collapse"><span><i
+                    <a href="#contact-links-2" class="list-group-item active" data-bs-toggle="collapse"><span><i
                                 class="fa fa-phone sidebar-icon"></i></span>Contact Us<span><i
                                 class="fa fa-caret-down arrow"></i></span></a>
                     <div class="collapse sub-menu" id="contact-links-2" data-bs-parent=".white-menu">
-                        <a href="contact-1.html" class="list-group-item">Contact Us 1</a>
+                        <a href="#" class="list-group-item active">Contact Us 1</a>
                         <a href="contact-2.html" class="list-group-item">Contact Us 2</a>
                     </div><!-- end sub-menu -->
 
@@ -418,7 +415,6 @@
             </div><!-- end main-menu -->
         </div><!-- end mySidenav -->
     </div><!-- end sidenav-content -->
-
 
     <!--=============== FULLSCR-NAV ==============-->
     <div id="fullscr-nav" class="fullscr-navigation">
@@ -551,127 +547,54 @@
         <!--========= PAGE-COVER =========-->
         <div class="page-cover">
             <div class="container-fluid">
-                <h3><span class="cover-left-icon float-start"><i class="fa fa-thumbs-up"></i></span>Checkout<span
-                        class="cover-right-icon float-end"><i class="fa fa-thumbs-up"></i></span></h3>
+                <h3><span class="cover-left-icon float-start"><i class="fa fa-phone"></i></span>Contact Us<span
+                        class="cover-right-p float-end"><i class="fa fa-phone"></i></span></h3>
             </div><!-- end container-fluid -->
         </div><!-- end page-cover -->
 
 
-        <!--=================== PAGE-WRAPPER ================-->
+        <!--======================== PAGE-WRAPPER ===================-->
         <section class="page-wrapper innerpage-section-padding">
-            <div id="checkout-page">
-                <div class="container-fluid">
-                    <div class="innerpage-heading text-center">
-                        <h3>Your Order</h3>
-                        <a href="shopping-cart.html" class="btn btn-orange">View Shopping Cart</a>
+            <div id="contact-page">
+                <div class="container-fluid text-center">
+                    <div class="innerpage-heading">
+                        <h3>Find Us</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit faucibus mattis.
+                        </p>
                     </div><!-- end innerpage-heading -->
 
-                    <div class="order-list">
-                        <ul class="list-unstyled">
-                            <li>
-                                <div class="order">
-                                    <div class="order-item">
-                                        <div class="order-item-info">
-                                            <h4><a href="#">Breakfast-3</a></h4>
-                                            <p>Lorem ipsum, dolor</p>
-                                            <p class="order-item-price"><span>Price : $45</span> , Qty : 1</p>
-                                        </div><!-- end order-item-info -->
+                    <iframe class="map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6509729.487836256!2d-123.77686152799836!3d37.1864783963941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia!5e0!3m2!1sen!2s!4v1490695907554"
+                        allowfullscreen></iframe>
 
-                                        <div class="order-item-img">
-                                            <a href="#"><img src="images/dish-breakfast-3.png" class="img-fluid"
-                                                    alt="order-img" /></a>
-                                        </div><!-- end order-img -->
-                                    </div><!-- end order-item -->
-
-                                    <div class="total">
-                                        <p>1 x $45 = <span>$45</span></p>
-                                    </div><!-- end total -->
-                                </div><!-- end order-->
-                            </li>
-
-                            <li>
-                                <div class="order">
-                                    <div class="order-item">
-                                        <div class="order-item-info">
-                                            <h4><a href="#">Dinner-4</a></h4>
-                                            <p>Lorem ipsum, dolor</p>
-                                            <p class="order-item-price"><span>Price : $45</span> , Qty : 1</p>
-                                        </div><!-- end order-item-info -->
-
-                                        <div class="order-item-img">
-                                            <a href="#"><img src="images/dish-dinner-4.png" class="img-fluid"
-                                                    alt="order-img" /></a>
-                                        </div><!-- end order-img -->
-                                    </div><!-- end order-item -->
-
-                                    <div class="total">
-                                        <p>1 x $45 = <span>$45</span></p>
-                                    </div><!-- end total -->
-                                </div><!-- end order-->
-                            </li>
-                        </ul>
-                        <div class="cart-info text-center">
-                            <h4>Total Price: <span>$90</span></h4>
-                        </div><!-- end cart-info -->
-                    </div>
-
-                    <form class="custom-form">
-                        <h4>Fill in the form:</h4>
+                    <form class="custom-form" id="contact-form" name="contact-form" method="post">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name" required />
+                            <input type="text" class="form-control" placeholder="Name" name="txt_name" id="txt_name" />
                         </div>
 
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" required />
+                            <input type="email" class="form-control" placeholder="Email" name="txt_email"
+                                id="txt_email" />
                         </div>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Phone" required />
+                            <input type="text" class="form-control" placeholder="Phone" name="txt_phone"
+                                id="txt_phone" />
                         </div>
 
                         <div class="form-group">
-                            <select class="form-control">
-                                <option selected>Choose Payment</option>
-                                <option>VISA</option>
-                                <option>Credit Card</option>
-                                <option>Paypal</option>
-                            </select>
+                            <input type="text" class="form-control" placeholder="Subject" name="txt_subject"
+                                id="txt_subject" />
                         </div>
-
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Card Number" required />
+                            <textarea class="form-control" rows="5" placeholder="Your Message" name="txt_message"
+                                id="txt_message"></textarea>
                         </div>
-
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control dpd" placeholder="Expire Date" required />
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="CVV Code" required />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea class="form-control" rows="5" placeholder="Additional Message"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                <label class="custom-control-label" for="customCheck">I agree that i have read and
-                                    accepted the <a href="#">terms & conditions</a></label>
-                            </div>
-                        </div>
-
-                        <button class="btn btn-orange btn-radius">Submit</button>
+                        <div class="col-sm-12 text-center" id="result_msg"></div>
+                        <button class="btn btn-orange btn-radius" name="submit" id="submit">Submit</button>
                     </form>
                 </div><!-- end container-fluid -->
-            </div><!-- end checkout-page -->
+            </div><!-- end contact-page -->
         </section><!-- end page-wrapper -->
 
 
@@ -705,9 +628,10 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-5.3.2.min.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/custom-navigation.js"></script>
-    <script src="js/custom-date-picker.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/custom-validation.js"></script>
+
     <!-- Page Scripts Ends -->
 
 </body>
