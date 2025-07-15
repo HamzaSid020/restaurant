@@ -23,11 +23,11 @@
                                 class="fa fa-caret-down arrow"></i></span></a>
                     <div class="collapse sub-menu" id="homepage-links-2" data-bs-parent=".white-menu">
                         <a href="#" class="list-group-item active">Restaurant</a>
-                        <a href="pizza.php" class="list-group-item">Pizza</a>
+                        <!-- <a href="pizza.php" class="list-group-item">Pizza</a>
                         <a href="bakery.php" class="list-group-item">Bakery</a>
                         <a href="coffee.php" class="list-group-item">Coffee</a>
                         <a href="fast-food.php" class="list-group-item">Fast Food</a>
-                        <a href="ice-parlour.php" class="list-group-item">Ice Parlour</a>
+                        <a href="ice-parlour.php" class="list-group-item">Ice Parlour</a> -->
                     </div><!-- end sub-menu -->
 
                     <a href="#menu-links-2" class="list-group-item" data-bs-toggle="collapse"><span><i
@@ -35,7 +35,7 @@
                                 class="fa fa-caret-down arrow"></i></span></a>
                     <div class="collapse sub-menu" id="menu-links-2" data-bs-parent=".white-menu">
                         <a href="menu-grid.php" class="list-group-item">Menu Grid</a>
-                        <a href="menu-list.php" class="list-group-item">Menu List</a>
+                        <!-- <a href="menu-list.php" class="list-group-item">Menu List</a> -->
                         <a href="menu-detail.php" class="list-group-item">Menu Detail</a>
                     </div><!-- end sub-menu -->
 
@@ -108,11 +108,11 @@
                                     class="fa fa-caret-down arrow"></i></span></a>
                         <div class="collapse sub-menu mega-sub-menu-links" id="form-style-links-2">
                             <a href="login-1.php" class="list-group-item">Login 1</a>
-                            <a href="login-2.php" class="list-group-item">Login 2</a>
+                            <!-- <a href="login-2.php" class="list-group-item">Login 2</a> -->
                             <a href="register-1.php" class="list-group-item">Register 1</a>
-                            <a href="register-2.php" class="list-group-item">Register 2</a>
+                            <!-- <a href="register-2.php" class="list-group-item">Register 2</a> -->
                             <a href="forget-password-1.php" class="list-group-item">Forget Password 1</a>
-                            <a href="forget-password-2.php" class="list-group-item">Forget Password 2</a>
+                            <!-- <a href="forget-password-2.php" class="list-group-item">Forget Password 2</a> -->
                         </div>
                     </div><!-- end sub-menu -->
 
@@ -151,20 +151,20 @@
                                 class="fa fa-caret-down arrow"></i></span></a>
                     <div class="collapse sub-menu" id="pages-links-2" data-bs-parent=".white-menu">
                         <a href="about-1.php" class="list-group-item">About Us 1</a>
-                        <a href="about-2.php" class="list-group-item">About Us 2</a>
+                        <!-- <a href="about-2.php" class="list-group-item">About Us 2</a> -->
                         <a href="services-1.php" class="list-group-item">Services 1</a>
-                        <a href="services-2.php" class="list-group-item">Services 2</a>
-                        <a href="testimonials-1.php" class="list-group-item">Testimonials 1</a>
+                        <!-- <a href="services-2.php" class="list-group-item">Services 2</a> -->
+                        <!-- <a href="testimonials-1.php" class="list-group-item">Testimonials 1</a> -->
                         <a href="testimonials-2.php" class="list-group-item">Testimonials 2</a>
                         <a href="error-page-1.php" class="list-group-item">Error Page 1</a>
-                        <a href="error-page-2.php" class="list-group-item">Error Page 2</a>
-                        <a href="coming-soon-1.php" class="list-group-item">Coming Soon 1</a>
-                        <a href="coming-soon-2.php" class="list-group-item">Coming Soon 2</a>
-                        <a href="blog.php" class="list-group-item">Blog List</a>
-                        <a href="blog-detail.php" class="list-group-item">Blog Detail</a>
+                        <!-- <a href="error-page-2.php" class="list-group-item">Error Page 2</a> -->
+                        <!-- <a href="coming-soon-1.php" class="list-group-item">Coming Soon 1</a>
+                        <a href="coming-soon-2.php" class="list-group-item">Coming Soon 2</a> -->
+                        <!-- <a href="blog.php" class="list-group-item">Blog List</a>
+                        <a href="blog-detail.php" class="list-group-item">Blog Detail</a> -->
                         <a href="pricing-1.php" class="list-group-item">Pricing 1</a>
-                        <a href="pricing-2.php" class="list-group-item">Pricing 2</a>
-                        <a href="faq-1.php" class="list-group-item">FAQ 1</a>
+                        <!-- <a href="pricing-2.php" class="list-group-item">Pricing 2</a> -->
+                        <!-- <a href="faq-1.php" class="list-group-item">FAQ 1</a> -->
                         <a href="faq-2.php" class="list-group-item">FAQ 2</a>
                     </div><!-- end sub-menu -->
 

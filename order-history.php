@@ -233,7 +233,7 @@
 
 
         <!--=============== FOOTER ===============-->
-        <?php include 'footer.php'; ?>
+        <?php include'includes/footer.php'; ?>
 
     </div><!-- end canvas -->
     <!-- Page Scripts Starts -->

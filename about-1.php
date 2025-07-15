@@ -37,7 +37,7 @@
                 <div class="container-fluid">
                     <div class="header-logo">
                         <a href="#">
-                            <h4><span><i class="far fa-star"></i>Res</span>taurant</h4>
+                            <h4><span><i class="far fa-star"></i>Chachu Ki</span>Biryani</h4>
                         </a>
                     </div><!-- end header-logo -->
 
@@ -73,14 +73,12 @@
                 <div class="container-fluid text-center">
                     <div class="innerpage-heading">
                         <h3>Who We Are</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit faucibus mattis.
+                        <p>It all started with Chachu’s secret recipe and a dream to share it with the world.
                         </p>
                     </div><!-- end innerpage-heading -->
 
-                    <img src="images/chefs.png" class="img-fluid" alt="about-img" />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit faucibus mattis. Donec
-                        pharetra odio convalli. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-                        blandit faucibus mattis. Donec pharetra odio convalli.</p>
+                    <img src="images/chachu.jpg" class="img-fluid" alt="about-img" />
+                    <p>We’re the flavor storytellers behind Chachu Ki Biryani — a family-run kitchen serving legendary biryani crafted with love, tradition, and a pinch of nostalgia.".</p>
                 </div><!-- end container-fluid -->
             </div><!-- end about-page -->
         </section><!-- end page-wrapper -->

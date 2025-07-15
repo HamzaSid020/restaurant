@@ -37,7 +37,7 @@
                 <div class="container-fluid">
                     <div class="header-logo">
                         <a href="#">
-                            <h4><span><i class="far fa-star"></i>Res</span>taurant</h4>
+                            <h4><span><i class="far fa-star"></i>Chachu</span>Ki Biryani</h4>
                         </a>
                     </div><!-- end header-logo -->
 
@@ -70,25 +70,25 @@
 
                     <div class="contact-block-2">
                         <h4><span><i class="fa fa-map-marker-alt"></i></span>Find Us</h4>
-                        <p>St. 14, Block D, Lorem Ipsum, California.</p>
+                        <p>988 Burnhamthorpe Rd E, Mississauga, ON L4Y 2X6</p>
                     </div><!-- end contact-block-2 -->
 
                     <div class="contact-block-2">
                         <h4><span><i class="fa fa-phone"></i></span>Call Us</h4>
-                        <p>+123 12345 123456</p>
-                        <p>+123 12345 123457</p>
+                        <p>+1 (905) 897-6226</p>
+                        <!-- <p>+123 12345 123457</p> -->
                     </div><!-- end contact-block-2 -->
 
                     <div class="contact-block-2">
                         <h4><span><i class="fa fa-envelope"></i></span>Email Us</h4>
-                        <p>info@loremipsum.com</p>
-                        <p>support@loremipsum.com</p>
+                        <p>ChachukiBiryani@gmail.com</p>
+                        <!-- <p>support@loremipsum.com</p> -->
                     </div><!-- end contact-block-2 -->
 
                     <div class="innerpage-heading mt-5">
-                        <h3>Send Message</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit faucibus mattis.
-                        </p>
+                        <h3>Send Us a Message</h3>
+                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit faucibus mattis.
+                        </p> -->
                     </div><!-- end innerpage-heading -->
 
                     <form class="custom-form" id="contact-form" name="contact-form" method="post">

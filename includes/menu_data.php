@@ -4,68 +4,68 @@ $menu_items = [
     'breakfast' => [
         [
             'id' => 1,
-            'name' => 'Breakfast-1',
-            'description' => 'Lorem ipsum, Dolor',
-            'price' => 45.00,
-            'image' => 'images/dish-breakfast-1.png',
+            'name' => 'Special Breakfast',
+            'description' => 'Anda Paratha + Karak Chai',
+            'price' => 5.00,
+            'image' => 'images/andaparathachai.jpg',
             'category' => 'breakfast'
         ],
-        [
-            'id' => 2,
-            'name' => 'Breakfast-2',
-            'description' => 'Lorem ipsum, Dolor',
-            'price' => 45.00,
-            'image' => 'images/dish-breakfast-2.png',
-            'category' => 'breakfast'
-        ],
-        [
-            'id' => 3,
-            'name' => 'Breakfast-3',
-            'description' => 'Lorem ipsum, Dolor',
-            'price' => 45.00,
-            'image' => 'images/dish-breakfast-3.png',
-            'category' => 'breakfast'
-        ],
-        [
-            'id' => 4,
-            'name' => 'Breakfast-4',
-            'description' => 'Lorem ipsum, Dolor',
-            'price' => 45.00,
-            'image' => 'images/dish-breakfast-4.png',
-            'category' => 'breakfast'
-        ],
-        [
-            'id' => 5,
-            'name' => 'Breakfast-5',
-            'description' => 'Lorem ipsum, Dolor',
-            'price' => 45.00,
-            'image' => 'images/dish-breakfast-5.png',
-            'category' => 'breakfast'
-        ],
-        [
-            'id' => 6,
-            'name' => 'Breakfast-6',
-            'description' => 'Lorem ipsum, Dolor',
-            'price' => 45.00,
-            'image' => 'images/dish-breakfast-6.png',
-            'category' => 'breakfast'
-        ],
-        [
-            'id' => 19,
-            'name' => 'Pancakes with Maple Syrup',
-            'description' => 'Fluffy pancakes served with real maple syrup and butter',
-            'price' => 12.99,
-            'image' => 'images/dish-breakfast-1.png',
-            'category' => 'breakfast'
-        ],
-        [
-            'id' => 20,
-            'name' => 'Eggs Benedict',
-            'description' => 'Poached eggs on English muffin with hollandaise sauce',
-            'price' => 15.99,
-            'image' => 'images/dish-breakfast-2.png',
-            'category' => 'breakfast'
-        ]
+    //     [
+    //         'id' => 2,
+    //         'name' => 'Breakfast-2',
+    //         'description' => 'Lorem ipsum, Dolor',
+    //         'price' => 45.00,
+    //         'image' => 'images/dish-breakfast-2.png',
+    //         'category' => 'breakfast'
+    //     ],
+    //     [
+    //         'id' => 3,
+    //         'name' => 'Breakfast-3',
+    //         'description' => 'Lorem ipsum, Dolor',
+    //         'price' => 45.00,
+    //         'image' => 'images/dish-breakfast-3.png',
+    //         'category' => 'breakfast'
+    //     ],
+    //     [
+    //         'id' => 4,
+    //         'name' => 'Breakfast-4',
+    //         'description' => 'Lorem ipsum, Dolor',
+    //         'price' => 45.00,
+    //         'image' => 'images/dish-breakfast-4.png',
+    //         'category' => 'breakfast'
+    //     ],
+    //     [
+    //         'id' => 5,
+    //         'name' => 'Breakfast-5',
+    //         'description' => 'Lorem ipsum, Dolor',
+    //         'price' => 45.00,
+    //         'image' => 'images/dish-breakfast-5.png',
+    //         'category' => 'breakfast'
+    //     ],
+    //     [
+    //         'id' => 6,
+    //         'name' => 'Breakfast-6',
+    //         'description' => 'Lorem ipsum, Dolor',
+    //         'price' => 45.00,
+    //         'image' => 'images/dish-breakfast-6.png',
+    //         'category' => 'breakfast'
+    //     ],
+    //     [
+    //         'id' => 19,
+    //         'name' => 'Pancakes with Maple Syrup',
+    //         'description' => 'Fluffy pancakes served with real maple syrup and butter',
+    //         'price' => 12.99,
+    //         'image' => 'images/dish-breakfast-1.png',
+    //         'category' => 'breakfast'
+    //     ],
+    //     [
+    //         'id' => 20,
+    //         'name' => 'Eggs Benedict',
+    //         'description' => 'Poached eggs on English muffin with hollandaise sauce',
+    //         'price' => 15.99,
+    //         'image' => 'images/dish-breakfast-2.png',
+    //         'category' => 'breakfast'
+    //     ]
     ],
     'lunch' => [
         [
@@ -167,7 +167,8 @@ $menu_items = [
             'category' => 'dinner'
         ]
     ]
-];
+
+        ];
 
 // Helper function to get menu items by category
 function getMenuItemsByCategory($category) {

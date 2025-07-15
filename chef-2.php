@@ -176,7 +176,7 @@
                     </div><!-- end row -->
                 </div><!-- end container-fluid -->
             </div><!-- end chef-page -->
-        </section><!-- end page-wrapper -->
+        </section>end page-wrapper
 
 
         <!--=============== FOOTER ===============-->

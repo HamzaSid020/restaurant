@@ -12,12 +12,12 @@ CREATE TABLE menu_items (
 
 -- Insert sample data
 INSERT INTO menu_items (name, description, price, image, category) VALUES
-('Breakfast-1', 'Lorem ipsum, Dolor', 45.00, 'images/dish-breakfast-1.png', 'breakfast'),
-('Breakfast-2', 'Lorem ipsum, Dolor', 45.00, 'images/dish-breakfast-2.png', 'breakfast'),
-('Breakfast-3', 'Lorem ipsum, Dolor', 45.00, 'images/dish-breakfast-3.png', 'breakfast'),
-('Breakfast-4', 'Lorem ipsum, Dolor', 45.00, 'images/dish-breakfast-4.png', 'breakfast'),
-('Breakfast-5', 'Lorem ipsum, Dolor', 45.00, 'images/dish-breakfast-5.png', 'breakfast'),
-('Breakfast-6', 'Lorem ipsum, Dolor', 45.00, 'images/dish-breakfast-6.png', 'breakfast'),
+('Breakfast-1', 'Anda Paratha + Karak Chai, Dolor', 5.00, 'images/dish-breakfast-1.png', 'breakfast'),
+-- ('Breakfast-2', 'Lorem ipsum, Dolor', 45.00, 'images/dish-breakfast-2.png', 'breakfast'),
+-- ('Breakfast-3', 'Lorem ipsum, Dolor', 45.00, 'images/dish-breakfast-3.png', 'breakfast'),
+-- ('Breakfast-4', 'Lorem ipsum, Dolor', 45.00, 'images/dish-breakfast-4.png', 'breakfast'),
+-- ('Breakfast-5', 'Lorem ipsum, Dolor', 45.00, 'images/dish-breakfast-5.png', 'breakfast'),
+-- ('Breakfast-6', 'Lorem ipsum, Dolor', 45.00, 'images/dish-breakfast-6.png', 'breakfast'),
 ('Lunch-1', 'Lorem ipsum, Dolor', 45.00, 'images/dish-lunch-1.png', 'lunch'),
 ('Lunch-2', 'Lorem ipsum, Dolor', 45.00, 'images/dish-lunch-2.png', 'lunch'),
 ('Lunch-3', 'Lorem ipsum, Dolor', 45.00, 'images/dish-lunch-3.png', 'lunch'),

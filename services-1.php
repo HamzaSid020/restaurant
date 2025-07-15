@@ -36,7 +36,7 @@
                 <div class="container-fluid">
                     <div class="header-logo">
                         <a href="#">
-                            <h4><span><i class="far fa-star"></i>Res</span>taurant</h4>
+                            <h4><span><i class="far fa-star"></i>Chachu</span>Ki Biryani</h4>
                         </a>
                     </div><!-- end header-logo -->
 
@@ -72,7 +72,7 @@
                 <div class="container-fluid text-center">
                     <div class="innerpage-heading">
                         <h3>What We Provide</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit faucibus mattis.
+                        <p>We believe in more than just food, we deliver a full experience. From carefully crafted meals to exceptional service, here's what sets us apart:
                         </p>
                     </div><!-- end innerpage-heading -->
 
@@ -82,7 +82,7 @@
                                 <div class="service-block">
                                     <span><i class="fa fa-thumbs-up"></i></span>
                                     <h4>Quality Serve</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <p>Every dish is prepared with the finest ingredients and delivered with attention to detail. Our team is trained to ensure your dining experience is as delightful as the food itself</p>
                                 </div><!-- end service-block -->
                             </div><!-- end columns -->
 
@@ -90,7 +90,7 @@
                                 <div class="service-block">
                                     <span><i class="fa fa-user"></i></span>
                                     <h4>Best Chefs</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <p>Our chefs bring passion and creativity to the kitchen, blending traditional flavors with modern techniques to serve up dishes that are both comforting and innovative.</p>
                                 </div><!-- end service-block -->
                             </div><!-- end columns -->
 
@@ -98,7 +98,7 @@
                                 <div class="service-block">
                                     <span><i class="fa fa-rocket"></i></span>
                                     <h4>Free Deilvery</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <p>Enjoy your favorite meals from the comfort of your home. We offer fast, reliable, and completely free delivery, because great food should come to you effortlessly.</p>
                                 </div><!-- end service-block -->
                             </div><!-- end columns -->
 
@@ -106,7 +106,7 @@
                                 <div class="service-block">
                                     <span><i class="fa fa-building"></i></span>
                                     <h4>Clean Spot</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <p>Your health is our priority. We maintain the highest hygiene standards in both our kitchen and dining areas to give you a clean, safe, and welcoming environment.</p>
                                 </div><!-- end service-block -->
                             </div><!-- end columns -->
                         </div><!-- end row -->

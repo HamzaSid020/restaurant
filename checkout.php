@@ -53,7 +53,7 @@
                 <div class="container-fluid">
                     <div class="innerpage-heading text-center">
                         <h3>Your Order</h3>
-                        <a href="shopping-cart.html" class="btn btn-orange">View Shopping Cart</a>
+                        <a href="shopping-cart.php" class="btn btn-orange">View Shopping Cart</a>
                     </div><!-- end innerpage-heading -->
 
                     <div class="order-list">

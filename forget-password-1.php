@@ -72,8 +72,8 @@
             <div id="forgot-password-page">
                 <div class="container-fluid text-center">
                     <div class="innerpage-heading">
-                        <h3>Forgot Password</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit faucibus mattis.
+                        <h3>Forgot Password?</h3>
+                        <p>Enter you email to receive the code.
                         </p>
                     </div><!-- end innerpage-heading -->
 
