@@ -36,7 +36,7 @@
                 <div class="container-fluid">
                     <div class="header-logo">
                         <a href="#">
-                            <h4><span><i class="far fa-star"></i>Res</span>taurant</h4>
+                            <h4><span><i class="far fa-star"></i>Chachu </span>Ki Biryani</h4>
                         </a>
                     </div><!-- end header-logo -->
 
@@ -60,7 +60,7 @@
         <!--========= PAGE-COVER =========-->
         <div class="page-cover">
             <div class="container-fluid">
-                <h3><span class="cover-left-icon float-start"><i class="fa fa-dollar-sign"></i></span>Pricing<span
+                <h3><span class="cover-left-icon float-start"><i class="fa fa-dollar-sign"></i></span>Special Deals<span
                         class="cover-right-icon float-end"><i class="fa fa-dollar-sign"></i></span></h3>
             </div><!-- end container-fluid -->
         </div><!-- end page-cover -->
@@ -72,75 +72,75 @@
                 <div class="container-fluid text-center">
                     <div class="innerpage-heading">
                         <h3>Our Packages</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Check out these deliciously affordable packages — perfect for any gathering!</p>
                     </div><!-- end innerpage-heading -->
 
                     <div class="row">
                         <div class="col-6">
                             <div class="p-table-block">
                                 <div class="p-table-price">
-                                    <h2>$15</h2>
+                                    <h2>$5</h2>
                                 </div><!-- end p-table-price -->
-                                <h4 class="p-table-title">Basic</h4>
+                                <h4 class="p-table-title">Special Nashta</h4>
                                 <ul class="list-unstyled">
-                                    <li>Clean</li>
-                                    <li>Responsive</li>
-                                    <li>20 GB</li>
+                                    <li>Anda Paratha</li>
+                                    <li>Karak Chai</li>
+                                    <!-- <li>20 GB</li>
                                     <li>Update</li>
-                                    <li>Support</li>
+                                    <li>Support</li> -->
                                 </ul>
-                                <button class="btn btn-orange">Buy Now</button>
+                                <button class="btn btn-orange">Add to Cart </button>
                             </div><!-- end p-table-block -->
                         </div><!-- end columns -->
 
                         <div class="col-6">
                             <div class="p-table-block">
                                 <div class="p-table-price">
-                                    <h2>$30</h2>
+                                    <h2>$80</h2>
                                 </div><!-- end p-table-price -->
-                                <h4 class="p-table-title">Medium</h4>
+                                <h4 class="p-table-title">Chiken Biryani Daigh</h4>
                                 <ul class="list-unstyled">
-                                    <li>Clean</li>
-                                    <li>Responsive</li>
-                                    <li>40 GB</li>
+                                    <li>6 to 7 People</li>
+                                    <li>Daigh Deposit $100</li>
+                                     <!--<li>40 GB</li>
                                     <li>Update</li>
-                                    <li>Support</li>
+                                    <li>Support</li> -->
                                 </ul>
-                                <button class="btn btn-orange">Buy Now</button>
+                                <button class="btn btn-orange">Add to Cart </button>
                             </div><!-- end p-table-block -->
                         </div><!-- end columns -->
 
                         <div class="col-6">
                             <div class="p-table-block mg-top-80">
                                 <div class="p-table-price">
-                                    <h2>$65</h2>
+                                    <h2>$100</h2>
                                 </div><!-- end p-table-price -->
-                                <h4 class="p-table-title">Advanced</h4>
+                                <h4 class="p-table-title">Veal Biryani Daigh</h4>
                                 <ul class="list-unstyled">
-                                    <li>Clean</li>
-                                    <li>Responsive</li>
-                                    <li>20 GB</li>
+                                <li>6 to 7 People</li>
+                                    <li>Daigh Deposit $100</li>
+                                     <!--<li>40 GB</li>
                                     <li>Update</li>
-                                    <li>Support</li>
+                                    <li>Support</li> -->
                                 </ul>
-                                <button class="btn btn-orange">Buy Now</button>
+                                <button class="btn btn-orange">Add to Cart </button>
                             </div><!-- end p-table-block -->
                         </div><!-- end columns -->
 
                         <div class="col-6">
                             <div class="p-table-block mg-top-80">
                                 <div class="p-table-price">
-                                    <h2>$90</h2>
+                                    <h2>$0</h2>
                                 </div><!-- end p-table-price -->
-                                <h4 class="p-table-title">Special</h4>
+                                <h4 class="p-table-title">Coming Soon</h4>
                                 <ul class="list-unstyled">
                                     <li>Clean</li>
                                     <li>Responsive</li>
-                                    <li>20 GB</li>
+                                    <!-- <li>20 GB</li>
                                     <li>Update</li>
-                                    <li>Support</li>
+                                    <li>Support</li> -->
                                 </ul>
-                                <button class="btn btn-orange">Buy Now</button>
+                                <button class="btn btn-orange">Add to Cart </button>
                             </div><!-- end p-table-block -->
                         </div><!-- end columns -->
                     </div><!-- end row -->

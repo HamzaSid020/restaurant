@@ -27,15 +27,15 @@
                                 class="fa fa-utensils sidebar-icon"></i></span>Menu<span><i
                                 class="fa fa-caret-down arrow"></i></span></a>
                     <div class="collapse sub-menu" id="menu-links" data-bs-parent="#main-menu">
-                        <a href="menu-grid.php" class="list-group-item">Menu Grid</a>
-                        <a href="menu-detail.php" class="list-group-item">Menu Detail</a>
+                        <a href="fast-food.php" class="list-group-item">Menu</a>
+                        <a href="bakery.php" class="list-group-item">Desserts</a>
                     </div><!-- end sub-menu -->
 
                     <a href="#chef-links" class="list-group-item" data-bs-toggle="collapse"><span><i
                                 class="fa fa-users sidebar-icon"></i></span>Chef<span><i
                                 class="fa fa-caret-down arrow"></i></span></a>
                     <div class="collapse sub-menu" id="chef-links" data-bs-parent="#main-menu">
-                        <a href="chef-1.php" class="list-group-item">Chef 1</a>
+                        <a href="chef-1.php" class="list-group-item">Meet the Chef!</a>
                     </div><!-- end sub-menu -->
 
                     <!-- <a href="reservation.php" class="list-group-item"><span><i

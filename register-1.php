@@ -38,7 +38,7 @@
                 <div class="container-fluid">
                     <div class="header-logo">
                         <a href="#">
-                            <h4><span><i class="far fa-star"></i>Res</span>taurant</h4>
+                            <h4><span><i class="far fa-star"></i>Chachu</span>Ki Biryani</h4>
                         </a>
                     </div><!-- end header-logo -->
 
@@ -66,7 +66,54 @@
                         class="cover-right-icon float-end"><i class="fa fa-user-plus"></i></span></h3>
             </div><!-- end container-fluid -->
         </div><!-- end page-cover -->
-
+        <?php
+        if(isset($_POST["Register"])){
+            $Name = $_POST["Name"];
+            $Email = $_POST["Email"];
+            $Password = $_POST["Password"];
+            $Confirm_Password = $_POST["Confirm_Password"];
+            $passwordHash = password_hash($Password, PASSWORD_DEFAULT);
+            $errors = array();
+            if(empty($Name) OR empty($Email) OR empty($Password) OR empty($Confirm_Password)){
+                array_push($errors,"All fields are required.");
+        }
+        if(!filter_var($Email, FILTER_VALIDATE_EMAIL)){
+            array_push($errors,"Invalid email format.");
+        }
+        if(strlen($Password) < 8){
+            array_push($errors,"Password must be at least 8 characters long");
+        }
+        if($Password !== $Confirm_Password){
+            array_push($errors,"Passwords do not match.");
+        }
+        require_once "database/database.php";
+        $sql = "SELECT * FROM register WHERE Email = '$Email'";
+        $result = mysqli_query($concc,$sql);
+        $rowCount = mysqli_num_rows($result);
+        if($rowCount > 0){
+            array_push($errors,"Email already exists. Please use a different email.");
+        }
+        if(count($errors) > 0){
+            foreach($errors as $error){
+                echo "<div class='alert alert-danger'>$error</div>";
+            }
+            }
+            else{
+                
+                $sql = "INSERT INTO register (Name, Email, Password) VALUES(?,?,?)";
+                $stmt = mysqli_stmt_init($concc);
+                $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
+                if($prepareStmt){
+                    mysqli_stmt_bind_param($stmt, "sss", $Name, $Email, $passwordHash);
+                    mysqli_stmt_execute($stmt);
+                    echo "<div class = 'alert alert-success'>Registration successful!</div>";
+                } 
+                else{
+                    die("Something went wrong");
+                }
+        }
+    }
+        ?>
 
         <!--=================== PAGE-WRAPPER ================-->
         <section class="page-wrapper innerpage-section-padding">
@@ -74,14 +121,13 @@
                 <div class="container-fluid text-center">
                     <div class="innerpage-heading">
                         <h3>Register Now</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit faucibus mattis.
+                        <p>Register now and be the first to enjoy special deals, updates, and of course — mouthwatering biryani!
                         </p>
                     </div><!-- end innerpage-heading -->
-
-                    <form class="custom-form">
+                    <form class="custom-form" method="post">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Name" required />
+                                <input type="text" class="form-control" name= "Name" placeholder="Name" required />
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                                 </div>
@@ -90,7 +136,7 @@
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Email" required />
+                                <input type="email" class="form-control" name = "Email" placeholder="Email" required />
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                                 </div>
@@ -99,7 +145,7 @@
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="password" class="form-control" placeholder="Password" required />
+                                <input type="password" class="form-control" name = "Password" placeholder="Password" required />
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa fa-lock"></i></span>
                                 </div>
@@ -108,18 +154,18 @@
 
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="password" class="form-control" placeholder="Confirm Password" required />
+                                <input type="password" class="form-control" name = "Confirm_Password" placeholder="Confirm Password" required />
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa fa-lock"></i></span>
                                 </div>
                             </div>
                         </div>
 
-                        <button class="btn btn-orange btn-radius">Register</button>
+                        <button class="btn btn-orange btn-radius" name = "Register">Register</button>
                     </form>
 
                     <div class="form-page-links">
-                        <p>Already Have An Account ? <a href="login.html">Login Now</a></p>
+                        <p>Already Have An Account ? <a href="login.php">Login Now</a></p>
                     </div><!-- end form-page-links -->
                 </div><!-- end container-fluid -->
             </div><!-- end register-page -->

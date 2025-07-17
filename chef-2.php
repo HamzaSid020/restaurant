@@ -61,7 +61,7 @@
         <div class="page-cover">
             <div class="container-fluid">
                 <h3><span class="cover-left-icon float-start"><i class="fab fa-free-code-camp "></i></span>Our Chef
-                    2<span class="cover-right-icon float-end"><i class="fab fa-free-code-camp "></i></span></h3>
+                    <span class="cover-right-icon float-end"><i class="fab fa-free-code-camp "></i></span></h3>
             </div><!-- end container-fluid -->
         </div><!-- end page-cover -->
 
@@ -98,78 +98,6 @@
                                 <div class="person-title">
                                     <h4>John Doe</h4>
                                     <p>Pastry Chef</p>
-                                </div><!-- end person-title -->
-                            </div><!-- end person-block -->
-                        </div><!-- end columns-->
-
-                        <div class="col-6">
-                            <div class="person-block person-block-circle">
-                                <div class="person-img">
-                                    <img src="images/chef-2.png" class="img-fluid" alt="team-2-img" />
-                                    <div class="person-img-overlay">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"><span><i
-                                                            class="fab fa-facebook-f"></i></span></a></li>
-                                            <li class="list-inline-item"><a href="#"><span><i
-                                                            class="fab fa-instagram"></i></span></a></li>
-                                            <li class="list-inline-item"><a href="#"><span><i
-                                                            class="fab fa-google"></i></span></a></li>
-                                            <li class="list-inline-item"><a href="#"><span><i
-                                                            class="fab fa-pinterest-p"></i></span></a></li>
-                                        </ul>
-                                    </div><!-- end person-img-overlay -->
-                                </div><!-- end person-img -->
-                                <div class="person-title">
-                                    <h4>Angelica</h4>
-                                    <p>Sous Chef</p>
-                                </div><!-- end person-title -->
-                            </div><!-- end person-block -->
-                        </div><!-- end columns-->
-
-                        <div class="col-6">
-                            <div class="person-block person-block-circle">
-                                <div class="person-img">
-                                    <img src="images/chef-3.png" class="img-fluid" alt="team-2-img" />
-                                    <div class="person-img-overlay">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"><span><i
-                                                            class="fab fa-facebook-f"></i></span></a></li>
-                                            <li class="list-inline-item"><a href="#"><span><i
-                                                            class="fab fa-instagram"></i></span></a></li>
-                                            <li class="list-inline-item"><a href="#"><span><i
-                                                            class="fab fa-google"></i></span></a></li>
-                                            <li class="list-inline-item"><a href="#"><span><i
-                                                            class="fab fa-pinterest-p"></i></span></a></li>
-                                        </ul>
-                                    </div><!-- end person-img-overlay -->
-                                </div><!-- end person-img -->
-                                <div class="person-title">
-                                    <h4>Randy</h4>
-                                    <p>Pastry Chef</p>
-                                </div><!-- end person-title -->
-                            </div><!-- end person-block -->
-                        </div><!-- end columns-->
-
-                        <div class="col-6">
-                            <div class="person-block person-block-circle">
-                                <div class="person-img">
-                                    <img src="images/Chef-4.png" class="img-fluid" alt="team-2-img" />
-                                    <div class="person-img-overlay">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"><span><i
-                                                            class="fab fa-facebook-f"></i></span></a></li>
-                                            <li class="list-inline-item"><a href="#"><span><i
-                                                            class="fab fa-instagram"></i></span></a></li>
-                                            <li class="list-inline-item"><a href="#"><span><i
-                                                            class="fab fa-google"></i></span></a></li>
-                                            <li class="list-inline-item"><a href="#"><span><i
-                                                            class="fab fa-pinterest-p"></i></span></a></li>
-                                        </ul>
-                                    </div><!-- end person-img-overlay -->
-                                </div><!-- end person-img -->
-                                <div class="person-title">
-                                    <h4>Jessica</h4>
-                                    <p>Ched De Cuisine</p>
                                 </div><!-- end person-title -->
                             </div><!-- end person-block -->
                         </div><!-- end columns-->
