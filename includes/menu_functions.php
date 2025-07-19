@@ -13,17 +13,17 @@ function getMenuItemsByCategory($category = null, $limit = null) {
     try {
         $db = Database::getInstance();
         
-        $sql = "SELECT * FROM menu_items";
+        $sql = "SELECT * FROM menu_items WHERE is_available = 1";
         $params = [];
         $types = "";
         
         if ($category) {
-            $sql .= " WHERE category = ?";
+            $sql .= " AND category = ?";
             $params[] = $category;
             $types .= "s";
         }
         
-        $sql .= " ORDER BY name ASC";
+        $sql .= " ORDER BY is_featured DESC, name ASC";
         
         if ($limit) {
             $sql .= " LIMIT ?";
@@ -60,7 +60,7 @@ function getFeaturedMenuItems($limit = 6) {
     try {
         $db = Database::getInstance();
         
-        $sql = "SELECT * FROM menu_items WHERE is_featured = 1 ORDER BY name ASC LIMIT ?";
+        $sql = "SELECT * FROM menu_items WHERE is_featured = 1 AND is_available = 1 ORDER BY name ASC LIMIT ?";
         $stmt = $db->prepare($sql);
         $stmt->bind_param("i", $limit);
         $stmt->execute();
@@ -86,7 +86,7 @@ function getMenuItemById($id) {
     try {
         $db = Database::getInstance();
         
-        $sql = "SELECT * FROM menu_items WHERE id = ?";
+        $sql = "SELECT * FROM menu_items WHERE id = ? AND is_available = 1";
         $stmt = $db->prepare($sql);
         $stmt->bind_param("i", $id);
         $stmt->execute();
@@ -107,7 +107,7 @@ function getMenuCategories() {
     try {
         $db = Database::getInstance();
         
-        $sql = "SELECT DISTINCT category FROM menu_items ORDER BY category ASC";
+        $sql = "SELECT DISTINCT category FROM menu_items WHERE is_available = 1 ORDER BY category ASC";
         $result = $db->query($sql);
         
         $categories = [];
@@ -124,18 +124,86 @@ function getMenuCategories() {
 }
 
 /**
- * Display menu item HTML
+ * Get testimonials for a specific menu item
+ */
+function getTestimonialsByMenuItem($menuItemId, $limit = 5) {
+    try {
+        $db = Database::getInstance();
+        
+        $sql = "SELECT * FROM testimonials WHERE menu_item_id = ? AND is_approved = 1 ORDER BY created_at DESC LIMIT ?";
+        $stmt = $db->prepare($sql);
+        $stmt->bind_param("ii", $menuItemId, $limit);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        $testimonials = [];
+        while ($row = $result->fetch_assoc()) {
+            $testimonials[] = $row;
+        }
+        
+        return $testimonials;
+        
+    } catch (Exception $e) {
+        error_log("Error fetching testimonials: " . $e->getMessage());
+        return [];
+    }
+}
+
+/**
+ * Get average rating for a menu item
+ */
+function getAverageRating($menuItemId) {
+    try {
+        $db = Database::getInstance();
+        
+        $sql = "SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM testimonials WHERE menu_item_id = ? AND is_approved = 1";
+        $stmt = $db->prepare($sql);
+        $stmt->bind_param("i", $menuItemId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        return $result->fetch_assoc();
+        
+    } catch (Exception $e) {
+        error_log("Error fetching average rating: " . $e->getMessage());
+        return ['avg_rating' => 0, 'total_reviews' => 0];
+    }
+}
+
+/**
+ * Display menu item HTML with modern styling
  */
 function displayMenuItem($item) {
-    $html = '<div class="grid">';
-    $html .= '<div class="dish-list">';
+    $rating = getAverageRating($item['id']);
+    $avgRating = round($rating['avg_rating'], 1);
+    $totalReviews = $rating['total_reviews'];
+    
+    $html = '<div class="grid" data-aos="fade-up">';
+    $html .= '<div class="dish-list modern-dish-card">';
     $html .= '<a href="menu-detail.php?id=' . $item['id'] . '">';
     $html .= '<img src="' . htmlspecialchars($item['image']) . '" class="img-fluid" alt="' . htmlspecialchars($item['name']) . '" />';
+    if ($item['is_featured']) {
+        $html .= '<div class="featured-badge"><i class="fa fa-star"></i> Featured</div>';
+    }
     $html .= '</a>';
     $html .= '<div class="dish-list-text">';
     $html .= '<h4><a href="menu-detail.php?id=' . $item['id'] . '">' . htmlspecialchars($item['name']) . '</a></h4>';
+    $html .= '<div class="price-rating">';
     $html .= '<h5>$' . number_format($item['price'], 2) . '</h5>';
+    if ($avgRating > 0) {
+        $html .= '<div class="star-rating-small">';
+        for ($i = 1; $i <= 5; $i++) {
+            $starClass = ($i <= $avgRating) ? 'fa-star' : 'fa-star-o';
+            $html .= '<i class="fa ' . $starClass . '"></i>';
+        }
+        $html .= '<span class="rating-text">(' . $totalReviews . ')</span>';
+        $html .= '</div>';
+    }
+    $html .= '</div>';
     $html .= '<p>' . htmlspecialchars($item['description']) . '</p>';
+    if ($item['calories'] > 0) {
+        $html .= '<div class="calories-info">' . $item['calories'] . ' calories</div>';
+    }
     $html .= '<button class="btn add-to-cart" data-id="' . $item['id'] . '" data-name="' . htmlspecialchars($item['name']) . '" data-price="' . $item['price'] . '">';
     $html .= 'Add to cart<span><i class="fa fa-shopping-cart"></i></span>';
     $html .= '</button>';
@@ -263,23 +331,41 @@ function displayMenuGrid($category) {
     
     foreach ($items as $item) {
         $html .= '<div class="col-lg-3 col-md-4 col-sm-6 mb-4">';
-        $html .= '<div class="dish-list">';
-        $html .= '<a href="menu-detail.php?id=' . $item['id'] . '">';
-        $html .= '<img src="' . htmlspecialchars($item['image']) . '" class="img-fluid" alt="' . htmlspecialchars($item['name']) . '" />';
-        $html .= '</a>';
-        $html .= '<div class="dish-list-text">';
-        $html .= '<h4><a href="menu-detail.php?id=' . $item['id'] . '">' . htmlspecialchars($item['name']) . '</a></h4>';
-        $html .= '<h5>$' . number_format($item['price'], 2) . '</h5>';
-        $html .= '<p>' . htmlspecialchars($item['description']) . '</p>';
-        $html .= '<button class="btn add-to-cart" data-id="' . $item['id'] . '" data-name="' . htmlspecialchars($item['name']) . '" data-price="' . $item['price'] . '">';
-        $html .= 'Add to cart<span><i class="fa fa-shopping-cart"></i></span>';
-        $html .= '</button>';
-        $html .= '</div>'; // end dish-list-text
-        $html .= '</div>'; // end dish-list
+        $html .= displayMenuItem($item);
         $html .= '</div>'; // end col
     }
     
     $html .= '</div>'; // end row
+    
+    return $html;
+}
+
+/**
+ * Display testimonials for a menu item
+ */
+function displayTestimonials($menuItemId) {
+    $testimonials = getTestimonialsByMenuItem($menuItemId, 5);
+    
+    if (empty($testimonials)) {
+        return '<p>No reviews available yet. Be the first to review this dish!</p>';
+    }
+    
+    $html = '';
+    foreach ($testimonials as $testimonial) {
+        $html .= '<div class="review-item">';
+        $html .= '<div class="review-header">';
+        $html .= '<div class="reviewer-name">' . htmlspecialchars($testimonial['customer_name']) . '</div>';
+        $html .= '<div class="star-rating">';
+        for ($i = 1; $i <= 5; $i++) {
+            $starClass = ($i <= $testimonial['rating']) ? 'fa-star' : 'fa-star-o';
+            $html .= '<i class="fa ' . $starClass . '"></i>';
+        }
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '<div class="review-text">' . htmlspecialchars($testimonial['review_text']) . '</div>';
+        $html .= '<div class="review-date">' . date('M d, Y', strtotime($testimonial['created_at'])) . '</div>';
+        $html .= '</div>';
+    }
     
     return $html;
 }
