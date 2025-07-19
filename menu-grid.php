@@ -52,29 +52,16 @@
                         <h3>Delicious Menu</h3>
                     </div><!-- end innerpage-heading -->
 
-                    <ul class="nav nav-tabs justify-content-center">
-                        <li class="nav-item"><a class="nav-link active" href="#breakfast-dishes"
-                                data-bs-toggle="tab">Breakfast</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#lunch-dishes" data-bs-toggle="tab">Lunch</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#dinner-dishes" data-bs-toggle="tab">Dinner</a>
-                        </li>
-                    </ul>
+                    <?php
+                    // Display menu tabs from database
+                    echo displayMenuTabs();
+                    ?>
 
                     <div class="tab-content">
-
-                        <div id="breakfast-dishes" class="tab-pane active">
-                            <?php echo renderMenuGrid('breakfast'); ?>
-                        </div><!-- end breakfast-dishes -->
-
-                        <div id="lunch-dishes" class="tab-pane fade">
-                            <?php echo renderMenuGrid('lunch'); ?>
-                        </div><!-- end lunch-dishes -->
-
-                        <div id="dinner-dishes" class="tab-pane fade">
-                            <?php echo renderMenuGrid('dinner'); ?>
-                        </div><!-- end dinner-dishes -->
-
+                        <?php
+                        // Display menu content from database
+                        echo displayMenuContent();
+                        ?>
                     </div><!-- end tab-content -->
                 </div><!-- end container-fluid -->
             </div><!-- end menu-page -->
@@ -91,6 +78,24 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-5.3.2.min.js"></script>
     <script src="js/custom-navigation.js"></script>
+    
+    <!-- Add to cart functionality -->
+    <script>
+    $(document).ready(function() {
+        // Add to cart functionality
+        $('.add-to-cart').click(function() {
+            var id = $(this).data('id');
+            var name = $(this).data('name');
+            var price = $(this).data('price');
+            
+            // Add to cart logic here
+            console.log('Adding to cart:', name, 'Price:', price);
+            
+            // You can implement cart functionality here
+            alert('Added to cart: ' + name);
+        });
+    });
+    </script>
     <!-- Page Scripts Ends -->
 
 </body>

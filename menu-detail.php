@@ -49,12 +49,19 @@
         include 'includes/menu_functions.php';
         
         // Get menu item ID from URL parameter
-        $item_id = isset($_GET['id']) ? (int)$_GET['id'] : 1;
-        $menu_item = getMenuItemDetails($item_id);
+        $item_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
         
-        // If menu item not found, redirect to menu list
+        if ($item_id <= 0) {
+            // Redirect to menu grid if no valid ID
+            header('Location: menu-grid.php');
+            exit;
+        }
+        
+        $menu_item = getMenuItemById($item_id);
+        
+        // If menu item not found, redirect to menu grid
         if (!$menu_item) {
-            header('Location: menu-list.php');
+            header('Location: menu-grid.php');
             exit;
         }
         ?>
@@ -66,10 +73,12 @@
                             <div class="menu-name">
                                 <p>Product Name</p>
                                 <h3><?php echo htmlspecialchars($menu_item['name']); ?></h3>
+                                <span class="badge bg-primary"><?php echo ucfirst($menu_item['category']); ?></span>
                             </div>
                             <div class="menu-price">
                                 <p>Price</p>
                                 <h3>$<?php echo number_format($menu_item['price'], 2); ?></h3>
+                                <p class="text-muted"><?php echo $menu_item['calories']; ?> calories</p>
                             </div>
                         </div><!-- end menu-title -->
 
@@ -100,8 +109,27 @@
                                 <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
                             </ul>
                             <p><?php echo htmlspecialchars($menu_item['description']); ?></p>
-                            <button class="btn btn-orange" data-item-id="<?php echo $menu_item['id']; ?>">Add to cart <span><i
-                                        class="fa fa-shopping-cart"></i></span></button>
+                            
+                            <div class="menu-details mb-3">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <strong>Category:</strong> <?php echo ucfirst($menu_item['category']); ?>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <strong>Calories:</strong> <?php echo $menu_item['calories']; ?>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <strong>Prep Time:</strong> <?php echo $menu_item['preparation_time']; ?> min
+                                    </div>
+                                    <div class="col-md-3">
+                                        <strong>Featured:</strong> <?php echo $menu_item['is_featured'] ? 'Yes' : 'No'; ?>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-orange add-to-cart" data-id="<?php echo $menu_item['id']; ?>" data-name="<?php echo htmlspecialchars($menu_item['name']); ?>" data-price="<?php echo $menu_item['price']; ?>">
+                                Add to cart <span><i class="fa fa-shopping-cart"></i></span>
+                            </button>
                         </div><!-- end menu-info -->
 
                         <ul class="nav nav-tabs justify-content-center">
@@ -113,53 +141,51 @@
 
                         <div class="tab-content">
                             <div id="description" class="tab-pane active">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit faucibus
-                                    mattis. Donec pharetra odio convalli. Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit.</p>
-                                <p> Maecenas blandit faucibus mattis. Donec pharetra odio convalli. Lorem ipsum dolor
-                                    sit amet, consectetur adipiscing elit.</p>
+                                <h4>About this dish</h4>
+                                <p><?php echo htmlspecialchars($menu_item['description']); ?></p>
+                                
+                                <h4>Nutritional Information</h4>
+                                <ul>
+                                    <li><strong>Calories:</strong> <?php echo $menu_item['calories']; ?> per serving</li>
+                                    <li><strong>Preparation Time:</strong> <?php echo $menu_item['preparation_time']; ?> minutes</li>
+                                    <li><strong>Category:</strong> <?php echo ucfirst($menu_item['category']); ?></li>
+                                    <?php if ($menu_item['is_featured']): ?>
+                                    <li><strong>Featured Item:</strong> This is one of our most popular dishes!</li>
+                                    <?php endif; ?>
+                                </ul>
+                                
+                                <h4>Ingredients</h4>
+                                <p>Our <?php echo htmlspecialchars($menu_item['name']); ?> is prepared with the finest ingredients, following traditional recipes to ensure authentic taste and quality.</p>
                             </div>
 
                             <div id="reviews" class="tab-pane fade">
                                 <div class="comments-wrapper">
-                                    <div class="comment-block">
-                                        <h4>James Anderson</h4>
-                                        <ul class="list-unstyled list-inline star-rating">
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                        </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit aecenas blandit.</p>
-                                        <a href="#"><span><i class="fa fa-reply"></i></span>Reply</a>
-                                    </div><!-- end comment-block -->
-
-                                    <div class="comment-block reply-block">
-                                        <h4>Elliot Jones</h4>
-                                        <ul class="list-unstyled list-inline star-rating">
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                        </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit aecenas blandit.</p>
-                                        <a href="#"><span><i class="fa fa-reply"></i></span>Reply</a>
-                                    </div><!-- end comment-block -->
-
-                                    <div class="comment-block">
-                                        <h4>James Anderson</h4>
-                                        <ul class="list-unstyled list-inline star-rating">
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                            <li class="list-inline-item"><span><i class="fa fa-star"></i></span></li>
-                                        </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit aecenas blandit.</p>
-                                        <a href="#"><span><i class="fa fa-reply"></i></span>Reply</a>
-                                    </div><!-- end comment-block -->
+                                    <?php
+                                    // Get testimonials from database (you can later create a reviews table)
+                                    try {
+                                        $db = Database::getInstance();
+                                        $result = $db->query("SELECT * FROM testimonials ORDER BY rating DESC LIMIT 3");
+                                        
+                                        if ($result && $result->num_rows > 0) {
+                                            while ($testimonial = $result->fetch_assoc()) {
+                                                echo '<div class="comment-block">';
+                                                echo '<h4>' . htmlspecialchars($testimonial['customer_name']) . '</h4>';
+                                                echo '<ul class="list-unstyled list-inline star-rating">';
+                                                for ($i = 1; $i <= 5; $i++) {
+                                                    $starClass = ($i <= $testimonial['rating']) ? 'fa-star' : 'fa-star-o';
+                                                    echo '<li class="list-inline-item"><span><i class="fa ' . $starClass . '"></i></span></li>';
+                                                }
+                                                echo '</ul>';
+                                                echo '<p>' . htmlspecialchars($testimonial['review_text']) . '</p>';
+                                                echo '</div><!-- end comment-block -->';
+                                            }
+                                        } else {
+                                            echo '<p>No reviews available yet. Be the first to review this dish!</p>';
+                                        }
+                                    } catch (Exception $e) {
+                                        echo '<p>Unable to load reviews at the moment.</p>';
+                                    }
+                                    ?>
                                 </div>
 
                                 <form class="custom-form">
@@ -196,6 +222,24 @@
     <script src="js/bootstrap-5.3.2.min.js"></script>
     <script src="js/custom-navigation.js"></script>
     <script src="js/custom-lightslider.js"></script>
+    
+    <!-- Add to cart functionality -->
+    <script>
+    $(document).ready(function() {
+        // Add to cart functionality
+        $('.add-to-cart').click(function() {
+            var id = $(this).data('id');
+            var name = $(this).data('name');
+            var price = $(this).data('price');
+            
+            // Add to cart logic here
+            console.log('Adding to cart:', name, 'Price:', price);
+            
+            // You can implement cart functionality here
+            alert('Added to cart: ' + name);
+        });
+    });
+    </script>
     <!-- Page Scripts Ends -->
 
 </body>
