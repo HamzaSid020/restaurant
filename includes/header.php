@@ -2,6 +2,9 @@
 // Start session for cart functionality
 session_start();
 
+// Include authentication functions
+require_once 'auth_functions.php';
+
 // Set default page title if not defined
 if (!isset($page_title)) {
     $page_title = "ChachuKiBiryani - Authentic Indian Cuisine";
@@ -105,9 +108,32 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
                         </li>
                     </ul>
                     <div class="user_option">
-                        <a href="login.php" class="user_link">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                        </a>
+                        <?php if (isLoggedIn()): ?>
+                            <div class="dropdown">
+                                <a href="#" class="user_link dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <?php echo htmlspecialchars(getCurrentUser()['first_name']); ?>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="profile.php">
+                                        <i class="fa fa-user-circle"></i> My Profile
+                                    </a>
+                                    <?php if (isAdmin()): ?>
+                                        <a class="dropdown-item" href="admin/">
+                                            <i class="fa fa-cog"></i> Admin Panel
+                                        </a>
+                                    <?php endif; ?>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="logout.php">
+                                        <i class="fa fa-sign-out"></i> Logout
+                                    </a>
+                                </div>
+                            </div>
+                        <?php else: ?>
+                            <a href="login.php" class="user_link">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </a>
+                        <?php endif; ?>
                         <a class="cart_link" href="cart.php" style="position: relative;">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                                 <g>
