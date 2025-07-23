@@ -1,26 +1,16 @@
 <?php
 /**
  * Database Configuration for ChachuKiBiryani
- * Configured for Hostinger hosting
+ * Configured for Hostinger hosting - Always connects to remote database
  */
 
-// Environment detection
-$is_localhost = in_array($_SERVER['HTTP_HOST'], ['localhost', '127.0.0.1', '::1']) || 
-                strpos($_SERVER['HTTP_HOST'], 'localhost') !== false;
-
-if ($is_localhost) {
-    // Local development settings
-    define('DB_HOST', 'localhost');
-    define('DB_USER', 'root');
-    define('DB_PASS', '');
-    define('DB_NAME', 'Chachukibiryani');
-} else {
-    // Hostinger production settings
-    define('DB_HOST', 'localhost');
-    define('DB_USER', 'u638930561_chachu_user');
-    define('DB_PASS', 'Chachu@13020');
-    define('DB_NAME', 'u638930561_chachu_db');
-}
+// Always use Hostinger database settings (both local development and production)
+// Try different hosts if localhost doesn't work
+define('DB_HOST', 'srv1823.hstgr.io'); // Try: 'sql.yourdomain.com' or 'mysql.hostinger.com'
+define('DB_USER', 'u638930561_chachu_user');
+define('DB_PASS', 'Chachu@13020');
+define('DB_NAME', 'u638930561_chachu_db');
+define('DB_USE_LOCAL', false);
 
 // Database connection class
 class Database {
@@ -56,6 +46,9 @@ class Database {
     }
     
     public function query($sql) {
+        if (!$this->connection) {
+            throw new Exception("Database connection not available");
+        }
         $result = $this->connection->query($sql);
         if (!$result) {
             error_log("Database query error: " . $this->connection->error);
@@ -65,6 +58,9 @@ class Database {
     }
     
     public function prepare($sql) {
+        if (!$this->connection) {
+            throw new Exception("Database connection not available");
+        }
         $stmt = $this->connection->prepare($sql);
         if (!$stmt) {
             error_log("Database prepare error: " . $this->connection->error);
@@ -74,14 +70,23 @@ class Database {
     }
     
     public function escape($string) {
+        if (!$this->connection) {
+            return addslashes($string); // Fallback escaping
+        }
         return $this->connection->real_escape_string($string);
     }
     
     public function getLastInsertId() {
+        if (!$this->connection) {
+            return 0;
+        }
         return $this->connection->insert_id;
     }
     
     public function getAffectedRows() {
+        if (!$this->connection) {
+            return 0;
+        }
         return $this->connection->affected_rows;
     }
     

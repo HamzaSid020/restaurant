@@ -1,493 +1,296 @@
-<!doctype html>
-<html lang="en">
+<?php
+// Set page-specific variables
+$page_title = "Checkout - ChachuKiBiryani";
+$page_description = "Complete your order and payment at ChachuKiBiryani.";
 
-<head>
-    <title>Checkout - ChachuKiBiryani</title>
-    <?php include 'includes/head.php'; ?>
+// Start session
+session_start();
+
+// Include database connection
+require_once 'includes/db_connect.php';
+
+// Check if cart is empty
+if (empty($_SESSION['cart'])) {
+    header('Location: cart.php');
+    exit;
+}
+
+// Process checkout form
+$checkout_message = '';
+$checkout_success = false;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $customer_name = trim($_POST['customer_name'] ?? '');
+    $customer_email = trim($_POST['customer_email'] ?? '');
+    $customer_phone = trim($_POST['customer_phone'] ?? '');
+    $delivery_address = trim($_POST['delivery_address'] ?? '');
+    $delivery_city = trim($_POST['delivery_city'] ?? '');
+    $delivery_state = trim($_POST['delivery_state'] ?? '');
+    $delivery_zip = trim($_POST['delivery_zip'] ?? '');
+    $delivery_instructions = trim($_POST['delivery_instructions'] ?? '');
+    $payment_method = trim($_POST['payment_method'] ?? '');
     
-    <!-- Additional Modern Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    // Validate input
+    $errors = [];
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    if (empty($customer_name)) $errors[] = 'Name is required';
+    if (empty($customer_email) || !filter_var($customer_email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Valid email is required';
+    if (empty($customer_phone)) $errors[] = 'Phone number is required';
+    if (empty($delivery_address)) $errors[] = 'Delivery address is required';
+    if (empty($delivery_city)) $errors[] = 'City is required';
+    if (empty($delivery_state)) $errors[] = 'State is required';
+    if (empty($delivery_zip)) $errors[] = 'ZIP code is required';
+    if (empty($payment_method)) $errors[] = 'Payment method is required';
     
-    <!--Date-Picker Stylesheet-->
-    <link rel="stylesheet" href="css/datepicker.css">
-    
-    <style>
-        /* Modern Custom Styles */
-        body {
-            font-family: 'Poppins', sans-serif !important;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif !important;
-            font-weight: 700;
-        }
-
-        /* Page Cover */
-        .page-cover-modern {
-            background: linear-gradient(135deg, rgba(44, 24, 16, 0.9) 0%, rgba(255, 107, 53, 0.8) 100%);
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-cover-modern::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('images/restaurant-slider-1.jpg') center/cover;
-            z-index: -1;
-        }
-
-        .page-cover-content {
-            text-align: center;
-            color: white;
-            position: relative;
-            z-index: 2;
-        }
-
-        .page-cover-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .page-cover-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .page-cover-icon {
-            font-size: 2rem;
-            margin: 0 20px;
-            opacity: 0.8;
-        }
-
-        /* Checkout Section */
-        .checkout-modern {
-            padding: 100px 0;
-            background: #FFF8F0;
-        }
-
-        /* Order Summary */
-        .order-summary-modern {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-        }
-
-        .order-item-modern {
-            display: flex;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .order-item-modern:last-child {
-            border-bottom: none;
-        }
-
-        .order-item-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-right: 20px;
-        }
-
-        .order-item-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .order-item-details {
-            flex: 1;
-        }
-
-        .order-item-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #2C1810;
-            margin-bottom: 5px;
-        }
-
-        .order-item-description {
-            color: #6B7280;
-            margin-bottom: 5px;
-        }
-
-        .order-item-price {
-            color: #FF6B35;
-            font-weight: 600;
-        }
-
-        .order-total {
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .order-total h4 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-
-        /* Checkout Form */
-        .checkout-form-modern {
-            background: white;
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .form-group-modern {
-            margin-bottom: 25px;
-        }
-
-        .form-control-modern {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #f0f0f0;
-            border-radius: 15px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: #fafafa;
-        }
-
-        .form-control-modern:focus {
-            outline: none;
-            border-color: #FF6B35;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
-        }
-
-        .form-control-modern::placeholder {
-            color: #9CA3AF;
-        }
-
-        .btn-checkout-modern {
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-            border: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .btn-checkout-modern:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .btn-cart-modern {
-            background: white;
-            border: 2px solid #FF6B35;
-            padding: 12px 30px;
-            border-radius: 50px;
-            color: #FF6B35;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-
-        .btn-cart-modern:hover {
-            background: #FF6B35;
-            color: white;
-            text-decoration: none;
-        }
-
-        /* Page Headings */
-        .page-heading {
-            font-family: 'Playfair Display', serif !important;
-            font-weight: 700;
-            font-size: 3.5rem;
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .page-heading-line {
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-            border-radius: 2px;
-            margin: 20px auto 40px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .page-cover-title {
-                font-size: 2.5rem;
+    if (empty($errors)) {
+        try {
+            // Calculate totals
+            $subtotal = 0;
+            foreach ($_SESSION['cart'] as $item) {
+                $subtotal += $item['price'] * $item['quantity'];
             }
+            $tax = $subtotal * 0.085;
+            $delivery_fee = $subtotal > 25 ? 0 : 5;
+            $total = $subtotal + $tax + $delivery_fee;
             
-            .page-heading {
-                font-size: 2.5rem;
-            }
+            // Create order
+            $order_data = [
+                'customer_name' => $customer_name,
+                'customer_email' => $customer_email,
+                'customer_phone' => $customer_phone,
+                'delivery_address' => $delivery_address,
+                'delivery_city' => $delivery_city,
+                'delivery_state' => $delivery_state,
+                'delivery_zip' => $delivery_zip,
+                'delivery_instructions' => $delivery_instructions,
+                'subtotal' => $subtotal,
+                'tax' => $tax,
+                'delivery_fee' => $delivery_fee,
+                'total' => $total,
+                'payment_method' => $payment_method,
+                'status' => 'pending'
+            ];
             
-            .checkout-form-modern {
-                padding: 40px 20px;
-                margin: 0 15px;
-            }
+            // Insert order into database
+            $sql = "INSERT INTO orders (customer_name, customer_email, customer_phone, delivery_address, delivery_city, delivery_state, delivery_zip, delivery_instructions, subtotal, tax, delivery_fee, total, payment_method, status, created_at) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
             
-            .order-summary-modern {
-                padding: 30px 20px;
-                margin: 0 15px 30px;
-            }
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Override existing styles */
-        .section-padding {
-            padding: 40px 0;
-        }
-
-        .container-fluid {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
-        /* Hide original elements */
-        .custom-form {
-            display: none;
-        }
-
-        .order-list {
-            display: none;
-        }
-    </style>
-</head>
-
-<body class="page-body">
-
-    <!--====== LOADER =====-->
-    <div class="loader"></div>
-
-    <!--============ SIDE-NAV =============-->
-    <?php include 'includes/side_nav.php'; ?>
-
-    <!--============ SIDE-NAV-2 =============-->
-    <?php include 'includes/side_nav2.php'; ?>
-
-    <!--=============== FULLSCR-NAV ==============-->
-    <?php include 'includes/fullscreen_nav.php'; ?>
-
-    <!--================ SHOPPING-CART ==============-->
-    <?php include 'includes/shopping_cart.php'; ?>
-
-    <!--============== USER-PROFILE-SIDEBAR =============-->
-    <?php include 'includes/user_profile_sidebar.php'; ?>
-
-    <div class="canvas">
-        <div class="overlay-black"></div>
-
-        <!--========= HEADER =========-->
-        <?php include 'includes/header.php'; ?>
-
-        <!--========= PAGE-COVER =========-->
-        <section class="page-cover-modern">
-            <div class="container-fluid">
-                <div class="page-cover-content" data-aos="fade-up" data-aos-duration="1000">
-                    <span class="page-cover-icon"><i class="fa fa-thumbs-up"></i></span>
-                    <h1 class="page-cover-title">Checkout</h1>
-                    <p class="page-cover-subtitle">Complete Your Order</p>
-                    <span class="page-cover-icon"><i class="fa fa-thumbs-up"></i></span>
-                </div>
-            </div>
-        </section>
-
-        <!--=================== CHECKOUT SECTION ================-->
-        <section class="checkout-modern">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 text-center mb-5" data-aos="fade-up">
-                        <h2 class="page-heading">Complete Your Order</h2>
-                        <div class="page-heading-line"></div>
-                        <p class="lead">Review your order and provide payment details to complete your purchase</p>
-                        <a href="shopping-cart.php" class="btn-cart-modern">
-                            <i class="fa fa-shopping-cart me-2"></i>View Shopping Cart
-                        </a>
-                    </div>
-                </div>
+            $order_id = insertData($sql, [
+                $order_data['customer_name'],
+                $order_data['customer_email'],
+                $order_data['customer_phone'],
+                $order_data['delivery_address'],
+                $order_data['delivery_city'],
+                $order_data['delivery_state'],
+                $order_data['delivery_zip'],
+                $order_data['delivery_instructions'],
+                $order_data['subtotal'],
+                $order_data['tax'],
+                $order_data['delivery_fee'],
+                $order_data['total'],
+                $order_data['payment_method']
+            ]);
+            
+            if ($order_id) {
+                // Insert order items
+                foreach ($_SESSION['cart'] as $item) {
+                    $item_sql = "INSERT INTO order_items (order_id, menu_item_id, item_name, quantity, price) VALUES (?, ?, ?, ?, ?)";
+                    insertData($item_sql, [
+                        $order_id,
+                        $item['id'],
+                        $item['name'],
+                        $item['quantity'],
+                        $item['price']
+                    ]);
+                }
                 
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="checkout-form-modern" data-aos="fade-up" data-aos-delay="200">
-                            <h3 style="color: #2C1810; margin-bottom: 30px;">Payment Information</h3>
-                            
-                            <form id="checkout-form-modern">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group-modern">
-                                            <input type="text" class="form-control-modern" placeholder="Full Name" required />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group-modern">
-                                            <input type="email" class="form-control-modern" placeholder="Email Address" required />
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group-modern">
-                                    <input type="tel" class="form-control-modern" placeholder="Phone Number" required />
-                                </div>
-                                
-                                <div class="form-group-modern">
-                                    <select class="form-control-modern">
-                                        <option selected>Choose Payment Method</option>
-                                        <option>Credit Card</option>
-                                        <option>Debit Card</option>
-                                        <option>PayPal</option>
-                                        <option>Cash on Delivery</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="form-group-modern">
-                                    <input type="text" class="form-control-modern" placeholder="Card Number" required />
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group-modern">
-                                            <input type="text" class="form-control-modern dpd" placeholder="Expiry Date (MM/YY)" required />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group-modern">
-                                            <input type="text" class="form-control-modern" placeholder="CVV Code" required />
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group-modern">
-                                    <textarea class="form-control-modern" rows="4" placeholder="Special Instructions (Optional)"></textarea>
-                                </div>
-                                
-                                <div class="form-group-modern">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="termsCheck" required>
-                                        <label class="custom-control-label" for="termsCheck">
-                                            I agree to the <a href="#" style="color: #FF6B35;">Terms & Conditions</a> and <a href="#" style="color: #FF6B35;">Privacy Policy</a>
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <button type="submit" class="btn-checkout-modern">
-                                    <i class="fa fa-credit-card me-2"></i>Complete Order
-                                </button>
-                            </form>
-                        </div>
+                // Clear cart
+                unset($_SESSION['cart']);
+                
+                $checkout_success = true;
+                $checkout_message = "Order placed successfully! Your order number is #$order_id. We'll send you a confirmation email shortly.";
+                
+                // Redirect to order confirmation page
+                header("Location: order-confirmation.php?order_id=$order_id");
+                exit;
+            } else {
+                $checkout_message = 'Sorry, there was an error processing your order. Please try again.';
+            }
+        } catch (Exception $e) {
+            error_log("Checkout error: " . $e->getMessage());
+            $checkout_message = 'Sorry, there was an error processing your order. Please try again.';
+        }
+    } else {
+        $checkout_message = 'Please correct the following errors: ' . implode(', ', $errors);
+    }
+}
+
+// Calculate cart totals
+$cart_items = $_SESSION['cart'] ?? [];
+$total_items = 0;
+$subtotal = 0;
+
+foreach ($cart_items as $item) {
+    $total_items += $item['quantity'];
+    $subtotal += $item['price'] * $item['quantity'];
+}
+
+$tax = $subtotal * 0.085;
+$delivery_fee = $subtotal > 25 ? 0 : 5;
+$total = $subtotal + $tax + $delivery_fee;
+
+// Include header
+include 'includes/header.php';
+?>
+
+<!-- checkout section -->
+<section class="food_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                Checkout
+            </h2>
+        </div>
+        
+        <?php if ($checkout_message && !$checkout_success): ?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?php echo htmlspecialchars($checkout_message); ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <?php endif; ?>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Delivery Information</h5>
                     </div>
-                    
-                    <div class="col-lg-4">
-                        <div class="order-summary-modern" data-aos="fade-up" data-aos-delay="300">
-                            <h3 style="color: #2C1810; margin-bottom: 30px;">Order Summary</h3>
-                            
-                            <div class="order-item-modern">
-                                <div class="order-item-image">
-                                    <img src="images/dish-breakfast-3.png" alt="Breakfast-3">
+                    <div class="card-body">
+                        <form method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="customer_name">Full Name *</label>
+                                        <input type="text" class="form-control" id="customer_name" name="customer_name" 
+                                               value="<?php echo htmlspecialchars($_POST['customer_name'] ?? ''); ?>" required>
+                                    </div>
                                 </div>
-                                <div class="order-item-details">
-                                    <h5 class="order-item-title">Chicken Biryani</h5>
-                                    <p class="order-item-description">Aromatic basmati rice with tender chicken</p>
-                                    <p class="order-item-price">$45.00</p>
-                                </div>
-                            </div>
-                            
-                            <div class="order-item-modern">
-                                <div class="order-item-image">
-                                    <img src="images/dish-dinner-4.png" alt="Dinner-4">
-                                </div>
-                                <div class="order-item-details">
-                                    <h5 class="order-item-title">Butter Chicken</h5>
-                                    <p class="order-item-description">Creamy tomato-based curry</p>
-                                    <p class="order-item-price">$45.00</p>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="customer_email">Email *</label>
+                                        <input type="email" class="form-control" id="customer_email" name="customer_email" 
+                                               value="<?php echo htmlspecialchars($_POST['customer_email'] ?? ''); ?>" required>
+                                    </div>
                                 </div>
                             </div>
                             
-                            <div class="order-total">
-                                <h4>Total: $90.00</h4>
-                                <p style="margin: 5px 0 0 0; opacity: 0.9;">Including taxes and delivery</p>
+                            <div class="form-group">
+                                <label for="customer_phone">Phone Number *</label>
+                                <input type="tel" class="form-control" id="customer_phone" name="customer_phone" 
+                                       value="<?php echo htmlspecialchars($_POST['customer_phone'] ?? ''); ?>" required>
                             </div>
-                        </div>
+                            
+                            <div class="form-group">
+                                <label for="delivery_address">Delivery Address *</label>
+                                <input type="text" class="form-control" id="delivery_address" name="delivery_address" 
+                                       value="<?php echo htmlspecialchars($_POST['delivery_address'] ?? ''); ?>" required>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="delivery_city">City *</label>
+                                        <input type="text" class="form-control" id="delivery_city" name="delivery_city" 
+                                               value="<?php echo htmlspecialchars($_POST['delivery_city'] ?? ''); ?>" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="delivery_state">State *</label>
+                                        <input type="text" class="form-control" id="delivery_state" name="delivery_state" 
+                                               value="<?php echo htmlspecialchars($_POST['delivery_state'] ?? ''); ?>" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="delivery_zip">ZIP Code *</label>
+                                        <input type="text" class="form-control" id="delivery_zip" name="delivery_zip" 
+                                               value="<?php echo htmlspecialchars($_POST['delivery_zip'] ?? ''); ?>" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="delivery_instructions">Delivery Instructions (Optional)</label>
+                                <textarea class="form-control" id="delivery_instructions" name="delivery_instructions" rows="3"><?php echo htmlspecialchars($_POST['delivery_instructions'] ?? ''); ?></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="payment_method">Payment Method *</label>
+                                <select class="form-control" id="payment_method" name="payment_method" required>
+                                    <option value="">Select Payment Method</option>
+                                    <option value="cash" <?php echo (isset($_POST['payment_method']) && $_POST['payment_method'] == 'cash') ? 'selected' : ''; ?>>Cash on Delivery</option>
+                                    <option value="card" <?php echo (isset($_POST['payment_method']) && $_POST['payment_method'] == 'card') ? 'selected' : ''; ?>>Credit/Debit Card</option>
+                                </select>
+                            </div>
+                            
+                            <div class="text-right">
+                                <a href="cart.php" class="btn btn-secondary">Back to Cart</a>
+                                <button type="submit" class="btn btn-primary">Place Order</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </section>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Order Summary</h5>
+                    </div>
+                    <div class="card-body">
+                        <?php foreach ($cart_items as $item): ?>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span><?php echo htmlspecialchars($item['name']); ?> x <?php echo $item['quantity']; ?></span>
+                            <span>$<?php echo number_format($item['price'] * $item['quantity'], 2); ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                        
+                        <hr>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Subtotal:</span>
+                            <span>$<?php echo number_format($subtotal, 2); ?></span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Tax (8.5%):</span>
+                            <span>$<?php echo number_format($tax, 2); ?></span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Delivery Fee:</span>
+                            <span>$<?php echo number_format($delivery_fee, 2); ?></span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-3">
+                            <strong>Total:</strong>
+                            <strong>$<?php echo number_format($total, 2); ?></strong>
+                        </div>
+                        
+                        <?php if ($delivery_fee > 0): ?>
+                        <div class="alert alert-info">
+                            <small>Add $<?php echo number_format(25 - $subtotal, 2); ?> more to your order for free delivery!</small>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end checkout section -->
 
-        <!--=============== FOOTER ===============-->
-        <?php include 'includes/footer.php'; ?>
-
-    </div><!-- end canvas -->
-
-    <!-- Page Scripts Starts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap-5.3.2.min.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/custom-navigation.js"></script>
-    <script src="js/custom-date-picker.js"></script>
-    
-    <!-- AOS Animation Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-
-        // Modern Checkout Form
-        $(document).ready(function() {
-            $('#checkout-form-modern').submit(function(e) {
-                e.preventDefault();
-                
-                // Show loading state
-                $('.btn-checkout-modern').text('Processing...').prop('disabled', true);
-                
-                // Simulate order processing
-                setTimeout(function() {
-                    alert('Order placed successfully! Thank you for choosing ChachuKiBiryani.');
-                    window.location.href = 'index.php';
-                }, 3000);
-            });
-        });
-    </script>
-    <!-- Page Scripts Ends -->
-
-</body>
-
-</html>
+<?php
+// Include footer
+include 'includes/footer.php';
+?> 
