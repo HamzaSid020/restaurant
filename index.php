@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__.'/includes/auth.php';
+startSession();
+?>
 <!doctype html>
 <html lang="en">
 

@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__.'/includes/auth.php';
+startSession();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -23,7 +27,7 @@
             font-family: 'Playfair Display', serif !important;
             font-weight: 700;
         }
-
+/*  */
         /* Page Cover */
         .page-cover-modern {
             background: linear-gradient(135deg, rgba(44, 24, 16, 0.9) 0%, rgba(255, 107, 53, 0.8) 100%);
