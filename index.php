@@ -32,7 +32,7 @@ startSession();
         .hero-section {
             position: relative;
             min-height: 100vh;
-            background: linear-gradient(135deg, rgba(44, 24, 16, 0.8) 0%, rgba(255, 107, 53, 0.6) 100%);
+            /* background: linear-gradient(135deg, rgba(44, 24, 16, 0.8) 0%, rgba(255, 107, 53, 0.6) 100%); */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -45,7 +45,7 @@ startSession();
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('images/restaurant-slider-1.jpg') center/cover;
+            background: url('images/background.png') center/cover;
             z-index: -1;
         }
 
@@ -59,15 +59,16 @@ startSession();
 
         .hero-subtitle {
             font-size: 1.2rem;
-            font-weight: 300;
+            font-weight: 700;
             margin-bottom: 20px;
             opacity: 0.9;
+            color:#F7931E;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .hero-title {
-            font-size: 4.5rem;
+            font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 30px;
             line-height: 1.1;
@@ -75,9 +76,11 @@ startSession();
         }
 
         .hero-description {
-            font-size: 1.3rem;
+            font-size: 1.0rem;
+            font-weight:700;
             margin-bottom: 40px;
-            opacity: 0.95;
+            opacity: 100%;
+            color:#F7931E;
             line-height: 1.6;
         }
 
@@ -176,7 +179,7 @@ startSession();
 
         /* Banner Section */
 .banner-modern {
-    background: #FF6B35;
+    background:rgb(232, 111, 46);
     padding: 15px 0;
     color: white;
 }
@@ -366,7 +369,7 @@ startSession();
 .stat-number {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #FF6B35;
+    color:rgb(226, 7, 7);
     display: block;
 }
 
@@ -495,7 +498,7 @@ startSession();
     
     .stat-item {
         padding: 15px;
-        background: rgba(255, 107, 53, 0.1);
+        background: rgba(198, 72, 37, 0.1);
         border-radius: 10px;
     }
     
@@ -526,7 +529,7 @@ startSession();
 .page-heading {
    font-size: 3rem;
    font-weight: 800;
-   background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+   background: linear-gradient(135deg, #FF0000 0%, #F7931E 100%);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    background-clip: text;
@@ -537,7 +540,7 @@ startSession();
 .page-heading-line {
    width: 100px;
    height: 4px;
-   background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+   background: linear-gradient(135deg, #FF0000 0%, #F7931E 100%);
    margin: 0 auto;
    border-radius: 2px;
    position: relative;
@@ -611,7 +614,7 @@ startSession();
 .service-icon {
    width: 80px;
    height: 80px;
-   background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+   background: linear-gradient(135deg, #FF0000 0%,rgb(232, 97, 97) 100%);
    border-radius: 50%;
    display: flex;
    align-items: center;
@@ -743,7 +746,7 @@ startSession();
 
         .menu-tab-modern.active,
         .menu-tab-modern:hover {
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            background: linear-gradient(135deg, #FF0000 0%, #F7931E 100%);
             color: white;
             border-color: #FF6B35;
         }
@@ -800,12 +803,12 @@ startSession();
         .menu-item-price {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #FF6B35;
+            color: #FF0000;
             margin-bottom: 15px;
         }
 
         .menu-item-button {
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            background: linear-gradient(135deg, #FF0000 0%, #F7931E 100%);
             border: none;
             padding: 10px 25px;
             border-radius: 25px;
@@ -822,11 +825,15 @@ startSession();
             color: white;
             text-decoration: none;
         }
-
+        .lead{
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: black;
+        }
 /* Testimonials Section */
 .testimonials-modern {
     padding: 100px 0;
-    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+    background: linear-gradient(135deg, #FF6B35 0%, #FF4500 50%, #DC143C 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -839,7 +846,7 @@ startSession();
     top: 10%;
     left: 5%;
     font-size: 30px;
-    opacity: 0.1;
+    opacity: 0.15;
     animation: float 6s ease-in-out infinite;
 }
 
@@ -849,7 +856,7 @@ startSession();
     bottom: 15%;
     right: 8%;
     font-size: 25px;
-    opacity: 0.1;
+    opacity: 0.15;
     animation: float 6s ease-in-out infinite;
     animation-delay: 3s;
 }
@@ -860,70 +867,83 @@ startSession();
 }
 
 .testimonial-card {
-    background: white;
-    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
     padding: 40px 30px;
     border-radius: 20px;
     text-align: center;
     margin: 20px;
-    border: none;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(220, 20, 60, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     color: #333;
     overflow: hidden;
 }
 
-/* Add gradient border top */
+/* Enhanced gradient border top */
 .testimonial-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #FF6B35, #F7931E);
+    height: 5px;
+    background: linear-gradient(90deg, #FF6B35, #FF4500, #DC143C);
 }
 
-/* Add quote icon */
+/* Enhanced quote icon */
 .testimonial-card::after {
     content: '"';
     position: absolute;
     top: 15px;
     right: 25px;
     font-size: 48px;
-    color: black;
-    opacity: 0.2;
+    color: #FF6B35;
+    opacity: 0.3;
     font-family: serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 .testimonial-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(220, 20, 60, 0.2);
+    background: rgba(255, 255, 255, 1);
 }
 
-/* Card variations */
+/* Card variations with orange-red-white theme */
 .owl-carousel .item:nth-child(2) .testimonial-card {
     background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
     transform: translateY(20px);
+    border: 2px solid rgba(255, 107, 53, 0.2);
+}
+
+.owl-carousel .item:nth-child(2) .testimonial-card::after {
+    color: #FF4500;
 }
 
 .owl-carousel .item:nth-child(2) .testimonial-card:hover {
-    transform: translateY(10px);
+    transform: translateY(8px);
+    border-color: rgba(255, 107, 53, 0.4);
 }
 
 .owl-carousel .item:nth-child(3) .testimonial-card {
-    background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
     color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.owl-carousel .item:nth-child(3) .testimonial-card::after {
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .owl-carousel .item:nth-child(3) .testimonial-card .testimonial-info p {
-    color: #FF6B35;
+    color: #FFB6C1;
     opacity: 1;
 }
 
 .testimonial-stars {
-    color: #FFD23F;
+    color: #FFD700;
     font-size: 1.4rem;
     margin-bottom: 25px;
     display: flex;
@@ -932,9 +952,15 @@ startSession();
 }
 
 .testimonial-stars i {
-    filter: drop-shadow(0 2px 4px rgba(255,210,63,0.3));
+    filter: drop-shadow(0 2px 4px rgba(255,215,0,0.4));
     animation: sparkle 2s ease-in-out infinite;
     animation-delay: calc(var(--i) * 0.1s);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-stars i {
+    color: #FFA500;
+    transform: scale(1.1);
 }
 
 .testimonial-stars i:nth-child(1) { --i: 0; }
@@ -945,12 +971,12 @@ startSession();
 
 @keyframes sparkle {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    50% { transform: scale(1.15); }
 }
 
 .testimonial-text {
     font-size: 1.1rem;
-    line-height: 1.7;
+    line-height: 1.8;
     margin-bottom: 30px;
     font-style: italic;
     color: #555;
@@ -958,9 +984,9 @@ startSession();
     z-index: 2;
 }
 
-/* White text for dark card */
+/* White text for dark red card */
 .owl-carousel .item:nth-child(3) .testimonial-card .testimonial-text {
-    color: #e0e0e0;
+    color: #f0f0f0;
 }
 
 .testimonial-author {
@@ -975,13 +1001,34 @@ startSession();
     height: 65px;
     border-radius: 50%;
     border: 3px solid #FF6B35;
-    box-shadow: 0 4px 12px rgba(255,107,53,0.3);
+    box-shadow: 0 4px 12px rgba(255,107,53,0.4);
     transition: all 0.3s ease;
+}
+
+.owl-carousel .item:nth-child(2) .testimonial-card .testimonial-avatar {
+    border-color: #FF4500;
+}
+
+.owl-carousel .item:nth-child(3) .testimonial-card .testimonial-avatar {
+    border-color: white;
+    box-shadow: 0 4px 12px rgba(255,255,255,0.3);
 }
 
 .testimonial-card:hover .testimonial-avatar {
     transform: scale(1.1);
-    border-color: #F7931E;
+    border-width: 4px;
+}
+
+.owl-carousel .item:nth-child(1) .testimonial-card:hover .testimonial-avatar {
+    border-color: #DC143C;
+}
+
+.owl-carousel .item:nth-child(2) .testimonial-card:hover .testimonial-avatar {
+    border-color: #DC143C;
+}
+
+.owl-carousel .item:nth-child(3) .testimonial-card:hover .testimonial-avatar {
+    border-color: #FFB6C1;
 }
 
 .testimonial-info h5 {
@@ -989,10 +1036,19 @@ startSession();
     font-weight: 600;
     color: #333;
     font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
 .owl-carousel .item:nth-child(3) .testimonial-card .testimonial-info h5 {
     color: white;
+}
+
+.testimonial-card:hover .testimonial-info h5 {
+    color: #FF6B35;
+}
+
+.owl-carousel .item:nth-child(3) .testimonial-card:hover .testimonial-info h5 {
+    color: #FFB6C1;
 }
 
 .testimonial-info p {
@@ -1000,29 +1056,70 @@ startSession();
     opacity: 0.7;
     font-size: 0.9rem;
     color: #888;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-info p {
+    opacity: 1;
+    color: #FF4500;
+}
+
+.owl-carousel .item:nth-child(3) .testimonial-card:hover .testimonial-info p {
+    color: #FFB6C1;
 }
 
 /* Enhanced heading styles */
 .page-heading.white-heading {
     font-size: 3.5rem;
     font-weight: 300;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
     margin-bottom: 20px;
+    letter-spacing: 2px;
 }
 
 .page-heading-line.white-line {
     width: 80px;
     height: 4px;
-    background: white;
+    background: linear-gradient(90deg, white, rgba(255,255,255,0.8));
     color: white;
     margin: 0 auto 40px auto;
     border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Add subtle animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.testimonial-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.owl-carousel .item:nth-child(1) .testimonial-card {
+    animation-delay: 0s;
+}
+
+.owl-carousel .item:nth-child(2) .testimonial-card {
+    animation-delay: 0.2s;
+}
+
+.owl-carousel .item:nth-child(3) .testimonial-card {
+    animation-delay: 0.4s;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .page-heading.white-heading {
         font-size: 2.5rem;
+        letter-spacing: 1px;
     }
     
     .testimonial-card {
@@ -1037,14 +1134,19 @@ startSession();
     .owl-carousel .item:nth-child(2) .testimonial-card:hover {
         transform: translateY(-10px);
     }
+    
+    .testimonials-modern::before,
+    .testimonials-modern::after {
+        font-size: 20px;
+        opacity: 0.1;
+    }
 }
-
         /* Page Headings */
         .page-heading {
             font-family: 'Playfair Display', serif !important;
             font-weight: 700;
             font-size: 3.5rem;
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            background: linear-gradient(135deg, #FF0000 0%,rgb(207, 189, 54) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -1055,7 +1157,7 @@ startSession();
         .page-heading-line {
             width: 80px;
             height: 4px;
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            background: linear-gradient(135deg, #FF0000 0%, #F7931E 100%);
             border-radius: 2px;
             margin: 20px auto 40px;
         }
@@ -1165,8 +1267,8 @@ startSession();
             </div>
             <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
                 <p class="hero-subtitle">Authentic Indian Cuisine</p>
-                <h1 class="hero-title">Experience the Magic of ChachuKiBiryani</h1>
-                <p class="hero-description">Discover the perfect blend of aromatic spices, tender meat, and fragrant basmati rice. Every bite tells a story of tradition and passion.</p>
+                <h1 class="hero-title">Experience </br>the Magic of</br> ChachuKiBiryani</h1>
+                <p class="hero-description">Discover the perfect blend of aromatic spices,</br> tender meat, and fragrant basmati rice.</p>
                 <div class="hero-buttons">
                     <a href="#menu" class="btn-hero-primary">Explore Menu</a>
                     <a href="#about" class="btn-hero-secondary">Our Story</a>
@@ -1333,7 +1435,7 @@ startSession();
                         <h4 class="menu-item-title"><?php echo htmlspecialchars($item['name']); ?></h4>
                         <p class="menu-item-description"><?php echo htmlspecialchars($item['description']); ?></p>
                         <div class="menu-item-price">$<?php echo number_format($item['price'], 2); ?></div>
-                        <a href="menu-detail.php?id=<?php echo $item['id']; ?>" class="menu-item-button">View Details</a>
+                        <a href="shopping-cart.php?id=<?php echo $item['id']; ?>" class="menu-item-button">Add to Cart</a>
                     </div>
                 </div>
                 <?php endforeach; ?>

@@ -30,7 +30,7 @@ startSession();
 /*  */
         /* Page Cover */
         .page-cover-modern {
-            background: linear-gradient(135deg, rgba(44, 24, 16, 0.9) 0%, rgba(255, 107, 53, 0.8) 100%);
+            /* background: linear-gradient(135deg, rgba(44, 24, 16, 0.9) 0%, rgba(255, 107, 53, 0.8) 100%); */
             padding: 80px 0;
             position: relative;
             overflow: hidden;
@@ -43,7 +43,7 @@ startSession();
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('images/restaurant-slider-2.jpg') center/cover;
+            background: url('images/background1.png') center/cover;
             z-index: -1;
         }
 
@@ -297,8 +297,8 @@ startSession();
                     <div class="page-cover-icon">
                         <i class="fa fa-key"></i>
                     </div>
-                    <h1 class="page-cover-title">Forgot Password</h1>
-                    <p class="page-cover-subtitle">Reset your account password</p>
+                    <h1 class="page-cover-title">Reset Your</br> Password</h1>
+                    <!-- <p class="page-cover-subtitle">Reset your account password</p> -->
                 </div>
             </div>
         </div>

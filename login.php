@@ -22,9 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <style>
         body {
             font-family: 'Poppins', sans-serif !important;
-            background: linear-gradient(135deg, rgba(44, 24, 16, 0.8) 0%, rgba(255, 107, 53, 0.6) 100%), url('images/restaurant-slider-1.jpg') center/cover no-repeat;
+            /* background: linear-gradient(135deg, rgba(44, 24, 16, 0.8) 0%, rgba(255, 107, 53, 0.6) 100%), url('images/restaurant-slider-1.jpg') center/cover no-repeat; */
+            background: url('images/background.png') center/cover no-repeat;
             min-height: 100vh;
-            margin: 0;
+            margin: 0; 
             display: flex;
             align-items: center;
             justify-content: center;
