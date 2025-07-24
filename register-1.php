@@ -640,7 +640,7 @@ body.register-page::after {
                     </form>
 
                     <div class="form-links">
-                        <p>Already Have An Account? <a href="login-1.php">Sign In Here</a></p>
+                        <p>Already Have An Account? <a href="login.php">Sign In Here</a></p>
                     </div>
                 </div>
             </div>

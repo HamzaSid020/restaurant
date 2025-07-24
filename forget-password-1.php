@@ -75,83 +75,260 @@ startSession();
         }
 
         /* Forgot Password Section */
-        .forgot-password-modern {
-            padding: 100px 0;
-            background: #FFF8F0;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-        }
+.forgot-password-modern {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #FFF8F0 0%, #FFEBE0 100%);
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
 
-        /* Forgot Password Form */
-        .forgot-form-modern {
-            background: white;
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            max-width: 500px;
-            margin: 0 auto;
-            width: 100%;
-        }
+.forgot-password-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 107, 53, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(220, 38, 38, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
 
-        .form-group-modern {
-            margin-bottom: 25px;
-        }
+/* Forgot Password Form */
+.forgot-form-modern {
+    background: white;
+    padding: 60px 40px;
+    border-radius: 25px;
+    box-shadow: 
+        0 25px 50px rgba(255, 107, 53, 0.1),
+        0 10px 30px rgba(220, 38, 38, 0.05);
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    border: 1px solid rgba(255, 107, 53, 0.1);
+}
 
-        .input-group-modern {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
+.forgot-form-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF6B35 0%, #DC2626 50%, #FF6B35 100%);
+    border-radius: 25px 25px 0 0;
+}
 
-        .form-control-modern {
-            width: 100%;
-            padding: 15px 20px 15px 50px;
-            border: 2px solid #f0f0f0;
-            border-radius: 15px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: #fafafa;
-        }
+.forgot-form-title {
+    text-align: center;
+    color: #DC2626;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #FF6B35 0%, #DC2626 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-        .form-control-modern:focus {
-            outline: none;
-            border-color: #FF6B35;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
-        }
+.forgot-form-subtitle {
+    text-align: center;
+    color: #6B7280;
+    margin-bottom: 40px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
 
-        .form-control-modern::placeholder {
-            color: #9CA3AF;
-        }
+.form-group-modern {
+    margin-bottom: 25px;
+}
 
-        .input-icon {
-            position: absolute;
-            left: 20px;
-            color: #6B7280;
-            font-size: 1.1rem;
-            z-index: 2;
-        }
+.form-label-modern {
+    display: block;
+    margin-bottom: 8px;
+    color: #374151;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
 
-        .btn-send-modern {
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-            border: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            width: 100%;
-        }
+.input-group-modern {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
 
-        .btn-send-modern:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
+.form-control-modern {
+    width: 100%;
+    padding: 18px 20px 18px 55px;
+    border: 2px solid #F3F4F6;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #FAFAFA;
+    color: #374151;
+}
+
+.form-control-modern:focus {
+    outline: none;
+    border-color: #FF6B35;
+    background: white;
+    box-shadow: 
+        0 0 0 4px rgba(255, 107, 53, 0.1),
+        0 4px 12px rgba(255, 107, 53, 0.15);
+    transform: translateY(-1px);
+}
+
+.form-control-modern:hover {
+    border-color: rgba(255, 107, 53, 0.3);
+    background: white;
+}
+
+.form-control-modern::placeholder {
+    color: #9CA3AF;
+    font-style: italic;
+}
+
+.input-icon {
+    position: absolute;
+    left: 20px;
+    color: #FF6B35;
+    font-size: 1.2rem;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.form-control-modern:focus + .input-icon {
+    color: #DC2626;
+    transform: scale(1.1);
+}
+
+.btn-send-modern {
+    background: linear-gradient(135deg, #FF6B35 0%, #DC2626 50%, #B91C1C 100%);
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+}
+
+.btn-send-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-send-modern:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 15px 35px rgba(255, 107, 53, 0.4),
+        0 5px 15px rgba(220, 38, 38, 0.3);
+    background: linear-gradient(135deg, #E55A2B 0%, #B91C1C 50%, #991B1B 100%);
+}
+
+.btn-send-modern:hover::before {
+    left: 100%;
+}
+
+.btn-send-modern:active {
+    transform: translateY(-1px);
+}
+
+.back-to-login {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-to-login a {
+    color: #FF6B35;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.back-to-login a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background: linear-gradient(90deg, #FF6B35, #DC2626);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.back-to-login a:hover {
+    color: #DC2626;
+}
+
+.back-to-login a:hover::after {
+    width: 100%;
+}
+
+/* Success/Error Messages */
+.alert-modern {
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-left: 4px solid;
+}
+
+.alert-success {
+    background: rgba(34, 197, 94, 0.1);
+    border-left-color: #22C55E;
+    color: #166534;
+}
+
+.alert-error {
+    background: rgba(220, 38, 38, 0.1);
+    border-left-color: #DC2626;
+    color: #991B1B;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .forgot-password-modern {
+        padding: 50px 20px;
+    }
+    
+    .forgot-form-modern {
+        padding: 40px 25px;
+        border-radius: 20px;
+    }
+    
+    .forgot-form-title {
+        font-size: 1.75rem;
+    }
+    
+    .form-control-modern {
+        padding: 16px 18px 16px 50px;
+    }
+    
+    .btn-send-modern {
+        padding: 16px 30px;
+        font-size: 1rem;
+    }
+}
 
         /* Success Message */
         .success-message {
@@ -298,7 +475,7 @@ startSession();
                         <i class="fa fa-key"></i>
                     </div>
                     <h1 class="page-cover-title">Reset Your</br> Password</h1>
-                    <!-- <p class="page-cover-subtitle">Reset your account password</p> -->
+                    <p class="page-cover-subtitle">Reset your account password</p>
                 </div>
             </div>
         </div>
@@ -331,7 +508,7 @@ startSession();
                     </form>
 
                     <div class="form-links">
-                        <p>Already have an account? <a href="login-1.php">Login Now</a></p>
+                        <p>Already have an account? <a href="login.php">Login Now</a></p>
                         <p>New here? <a href="register-1.php">Register Now</a></p>
                     </div>
                 </div>
