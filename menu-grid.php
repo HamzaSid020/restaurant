@@ -356,7 +356,16 @@
                             <h4 class="menu-item-title"><?php echo htmlspecialchars($item['name']); ?></h4>
                             <p class="menu-item-description"><?php echo htmlspecialchars($item['description']); ?></p>
                             <div class="menu-item-price">$<?php echo number_format($item['price'], 2); ?></div>
-                            <a href="menu-detail.php?id=<?php echo $item['id']; ?>" class="menu-item-button">View Details</a>
+                            <div class="menu-item-buttons">
+                                <a href="menu-detail.php?id=<?php echo $item['id']; ?>" class="menu-item-button secondary">View Details</a>
+                                <button class="menu-item-button add-to-cart" 
+                                        data-id="<?php echo $item['id']; ?>" 
+                                        data-name="<?php echo htmlspecialchars($item['name']); ?>" 
+                                        data-price="<?php echo $item['price']; ?>"
+                                        data-image="<?php echo htmlspecialchars($item['image']); ?>">
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <?php endforeach; ?>
@@ -374,6 +383,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-5.3.2.min.js"></script>
     <script src="js/custom-navigation.js"></script>
+    <script src="js/cart-manager.js"></script>
     
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -402,21 +412,7 @@
                 }
             });
 
-            // Add to cart functionality
-            $('.add-to-cart').click(function() {
-                var id = $(this).data('id');
-                var name = $(this).data('name');
-                var price = $(this).data('price');
-                
-                // Add to cart logic here
-                console.log('Adding to cart:', name, 'Price:', price);
-                
-                // Show success message
-                $(this).text('Added!').css('background', '#28a745');
-                setTimeout(() => {
-                    $(this).text('Add to Cart').css('background', 'linear-gradient(135deg, #FF6B35 0%, #F7931E 100%)');
-                }, 2000);
-            });
+            // Cart functionality is now handled by CartManager
         });
     </script>
     <!-- Page Scripts Ends -->

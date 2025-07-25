@@ -29,6 +29,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <!-- Shopping Cart Page Optimized CSS -->
     <link rel="stylesheet" href="css/shopping-cart-optimized.css">
+    <link rel="stylesheet" href="css/cart-styles.css">
     
     <!-- Additional Modern Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -194,6 +195,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-5.3.2.min.js"></script>
     <script src="js/custom-navigation.js"></script>
+    <script src="js/cart-manager.js"></script>
     
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

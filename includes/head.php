@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/orange.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/cart-styles.css">
 
     <!-- Flex Slider Stylesheets -->
     <link rel="stylesheet" href="css/flexslider.css">

@@ -1435,7 +1435,13 @@ startSession();
                         <h4 class="menu-item-title"><?php echo htmlspecialchars($item['name']); ?></h4>
                         <p class="menu-item-description"><?php echo htmlspecialchars($item['description']); ?></p>
                         <div class="menu-item-price">$<?php echo number_format($item['price'], 2); ?></div>
-                        <a href="shopping-cart.php?id=<?php echo $item['id']; ?>" class="menu-item-button">Add to Cart</a>
+                        <button class="menu-item-button add-to-cart" 
+                                data-id="<?php echo $item['id']; ?>" 
+                                data-name="<?php echo htmlspecialchars($item['name']); ?>" 
+                                data-price="<?php echo $item['price']; ?>"
+                                data-image="<?php echo $item['image'] ?? 'images/dish-breakfast-3.png'; ?>">
+                            Add to Cart
+                        </button>
                     </div>
                 </div>
                 <?php endforeach; ?>
@@ -1528,6 +1534,7 @@ startSession();
     <script src="js/custom-navigation.js"></script>
     <script src="js/custom-flex.js"></script>
     <script src="js/custom-owl.js"></script>
+    <script src="js/cart-manager.js"></script>
     
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

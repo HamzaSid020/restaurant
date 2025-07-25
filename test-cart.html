@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Test - ChachuKiBiryani</title>
+    <link rel="stylesheet" href="css/bootstrap-5.3.2.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart-styles.css">
+    <style>
+        .test-container {
+            padding: 50px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-item {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .debug-panel {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .debug-button {
+            margin: 5px;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .debug-button.primary { background: #007bff; color: white; }
+        .debug-button.success { background: #28a745; color: white; }
+        .debug-button.warning { background: #ffc107; color: black; }
+        .debug-button.danger { background: #dc3545; color: white; }
+    </style>
+</head>
+<body>
+    <!-- Header with Cart -->
+    <div class="header">
+        <div class="fixed-header">
+            <div class="container-fluid">
+                <div class="header-logo">
+                    <a href="index.php">
+                        <h4><span><i class="far fa-star"></i>Chachu</span>KiBiryani</h4>
+                    </a>
+                </div>
+                <div class="header-links">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item shopping-cart">
+                            <a href="javascript:void(0)" id="shc-side-open">
+                                <span><i class="fa fa-shopping-cart"></i></span>
+                                <span class="cart-badge">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="shopping-cart-sidebar" class="shc-sidebar">
+        <ul class="list-unstyled cart-list">
+            <!-- Cart items will be dynamically populated -->
+        </ul>
+        <div class="cart-info text-end">
+            <!-- Cart summary will be dynamically updated -->
+        </div>
+    </div>
+
+    <div class="canvas">
+        <div class="overlay-black"></div>
+        
+        <div class="test-container">
+            <h1>Cart Functionality Test</h1>
+            
+            <div class="debug-panel">
+                <h3>Debug Controls</h3>
+                <button class="debug-button primary" onclick="debugCart()">Debug Cart</button>
+                <button class="debug-button success" onclick="showCart()">Show Cart</button>
+                <button class="debug-button warning" onclick="clearCart()">Clear Cart</button>
+                <button class="debug-button danger" onclick="resetAllButtons()">Reset All Buttons</button>
+                <button class="debug-button danger" onclick="localStorage.clear(); location.reload();">Clear Storage & Reload</button>
+            </div>
+
+            <div class="test-item">
+                <h3>Test Item 1 - Chicken Biryani</h3>
+                <p>Price: $45.00</p>
+                <button class="add-to-cart" 
+                        data-id="1" 
+                        data-name="Chicken Biryani" 
+                        data-price="45.00"
+                        data-image="images/dish-breakfast-3.png">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="test-item">
+                <h3>Test Item 2 - Butter Chicken</h3>
+                <p>Price: $35.00</p>
+                <button class="add-to-cart" 
+                        data-id="2" 
+                        data-name="Butter Chicken" 
+                        data-price="35.00"
+                        data-image="images/dish-dinner-4.png">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="test-item">
+                <h3>Test Item 3 - Vegetable Biryani</h3>
+                <p>Price: $25.00</p>
+                <button class="add-to-cart" 
+                        data-id="3" 
+                        data-name="Vegetable Biryani" 
+                        data-price="25.00"
+                        data-image="images/dish-breakfast-3.png">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="debug-panel">
+                <h3>Test Instructions</h3>
+                <ol>
+                    <li>Click "Add to Cart" on the same item multiple times - quantity should increase, not create duplicates</li>
+                    <li>Click "Debug Cart" to see cart state in console</li>
+                    <li>Click "Show Cart" to open the sidebar</li>
+                    <li>Try changing quantities in the sidebar</li>
+                    <li>Try removing items from the sidebar</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/custom-navigation.js"></script>
+    <script src="js/cart-manager.js"></script>
+</body>
+</html> 

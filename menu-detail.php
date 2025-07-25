@@ -602,7 +602,11 @@
 
                         <!-- Add to Cart Button -->
                         <div class="add-to-cart-section">
-                            <button class="btn-add-to-cart add-to-cart" data-id="<?php echo $menu_item['id']; ?>" data-name="<?php echo htmlspecialchars($menu_item['name']); ?>" data-price="<?php echo $menu_item['price']; ?>">
+                            <button class="btn-add-to-cart add-to-cart" 
+                                    data-id="<?php echo $menu_item['id']; ?>" 
+                                    data-name="<?php echo htmlspecialchars($menu_item['name']); ?>" 
+                                    data-price="<?php echo $menu_item['price']; ?>"
+                                    data-image="<?php echo htmlspecialchars($menu_item['image']); ?>">
                                 <i class="fa fa-shopping-cart"></i>
                                 Add to Cart
                             </button>
@@ -676,6 +680,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-5.3.2.min.js"></script>
     <script src="js/custom-navigation.js"></script>
+    <script src="js/cart-manager.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
