@@ -1,0 +1,57 @@
+/* ======================================================
+   CHECKOUT PAGE - OPTIMIZED CSS
+   Mobile and Web Friendly Styles
+   ====================================================== */
+
+/* ======================================================
+   BASE STYLES
+   ====================================================== */
+.checkout-page{font-family:'Poppins',sans-serif!important;line-height:1.6;color:#333}.checkout-page h1,.checkout-page h2,.checkout-page h3,.checkout-page h4,.checkout-page h5,.checkout-page h6{font-family:'Playfair Display',serif!important;font-weight:700}
+
+/* ======================================================
+   PAGE COVER STYLES
+   ====================================================== */
+.page-cover-modern{background:linear-gradient(135deg,rgba(44,24,16,.9) 0%,rgba(255,107,53,.8) 100%);padding:80px 0;position:relative;overflow:hidden;min-height:300px;display:flex;align-items:center}.page-cover-modern::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:url('../images/restaurant-slider-1.jpg') center/cover;z-index:-1}.page-cover-content{text-align:center;color:white;position:relative;z-index:2;width:100%}.page-cover-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:20px;text-shadow:2px 2px 4px rgba(0,0,0,.3);line-height:1.2}.page-cover-subtitle{font-size:clamp(1rem,2.5vw,1.2rem);opacity:.9;letter-spacing:2px;text-transform:uppercase;margin-bottom:0}.page-cover-icon{font-size:clamp(1.5rem,3vw,2rem);margin:0 20px;opacity:.8}
+
+/* ======================================================
+   CHECKOUT SECTION STYLES
+   ====================================================== */
+.checkout-modern{padding:clamp(60px,8vw,100px) 0;background:#FFF8F0}
+
+/* ======================================================
+   PAGE HEADINGS
+   ====================================================== */
+.page-heading{font-family:'Playfair Display',serif!important;font-weight:700;font-size:clamp(2rem,4vw,3.5rem);background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:20px;line-height:1.2}.page-heading-line{width:80px;height:4px;background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);border-radius:2px;margin:20px auto 40px}.checkout-lead{font-size:clamp(1rem,2vw,1.1rem);color:#6B7280;text-align:center;max-width:600px;margin:0 auto 60px;line-height:1.6}
+
+/* ======================================================
+   ORDER SUMMARY STYLES
+   ====================================================== */
+.order-summary-modern{background:white;padding:clamp(25px,4vw,40px);border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.1);margin-bottom:40px}.order-item-modern{display:flex;align-items:center;padding:20px 0;border-bottom:1px solid #f0f0f0;gap:clamp(15px,2.5vw,20px)}.order-item-modern:last-child{border-bottom:none}.order-item-image{width:clamp(60px,10vw,80px);height:clamp(60px,10vw,80px);border-radius:10px;overflow:hidden;flex-shrink:0}.order-item-image img{width:100%;height:100%;object-fit:cover}.order-item-details{flex:1}.order-item-title{font-size:clamp(1rem,2vw,1.2rem);font-weight:600;color:#2C1810;margin-bottom:5px}.order-item-description{color:#6B7280;font-size:clamp(.9rem,1.5vw,1rem);margin-bottom:8px}.order-item-price{font-size:clamp(1rem,2vw,1.1rem);font-weight:600;color:#FF6B35}.order-total{text-align:center;margin-top:30px;padding-top:20px;border-top:2px solid #f0f0f0}.order-total h4{font-size:clamp(1.2rem,2.5vw,1.5rem);font-weight:700;color:#2C1810;margin-bottom:5px}.order-total p{color:#6B7280;font-size:clamp(.9rem,1.5vw,1rem)}
+
+/* ======================================================
+   FORM STYLES
+   ====================================================== */
+.checkout-form-modern{background:white;padding:clamp(30px,4vw,50px);border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.1)}.form-section-title{font-size:clamp(1.3rem,2.5vw,1.6rem);font-weight:600;color:#2C1810;margin-bottom:25px;padding-bottom:15px;border-bottom:2px solid #f0f0f0}.form-group-modern{margin-bottom:25px}.form-group-modern label{display:block;margin-bottom:8px;font-weight:500;color:#2C1810;font-size:clamp(.9rem,1.5vw,1rem)}.form-control-modern{width:100%;padding:clamp(12px,2vw,15px);border:2px solid #f0f0f0;border-radius:10px;font-size:clamp(.9rem,1.5vw,1rem);transition:all .3s ease;background:white}.form-control-modern:focus{outline:none;border-color:#FF6B35;box-shadow:0 0 0 3px rgba(255,107,53,.1)}.form-control-modern::placeholder{color:#9CA3AF}.form-row{display:flex;gap:clamp(15px,2.5vw,20px);margin-bottom:25px}.form-row .form-group-modern{flex:1;margin-bottom:0}.custom-control{position:relative;display:flex;align-items:flex-start;gap:10px;margin-bottom:20px}.custom-control-input{width:18px;height:18px;margin-top:2px}.custom-control-label{font-size:clamp(.9rem,1.5vw,1rem);color:#6B7280;line-height:1.4}.custom-control-label a{color:#FF6B35;text-decoration:none}.custom-control-label a:hover{text-decoration:underline}
+
+/* ======================================================
+   BUTTON STYLES
+   ====================================================== */
+.btn-checkout-modern{background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);border:none;padding:clamp(15px,2.5vw,20px) clamp(30px,4vw,50px);border-radius:50px;color:white;font-weight:600;font-size:clamp(1rem,2vw,1.1rem);cursor:pointer;transition:all .3s ease;width:100%;display:flex;align-items:center;justify-content:center;gap:10px}.btn-checkout-modern:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(0,0,0,.15)}.btn-checkout-modern:disabled{opacity:.7;cursor:not-allowed;transform:none}
+
+/* ======================================================
+   RESPONSIVE DESIGN
+   ====================================================== */
+@media (max-width:768px){.order-item-modern{flex-direction:column;text-align:center;gap:15px}.order-item-image{margin-bottom:10px}.form-row{flex-direction:column;gap:0}.form-row .form-group-modern{margin-bottom:25px}.checkout-form-modern,.order-summary-modern{padding:25px 20px}}@media (max-width:576px){.page-cover-title{font-size:2.5rem}.page-heading{font-size:2.5rem}.order-item-modern{padding:15px 0}.order-item-image{width:60px;height:60px}.order-item-title{font-size:1.1rem}.order-item-description{font-size:.9rem}.form-control-modern{padding:12px}.btn-checkout-modern{padding:15px 30px;font-size:1rem}}
+
+/* ======================================================
+   LOADER FIXES
+   ====================================================== */
+.loader{z-index:9999!important}.loader.hidden{display:none!important}.loader.fade-out{opacity:0!important;visibility:hidden!important}
+
+/* Force hide loader if needed */
+.loader[style*="display: none"],.loader.hidden,.loader.fade-out{display:none!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+
+/* ======================================================
+   UTILITY CLASSES
+   ====================================================== */
+.text-center{text-align:center}.mb-4{margin-bottom:1.5rem}.mb-5{margin-bottom:3rem}.me-2{margin-right:.5rem} 

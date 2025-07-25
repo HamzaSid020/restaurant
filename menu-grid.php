@@ -325,7 +325,7 @@
                     <div class="col-12 text-center mb-5" data-aos="fade-up">
                         <h2 class="page-heading">Delicious Menu</h2>
                         <div class="page-heading-line"></div>
-                        <p class="lead">Discover our carefully curated selection of authentic Indian dishes</p>
+                        <p class="lead">Discover our carefully curated selection of authentic Pakistani dishes</p>
                     </div>
                 </div>
                 

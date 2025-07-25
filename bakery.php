@@ -477,8 +477,8 @@ startSession();
             <div class="container">
                 <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
                     <p class="hero-subtitle">Sweet Endings</p>
-                    <h1 class="hero-title">Traditional Indian Desserts</h1>
-                    <p class="hero-description">Discover our authentic collection of traditional Indian sweets and desserts, crafted with love and the finest ingredients.</p>
+                    <h1 class="hero-title">Traditional Pakistani Desserts</h1>
+                    <p class="hero-description">Discover our authentic collection of traditional Pakistani sweets and desserts, crafted with love and the finest ingredients.</p>
                     <a href="#menu-section" class="btn-hero">Explore Desserts</a>
                 </div>
             </div>
@@ -499,7 +499,7 @@ startSession();
                             <div class="menu-card-content">
                                 <h4 class="menu-card-title">Gulab Jamun</h4>
                                 <div class="menu-card-price">$6.99</div>
-                                <p class="menu-card-description">Sweet milk dumplings soaked in rose-flavored sugar syrup. A classic Indian dessert.</p>
+                                <p class="menu-card-description">Sweet milk dumplings soaked in rose-flavored sugar syrup. A classic Pakistani dessert.</p>
                                 <button class="btn-add-cart">Add to Cart</button>
                             </div>
                         </div>
@@ -547,7 +547,7 @@ startSession();
                         <p>We believe that a meal is incomplete without a sweet ending, and our desserts are designed to provide the perfect conclusion to your ChachuKiBiryani experience.</p>
                     </div>
                     <div class="about-image" data-aos="fade-left">
-                        <img src="images/about-img-bakery.png" alt="Traditional Indian Desserts">
+                        <img src="images/about-img-bakery.png" alt="Traditional Pakistani Desserts">
                     </div>
                 </div>
             </div>
@@ -602,7 +602,7 @@ startSession();
                             <div class="menu-card-content">
                                 <h4 class="menu-card-title">Fusion Dessert</h4>
                                 <div class="menu-card-price">$8.99</div>
-                                <p class="menu-card-description">Modern twist on traditional flavors, combining Indian spices with contemporary presentation.</p>
+                                <p class="menu-card-description">Modern twist on traditional flavors, combining Pakistani spices with contemporary presentation.</p>
                                 <button class="btn-add-cart">Add to Cart</button>
                             </div>
                         </div>
@@ -697,7 +697,7 @@ startSession();
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
-                            <p class="testimonial-text">"Authentic Indian desserts that remind me of home. The Kheer is creamy and perfectly sweetened."</p>
+                            <p class="testimonial-text">"Authentic Pakistani desserts that remind me of home. The Kheer is creamy and perfectly sweetened."</p>
                             <h5 class="testimonial-author">Raj Patel</h5>
                         </div>
                     </div>

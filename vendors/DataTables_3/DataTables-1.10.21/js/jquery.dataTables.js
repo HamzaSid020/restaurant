@@ -1348,7 +1348,7 @@
 	// - \u20BD - Russian ruble.
 	// - \u20a9 - South Korean Won
 	// - \u20BA - Turkish Lira
-	// - \u20B9 - Indian Rupee
+	// - \u20B9 - Pakistani Rupee
 	// - R - Brazil (R$) and South Africa
 	// - fr - Swiss Franc
 	// - kr - Swedish krona, Norwegian krone and Danish krone

@@ -555,8 +555,8 @@
 
                         <div class="col-8">
                             <div class="header-logo f-none text-center">
-                                <a href="#">
-                                    <h4><span><i class="far fa-star"></i>Res</span>taurant</h4>
+                                <a href="index.php">
+                                    <h4><span><i class="far fa-star"></i>Chachu</span>KiBiryani</h4>
                                 </a>
                             </div><!-- end header-logo -->
                         </div><!-- end columns -->

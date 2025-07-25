@@ -522,7 +522,7 @@ startSession();
                         <div class="team-content">
                             <h4 class="team-name">Chef Amit</h4>
                             <p class="team-role">Pastry Chef</p>
-                            <p class="team-description">Specializing in traditional Indian desserts, Chef Amit creates sweet endings that perfectly complement our savory dishes.</p>
+                            <p class="team-description">Specializing in traditional Pakistani desserts, Chef Amit creates sweet endings that perfectly complement our savory dishes.</p>
                         </div>
                     </div>
                 </div>

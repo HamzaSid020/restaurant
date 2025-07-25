@@ -345,7 +345,7 @@ startSession();
             <div class="fixed-header">
                 <div class="container-fluid">
                     <div class="header-logo">
-                        <a href="#">
+                        <a href="index.php">
                             <h4><span><i class="far fa-star"></i>Chachu</span>KiBiryani</h4>
                         </a>
                     </div>

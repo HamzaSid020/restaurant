@@ -1,0 +1,67 @@
+/* ======================================================
+   SHOPPING CART PAGE - OPTIMIZED CSS
+   Mobile and Web Friendly Styles
+   ====================================================== */
+
+/* ======================================================
+   BASE STYLES
+   ====================================================== */
+.shopping-cart-page{font-family:'Poppins',sans-serif!important;line-height:1.6;color:#333}.shopping-cart-page h1,.shopping-cart-page h2,.shopping-cart-page h3,.shopping-cart-page h4,.shopping-cart-page h5,.shopping-cart-page h6{font-family:'Playfair Display',serif!important;font-weight:700}
+
+/* ======================================================
+   PAGE COVER STYLES
+   ====================================================== */
+.page-cover-modern{background:linear-gradient(135deg,rgba(44,24,16,.9) 0%,rgba(255,107,53,.8) 100%);padding:80px 0;position:relative;overflow:hidden;min-height:300px;display:flex;align-items:center}.page-cover-modern::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:url('../images/restaurant-slider-1.jpg') center/cover;z-index:-1}.page-cover-content{text-align:center;color:white;position:relative;z-index:2;width:100%}.page-cover-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:20px;text-shadow:2px 2px 4px rgba(0,0,0,.3);line-height:1.2}.page-cover-subtitle{font-size:clamp(1rem,2.5vw,1.2rem);opacity:.9;letter-spacing:2px;text-transform:uppercase;margin-bottom:0}.page-cover-icon{font-size:clamp(1.5rem,3vw,2rem);margin:0 20px;opacity:.8}
+
+/* ======================================================
+   CART SECTION STYLES
+   ====================================================== */
+.cart-modern{padding:clamp(60px,8vw,100px) 0;background:#FFF8F0}
+
+/* ======================================================
+   PAGE HEADINGS
+   ====================================================== */
+.page-heading{font-family:'Playfair Display',serif!important;font-weight:700;font-size:clamp(2rem,4vw,3.5rem);background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:20px;line-height:1.2}.page-heading-line{width:80px;height:4px;background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);border-radius:2px;margin:20px auto 40px}.cart-lead{font-size:clamp(1rem,2vw,1.1rem);color:#6B7280;text-align:center;max-width:600px;margin:0 auto 60px;line-height:1.6}
+
+/* ======================================================
+   CART ITEMS STYLES
+   ====================================================== */
+.cart-item-modern{background:white;border-radius:20px;padding:clamp(20px,3vw,30px);margin-bottom:30px;box-shadow:0 10px 30px rgba(0,0,0,.1);transition:all .3s ease;display:flex;align-items:center;gap:clamp(15px,2.5vw,25px)}.cart-item-modern:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.15)}.item-image{width:clamp(80px,12vw,120px);height:clamp(80px,12vw,120px);border-radius:15px;overflow:hidden;flex-shrink:0}.item-image img{width:100%;height:100%;object-fit:cover}.item-details{flex:1}.item-name{font-size:clamp(1.1rem,2vw,1.4rem);font-weight:600;color:#2C1810;margin-bottom:8px}.item-description{color:#6B7280;margin-bottom:15px;font-size:clamp(.9rem,1.5vw,1rem)}.item-price{font-size:clamp(1rem,2vw,1.2rem);font-weight:600;color:#FF6B35}.quantity-controls{display:flex;align-items:center;gap:clamp(10px,2vw,15px);margin:15px 0}.quantity-btn{width:clamp(35px,6vw,40px);height:clamp(35px,6vw,40px);border:2px solid #FF6B35;background:white;color:#FF6B35;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s ease;font-weight:bold;font-size:clamp(.9rem,1.5vw,1rem)}.quantity-btn:hover{background:#FF6B35;color:white}.quantity-input{width:clamp(50px,8vw,60px);text-align:center;border:2px solid #f0f0f0;border-radius:10px;padding:8px;font-weight:600;font-size:clamp(.9rem,1.5vw,1rem)}.item-total{font-size:clamp(1.1rem,2vw,1.3rem);font-weight:700;color:#2C1810;text-align:right}.remove-btn{background:linear-gradient(135deg,#dc3545 0%,#fd7e14 100%);border:none;padding:clamp(10px,2vw,12px) clamp(15px,2.5vw,20px);border-radius:25px;color:white;font-weight:500;cursor:pointer;transition:all .3s ease;font-size:clamp(.9rem,1.5vw,1rem)}.remove-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.15)}
+
+/* ======================================================
+   CART SUMMARY STYLES
+   ====================================================== */
+.cart-summary{background:white;border-radius:20px;padding:clamp(25px,4vw,40px);box-shadow:0 10px 30px rgba(0,0,0,.1);position:sticky;top:20px}.summary-title{font-size:clamp(1.2rem,2.5vw,1.5rem);font-weight:600;color:#2C1810;margin-bottom:30px;text-align:center}.summary-item{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid #f0f0f0}.summary-item:last-child{border-bottom:none;font-weight:700;font-size:clamp(1rem,2vw,1.2rem);color:#FF6B35}.summary-label{color:#6B7280;font-size:clamp(.9rem,1.5vw,1rem)}.summary-value{font-weight:600;color:#2C1810;font-size:clamp(.9rem,1.5vw,1rem)}.cart-actions{margin-top:30px}.btn-continue{background:white;border:2px solid #FF6B35;padding:clamp(12px,2vw,15px) clamp(20px,3vw,30px);border-radius:50px;color:#FF6B35;font-weight:600;text-decoration:none;transition:all .3s ease;display:block;text-align:center;margin-bottom:15px;font-size:clamp(.9rem,1.5vw,1rem)}.btn-continue:hover{background:#FF6B35;color:white;text-decoration:none}.btn-checkout{background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);border:none;padding:clamp(12px,2vw,15px) clamp(20px,3vw,30px);border-radius:50px;color:white;font-weight:600;text-decoration:none;transition:all .3s ease;display:block;text-align:center;width:100%;font-size:clamp(.9rem,1.5vw,1rem)}.btn-checkout:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(0,0,0,.15);color:white;text-decoration:none}
+
+/* ======================================================
+   EMPTY CART STYLES
+   ====================================================== */
+.empty-cart{text-align:center;padding:clamp(60px,8vw,80px) 20px}.empty-cart-icon{font-size:clamp(3rem,8vw,5rem);color:#FF6B35;margin-bottom:30px}.empty-cart-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:600;color:#2C1810;margin-bottom:15px}.empty-cart-text{color:#6B7280;margin-bottom:30px;font-size:clamp(.9rem,1.5vw,1rem)}
+
+/* ======================================================
+   RESPONSIVE DESIGN
+   ====================================================== */
+@media (max-width:768px){.cart-item-modern{flex-direction:column;text-align:center;gap:20px}.item-image{margin-bottom:20px}.quantity-controls{justify-content:center}.item-total{text-align:center;margin-top:15px}.cart-summary{position:static;margin-top:30px}}@media (max-width:576px){.cart-item-modern{padding:20px 15px}.item-image{width:100px;height:100px}.item-name{font-size:1.2rem}.item-description{font-size:.9rem}.quantity-controls{gap:10px}.quantity-btn{width:35px;height:35px}.quantity-input{width:50px}.cart-summary{padding:25px 20px}.summary-title{font-size:1.3rem}.btn-continue,.btn-checkout{padding:12px 20px;font-size:.9rem}}
+
+/* ======================================================
+   ANIMATIONS
+   ====================================================== */
+@keyframes slideOut{from{transform:translateX(0);opacity:1}to{transform:translateX(-100%);opacity:0}}.slide-out{animation:slideOut .3s ease-out}
+
+/* ======================================================
+   UTILITY CLASSES
+   ====================================================== */
+.text-center{text-align:center}.mb-4{margin-bottom:1.5rem}.mb-5{margin-bottom:3rem}.me-2{margin-right:.5rem}
+
+/* ======================================================
+   HIDE ORIGINAL ELEMENTS
+   ====================================================== */
+.cart-list,.cart-info{display:none!important}
+
+/* ======================================================
+   LOADER FIXES
+   ====================================================== */
+.loader{z-index:9999!important}.loader.hidden{display:none!important}.loader.fade-out{opacity:0!important;visibility:hidden!important}
+
+/* Force hide loader if needed */
+.loader[style*="display: none"],.loader.hidden,.loader.fade-out{display:none!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important} 

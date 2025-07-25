@@ -6,7 +6,7 @@ startSession();
 <html lang="en">
 
 <head>
-    <title>ChachuKiBiryani - Authentic Indian Biryani Experience</title>
+    <title>ChachuKiBiryani - Authentic Pakistani Biryani Experience</title>
     <?php include 'includes/head.php'; ?>
     
     <!-- Additional Modern Fonts -->
@@ -1266,7 +1266,7 @@ startSession();
                 <div class="floating-element">🍚</div>
             </div>
             <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-                <p class="hero-subtitle">Authentic Indian Cuisine</p>
+                <p class="hero-subtitle">Authentic Pakistani Cuisine</p>
                 <h1 class="hero-title">Experience </br>the Magic of</br> ChachuKiBiryani</h1>
                 <p class="hero-description">Discover the perfect blend of aromatic spices,</br> tender meat, and fragrant basmati rice.</p>
                 <div class="hero-buttons">

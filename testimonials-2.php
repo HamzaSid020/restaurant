@@ -440,7 +440,7 @@
             <div class="fixed-header">
                 <div class="container-fluid">
                     <div class="header-logo">
-                        <a href="#">
+                        <a href="index.php">
                             <h4><span><i class="far fa-star"></i>Chachu</span>KiBiryani</h4>
                         </a>
                     </div>
@@ -482,7 +482,7 @@
                 <div class="featured-review" data-aos="fade-up" data-aos-delay="200">
                     <div class="featured-review-content">
                         <div class="featured-badge">Featured Review</div>
-                        <p class="featured-text">"The best biryani I've ever tasted! The flavors are perfectly balanced, the rice is fluffy, and the meat is tender. ChachuKiBiryani has become our family's go-to place for authentic Indian cuisine. The delivery is always on time and the food arrives piping hot."</p>
+                        <p class="featured-text">"The best biryani I've ever tasted! The flavors are perfectly balanced, the rice is fluffy, and the meat is tender. ChachuKiBiryani has become our family's go-to place for authentic Pakistani cuisine. The delivery is always on time and the food arrives piping hot."</p>
                         <div class="featured-author">
                             <div class="featured-author-image">
                                 <img src="images/reviewer-1.jpg" alt="Sarah Johnson">

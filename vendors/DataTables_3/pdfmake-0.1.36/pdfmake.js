@@ -24481,7 +24481,7 @@ By Devon Govett
     greenyellow: [173, 255, 47],
     honeydew: [240, 255, 240],
     hotpink: [255, 105, 180],
-    indianred: [205, 92, 92],
+    Pakistanired: [205, 92, 92],
     indigo: [75, 0, 130],
     ivory: [255, 255, 240],
     khaki: [240, 230, 140],

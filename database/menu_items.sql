@@ -24,7 +24,7 @@ INSERT INTO menu_items (name, description, price, image, category, calories, pre
 ('Chicken Biryani Breakfast', 'Aromatic basmati rice cooked with tender chicken and aromatic spices. Perfect for a hearty breakfast.', 8.99, 'images/dish-breakfast-3.png', 'breakfast', 650, 25, TRUE, 'Basmati rice, chicken, onions, tomatoes, spices, saffron, ghee', 'Protein: 25g, Carbs: 85g, Fat: 28g'),
 ('Aloo Paratha with Curd', 'Stuffed paratha with spiced potato filling, served with fresh curd and pickle. Traditional comfort food.', 4.49, 'images/dish-breakfast-4.png', 'breakfast', 420, 12, FALSE, 'Whole wheat flour, potatoes, onions, spices, curd, pickle', 'Protein: 12g, Carbs: 55g, Fat: 15g'),
 ('Poha with Peanuts', 'Flattened rice cooked with onions, peanuts, and mild spices. Light and nutritious breakfast option.', 3.99, 'images/dish-breakfast-5.png', 'breakfast', 320, 10, FALSE, 'Flattened rice, onions, peanuts, curry leaves, mustard seeds, turmeric', 'Protein: 8g, Carbs: 48g, Fat: 12g'),
-('Bread Omelette', 'Classic bread omelette with a twist of Indian spices. Quick and delicious breakfast choice.', 3.49, 'images/dish-breakfast-6.png', 'breakfast', 350, 6, FALSE, 'Eggs, bread, onions, tomatoes, green chilies, spices', 'Protein: 16g, Carbs: 32g, Fat: 18g'),
+('Bread Omelette', 'Classic bread omelette with a twist of Pakistani spices. Quick and delicious breakfast choice.', 3.49, 'images/dish-breakfast-6.png', 'breakfast', 350, 6, FALSE, 'Eggs, bread, onions, tomatoes, green chilies, spices', 'Protein: 16g, Carbs: 32g, Fat: 18g'),
 
 -- Lunch Items
 ('Chicken Biryani', 'Aromatic basmati rice layered with tender chicken, caramelized onions, and aromatic spices. Our signature dish.', 12.99, 'images/dish-lunch-1.png', 'lunch', 850, 45, TRUE, 'Basmati rice, chicken, onions, tomatoes, spices, saffron, ghee, mint, coriander', 'Protein: 35g, Carbs: 95g, Fat: 32g'),
@@ -43,7 +43,7 @@ INSERT INTO menu_items (name, description, price, image, category, calories, pre
 ('Chicken Fried Rice', 'Stir-fried rice with tender chicken pieces, vegetables, and aromatic spices.', 9.99, 'images/dish-dinner-6.png', 'dinner', 680, 20, FALSE, 'Basmati rice, chicken, mixed vegetables, soy sauce, spices, oil', 'Protein: 25g, Carbs: 82g, Fat: 22g'),
 
 -- Desserts
-('Gulab Jamun', 'Soft and spongy milk solids dumplings soaked in sugar syrup. Traditional Indian dessert.', 3.99, 'images/sweet-donut-1.png', 'desserts', 280, 15, FALSE, 'Milk solids, flour, sugar, cardamom, rose water, ghee', 'Protein: 6g, Carbs: 45g, Fat: 12g'),
+('Gulab Jamun', 'Soft and spongy milk solids dumplings soaked in sugar syrup. Traditional Pakistani dessert.', 3.99, 'images/sweet-donut-1.png', 'desserts', 280, 15, FALSE, 'Milk solids, flour, sugar, cardamom, rose water, ghee', 'Protein: 6g, Carbs: 45g, Fat: 12g'),
 ('Rasgulla', 'Soft cottage cheese balls soaked in light sugar syrup. Refreshing and light dessert.', 3.49, 'images/sweet-donut-2.png', 'desserts', 220, 12, FALSE, 'Cottage cheese, sugar, cardamom, rose water', 'Protein: 8g, Carbs: 38g, Fat: 8g'),
 ('Kheer', 'Creamy rice pudding cooked with milk, sugar, and aromatic spices. Rich and comforting.', 4.99, 'images/sweet-donut-3.png', 'desserts', 380, 30, FALSE, 'Rice, milk, sugar, cardamom, saffron, nuts', 'Protein: 12g, Carbs: 52g, Fat: 18g'),
 

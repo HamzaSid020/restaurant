@@ -205,14 +205,14 @@ INSERT INTO `menu_items` (`name`, `description`, `price`, `image`, `category`, `
 -- Insert testimonials
 INSERT INTO `testimonials` (`name`, `email`, `rating`, `comment`, `image`, `is_approved`, `is_featured`) VALUES
 ('Andrew Smith', 'andrew@example.com', 5, 'Amazing biryani! The flavors are authentic and the service is excellent. Highly recommended!', 'images/reviewer-1.jpg', TRUE, TRUE),
-('Sarah Johnson', 'sarah@example.com', 5, 'Best Indian food in Mississauga. The chicken biryani is absolutely delicious!', 'images/reviewer-2.jpg', TRUE, TRUE),
+('Sarah Johnson', 'sarah@example.com', 5, 'Best Pakistani food in Mississauga. The chicken biryani is absolutely delicious!', 'images/reviewer-2.jpg', TRUE, TRUE),
 ('Michael Brown', 'michael@example.com', 5, 'Great food and friendly staff. The portion sizes are perfect and the prices are reasonable.', 'images/reviewer-3.jpg', TRUE, TRUE),
 ('Emily Davis', 'emily@example.com', 5, 'Authentic taste of India. The spices are perfectly balanced and the rice is cooked to perfection.', 'images/reviewer-4.jpg', TRUE, TRUE);
 
 -- Insert site settings
 INSERT INTO `site_settings` (`setting_key`, `setting_value`, `setting_type`, `description`) VALUES
 ('site_name', 'ChachuKiBiryani', 'text', 'Website name'),
-('site_description', 'Authentic Indian Biryani Restaurant in Mississauga', 'text', 'Website description'),
+('site_description', 'Authentic Pakistani Biryani Restaurant in Mississauga', 'text', 'Website description'),
 ('business_hours_weekdays', '10:00 AM - 11:00 PM', 'text', 'Business hours for weekdays'),
 ('business_hours_weekend', '11:00 AM - 8:00 PM', 'text', 'Business hours for weekends'),
 ('contact_phone', '+1 (905) 897-6226', 'text', 'Contact phone number'),

@@ -375,9 +375,9 @@ Navigation & Sidebars
 
 /********** SHOPPING-CART-SIDEBAR *********/
 
-#shopping-cart-sidebar { overflow-Y:auto; overflow-X:hidden; width:280px; transition:.4s; background:white; box-shadow:0px 0px 20px rgba(0,0,0,0.3); } 
+#shopping-cart-sidebar { overflow-Y:auto; overflow-X:hidden; width:280px; transition:.4s; background:white; box-shadow:0px 0px 20px rgba(0,0,0,0.3); height: 100%; position: fixed; z-index: 300; top: 0; right:-150%; transition: all 0.5s; border-top:6px solid #212121; padding:20px 15px 15px; } 
 
-.shc-sidebar { height: 100%; width: 0; position: fixed; z-index: 300; top: 0; right:-150%; transition: all 0.5s; border-top:6px solid #212121; padding:20px 15px 15px; } 
+.shc-sidebar { height: 100%; width: 280px; position: fixed; z-index: 300; top: 0; right:-150%; transition: all 0.5s; border-top:6px solid #212121; padding:20px 15px 15px; background:white; box-shadow:0px 0px 20px rgba(0,0,0,0.3); } 
 
 .shc-sidebar .cart-info { margin:30px 0px 50px; } 
 

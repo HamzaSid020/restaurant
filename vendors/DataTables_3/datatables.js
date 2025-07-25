@@ -33649,7 +33649,7 @@ By Devon Govett
     greenyellow: [173, 255, 47],
     honeydew: [240, 255, 240],
     hotpink: [255, 105, 180],
-    indianred: [205, 92, 92],
+    Pakistanired: [205, 92, 92],
     indigo: [75, 0, 130],
     ivory: [255, 255, 240],
     khaki: [240, 230, 140],
@@ -60992,7 +60992,7 @@ this.pdfMake = this.pdfMake || {}; this.pdfMake.vfs = {
 	// - \u20BD - Russian ruble.
 	// - \u20a9 - South Korean Won
 	// - \u20BA - Turkish Lira
-	// - \u20B9 - Indian Rupee
+	// - \u20B9 - Pakistani Rupee
 	// - R - Brazil (R$) and South Africa
 	// - fr - Swiss Franc
 	// - kr - Swedish krona, Norwegian krone and Danish krone

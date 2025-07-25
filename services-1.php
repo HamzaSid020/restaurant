@@ -446,7 +446,7 @@
                     <div class="col-12 text-center mb-5" data-aos="fade-up">
                         <h2 class="page-heading">Why Choose ChachuKiBiryani?</h2>
                         <div class="page-heading-line"></div>
-                        <p class="lead">Discover what makes us the preferred choice for authentic Indian cuisine</p>
+                        <p class="lead">Discover what makes us the preferred choice for authentic Pakistani cuisine</p>
                     </div>
                 </div>
                 
@@ -457,7 +457,7 @@
                                 <i class="fa fa-heart"></i>
                             </div>
                             <h4 class="feature-title">Made with Love</h4>
-                            <p class="feature-description">Every dish is prepared with passion and care, ensuring you get the authentic taste of home-cooked Indian food.</p>
+                            <p class="feature-description">Every dish is prepared with passion and care, ensuring you get the authentic taste of home-cooked Pakistani food.</p>
                         </div>
                     </div>
                     

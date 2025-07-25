@@ -1,9 +1,34 @@
+<?php
+// Start session without database dependency
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!doctype html>
 <html lang="en">
 
 <head>
     <title>Checkout - ChachuKiBiryani</title>
-    <?php include 'includes/head.php'; ?>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,800italic,800,700italic,700,600italic,600,400italic,300%7CRoboto+Condensed:400,400i,700,700i%7CGreat+Vibes" rel="stylesheet">
+
+    <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="css/bootstrap-5.3.2.min.css">
+
+    <!-- Font Awesome Stylesheet -->
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/orange.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Checkout Page Optimized CSS -->
+    <link rel="stylesheet" href="css/checkout-optimized.css">
     
     <!-- Additional Modern Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,315 +38,45 @@
     
     <!--Date-Picker Stylesheet-->
     <link rel="stylesheet" href="css/datepicker.css">
-    
-    <style>
-        /* Modern Custom Styles */
-        body {
-            font-family: 'Poppins', sans-serif !important;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif !important;
-            font-weight: 700;
-        }
-
-        /* Page Cover */
-        .page-cover-modern {
-            background: linear-gradient(135deg, rgba(44, 24, 16, 0.9) 0%, rgba(255, 107, 53, 0.8) 100%);
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-cover-modern::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('images/restaurant-slider-1.jpg') center/cover;
-            z-index: -1;
-        }
-
-        .page-cover-content {
-            text-align: center;
-            color: white;
-            position: relative;
-            z-index: 2;
-        }
-
-        .page-cover-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .page-cover-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .page-cover-icon {
-            font-size: 2rem;
-            margin: 0 20px;
-            opacity: 0.8;
-        }
-
-        /* Checkout Section */
-        .checkout-modern {
-            padding: 100px 0;
-            background: #FFF8F0;
-        }
-
-        /* Order Summary */
-        .order-summary-modern {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-        }
-
-        .order-item-modern {
-            display: flex;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .order-item-modern:last-child {
-            border-bottom: none;
-        }
-
-        .order-item-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-right: 20px;
-        }
-
-        .order-item-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .order-item-details {
-            flex: 1;
-        }
-
-        .order-item-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #2C1810;
-            margin-bottom: 5px;
-        }
-
-        .order-item-description {
-            color: #6B7280;
-            margin-bottom: 5px;
-        }
-
-        .order-item-price {
-            color: #FF6B35;
-            font-weight: 600;
-        }
-
-        .order-total {
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .order-total h4 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-
-        /* Checkout Form */
-        .checkout-form-modern {
-            background: white;
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .form-group-modern {
-            margin-bottom: 25px;
-        }
-
-        .form-control-modern {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #f0f0f0;
-            border-radius: 15px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: #fafafa;
-        }
-
-        .form-control-modern:focus {
-            outline: none;
-            border-color: #FF6B35;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
-        }
-
-        .form-control-modern::placeholder {
-            color: #9CA3AF;
-        }
-
-        .btn-checkout-modern {
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-            border: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .btn-checkout-modern:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .btn-cart-modern {
-            background: white;
-            border: 2px solid #FF6B35;
-            padding: 12px 30px;
-            border-radius: 50px;
-            color: #FF6B35;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-
-        .btn-cart-modern:hover {
-            background: #FF6B35;
-            color: white;
-            text-decoration: none;
-        }
-
-        /* Page Headings */
-        .page-heading {
-            font-family: 'Playfair Display', serif !important;
-            font-weight: 700;
-            font-size: 3.5rem;
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .page-heading-line {
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-            border-radius: 2px;
-            margin: 20px auto 40px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .page-cover-title {
-                font-size: 2.5rem;
-            }
-            
-            .page-heading {
-                font-size: 2.5rem;
-            }
-            
-            .checkout-form-modern {
-                padding: 40px 20px;
-                margin: 0 15px;
-            }
-            
-            .order-summary-modern {
-                padding: 30px 20px;
-                margin: 0 15px 30px;
-            }
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Override existing styles */
-        .section-padding {
-            padding: 40px 0;
-        }
-
-        .container-fluid {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
-        /* Hide original elements */
-        .custom-form {
-            display: none;
-        }
-
-        .order-list {
-            display: none;
-        }
-    </style>
 </head>
 
-<body class="page-body">
+<body class="page-body checkout-page">
 
     <!--====== LOADER =====-->
     <div class="loader"></div>
 
-    <!--============ SIDE-NAV =============-->
-    <?php include 'includes/side_nav.php'; ?>
+    <!--========= HEADER =========-->
+    <div class="header">
+        <div class="fixed-header">
+            <div class="container-fluid">
+                <div class="header-logo">
+                    <a href="index.php">
+                        <h4><span><i class="far fa-star"></i>Chachu</span>KiBiryani</h4>
+                    </a>
+                </div>
 
-    <!--============ SIDE-NAV-2 =============-->
-    <?php include 'includes/side_nav2.php'; ?>
-
-    <!--=============== FULLSCR-NAV ==============-->
-    <?php include 'includes/fullscreen_nav.php'; ?>
-
-    <!--================ SHOPPING-CART ==============-->
-    <?php include 'includes/shopping_cart.php'; ?>
-
-    <!--============== USER-PROFILE-SIDEBAR =============-->
-    <?php include 'includes/user_profile_sidebar.php'; ?>
+                <div class="header-links">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item shopping-cart"><a href="javascript:void(0)" id="shc-side-open"><span><i class="fa fa-shopping-cart"></i></span><span class="cart-badge">2</span></a></li>
+                        <li class="list-inline-item user-link"><a href="javascript:void(0)" id="usr-side-open"><span><i class="fa fa-user"></i></span></a></li>
+                        <li class="list-inline-item"><a href="javascript:void(0)" id="sidenav-open"><span><i class="fa fa-bars"></i></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="canvas">
         <div class="overlay-black"></div>
-
-        <!--========= HEADER =========-->
-        <?php include 'includes/header.php'; ?>
 
         <!--========= PAGE-COVER =========-->
         <section class="page-cover-modern">
             <div class="container-fluid">
                 <div class="page-cover-content" data-aos="fade-up" data-aos-duration="1000">
-                    <span class="page-cover-icon"><i class="fa fa-thumbs-up"></i></span>
+                    <span class="page-cover-icon"><i class="fa fa-credit-card"></i></span>
                     <h1 class="page-cover-title">Checkout</h1>
                     <p class="page-cover-subtitle">Complete Your Order</p>
-                    <span class="page-cover-icon"><i class="fa fa-thumbs-up"></i></span>
+                    <span class="page-cover-icon"><i class="fa fa-credit-card"></i></span>
                 </div>
             </div>
         </section>
@@ -333,69 +88,93 @@
                     <div class="col-12 text-center mb-5" data-aos="fade-up">
                         <h2 class="page-heading">Complete Your Order</h2>
                         <div class="page-heading-line"></div>
-                        <p class="lead">Review your order and provide payment details to complete your purchase</p>
-                        <a href="shopping-cart.php" class="btn-cart-modern">
-                            <i class="fa fa-shopping-cart me-2"></i>View Shopping Cart
-                        </a>
+                        <p class="checkout-lead">Fill in your details and complete your purchase</p>
                     </div>
                 </div>
                 
                 <div class="row">
                     <div class="col-lg-8">
-                        <div class="checkout-form-modern" data-aos="fade-up" data-aos-delay="200">
-                            <h3 style="color: #2C1810; margin-bottom: 30px;">Payment Information</h3>
-                            
+                        <div class="checkout-form-modern" data-aos="fade-up" data-aos-delay="100">
                             <form id="checkout-form-modern">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group-modern">
-                                            <input type="text" class="form-control-modern" placeholder="Full Name" required />
-                                        </div>
+                                <h3 class="form-section-title">Personal Information</h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group-modern">
+                                        <label for="firstName">First Name *</label>
+                                        <input type="text" class="form-control-modern" id="firstName" name="firstName" required>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group-modern">
-                                            <input type="email" class="form-control-modern" placeholder="Email Address" required />
-                                        </div>
+                                    <div class="form-group-modern">
+                                        <label for="lastName">Last Name *</label>
+                                        <input type="text" class="form-control-modern" id="lastName" name="lastName" required>
                                     </div>
                                 </div>
                                 
                                 <div class="form-group-modern">
-                                    <input type="tel" class="form-control-modern" placeholder="Phone Number" required />
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" class="form-control-modern" id="email" name="email" required>
                                 </div>
                                 
                                 <div class="form-group-modern">
-                                    <select class="form-control-modern">
-                                        <option selected>Choose Payment Method</option>
-                                        <option>Credit Card</option>
-                                        <option>Debit Card</option>
-                                        <option>PayPal</option>
-                                        <option>Cash on Delivery</option>
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" class="form-control-modern" id="phone" name="phone" required>
+                                </div>
+                                
+                                <h3 class="form-section-title">Delivery Information</h3>
+                                
+                                <div class="form-group-modern">
+                                    <label for="address">Delivery Address *</label>
+                                    <input type="text" class="form-control-modern" id="address" name="address" placeholder="Street Address" required>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group-modern">
+                                        <label for="city">City *</label>
+                                        <input type="text" class="form-control-modern" id="city" name="city" required>
+                                    </div>
+                                    <div class="form-group-modern">
+                                        <label for="postalCode">Postal Code *</label>
+                                        <input type="text" class="form-control-modern" id="postalCode" name="postalCode" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group-modern">
+                                    <label for="deliveryDate">Preferred Delivery Date *</label>
+                                    <input type="date" class="form-control-modern" id="deliveryDate" name="deliveryDate" required>
+                                </div>
+                                
+                                <div class="form-group-modern">
+                                    <label for="deliveryTime">Preferred Delivery Time *</label>
+                                    <select class="form-control-modern" id="deliveryTime" name="deliveryTime" required>
+                                        <option value="">Select Time</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="12:30">12:30 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="13:30">1:30 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="14:30">2:30 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="15:30">3:30 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="16:30">4:30 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                        <option value="17:30">5:30 PM</option>
+                                        <option value="18:00">6:00 PM</option>
+                                        <option value="18:30">6:30 PM</option>
+                                        <option value="19:00">7:00 PM</option>
+                                        <option value="19:30">7:30 PM</option>
+                                        <option value="20:00">8:00 PM</option>
+                                        <option value="20:30">8:30 PM</option>
+                                        <option value="21:00">9:00 PM</option>
                                     </select>
                                 </div>
                                 
                                 <div class="form-group-modern">
-                                    <input type="text" class="form-control-modern" placeholder="Card Number" required />
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group-modern">
-                                            <input type="text" class="form-control-modern dpd" placeholder="Expiry Date (MM/YY)" required />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group-modern">
-                                            <input type="text" class="form-control-modern" placeholder="CVV Code" required />
-                                        </div>
-                                    </div>
+                                    <label for="specialInstructions">Special Instructions (Optional)</label>
+                                    <textarea class="form-control-modern" rows="4" id="specialInstructions" name="specialInstructions" placeholder="Any special instructions for delivery..."></textarea>
                                 </div>
                                 
                                 <div class="form-group-modern">
-                                    <textarea class="form-control-modern" rows="4" placeholder="Special Instructions (Optional)"></textarea>
-                                </div>
-                                
-                                <div class="form-group-modern">
-                                    <div class="custom-control custom-checkbox">
+                                    <div class="custom-control">
                                         <input type="checkbox" class="custom-control-input" id="termsCheck" required>
                                         <label class="custom-control-label" for="termsCheck">
                                             I agree to the <a href="#" style="color: #FF6B35;">Terms & Conditions</a> and <a href="#" style="color: #FF6B35;">Privacy Policy</a>
@@ -447,8 +226,15 @@
         </section>
 
         <!--=============== FOOTER ===============-->
-        <?php include 'includes/footer.php'; ?>
-
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p>&copy; 2024 ChachuKiBiryani. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div><!-- end canvas -->
 
     <!-- Page Scripts Starts -->
@@ -463,12 +249,40 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
+        // Force loader removal - multiple fallbacks
+        function hideLoader() {
+            $('.loader').fadeOut('slow');
+            $('.loader').hide();
+            $('.loader').css('display', 'none');
+            $('.loader').addClass('hidden');
+        }
+        
+        // Hide loader on document ready
+        $(document).ready(function() {
+            console.log('Document ready - hiding loader');
+            hideLoader();
         });
+        
+        // Hide loader on window load
+        $(window).on('load', function() {
+            console.log('Window loaded - hiding loader');
+            hideLoader();
+        });
+        
+        // Force hide loader after 1 second
+        setTimeout(function() {
+            console.log('Timeout - forcing loader hide');
+            hideLoader();
+        }, 1000);
+        
+        // Initialize AOS after loader is hidden
+        setTimeout(function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        }, 1500);
 
         // Modern Checkout Form
         $(document).ready(function() {

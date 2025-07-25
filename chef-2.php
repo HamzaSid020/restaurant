@@ -359,7 +359,7 @@ startSession();
                         <div class="chef-content">
                             <h4 class="chef-name">Chef Rajesh</h4>
                             <p class="chef-role">Head Chef</p>
-                            <p class="chef-description">With over 15 years of experience in traditional Indian cuisine, Chef Rajesh leads our kitchen with passion and expertise. His mastery of authentic biryani recipes has made him a legend in the culinary world.</p>
+                            <p class="chef-description">With over 15 years of experience in traditional Pakistani cuisine, Chef Rajesh leads our kitchen with passion and expertise. His mastery of authentic biryani recipes has made him a legend in the culinary world.</p>
                             <div class="chef-specialties">
                                 <span class="chef-specialty">Biryani</span>
                                 <span class="chef-specialty">Curries</span>
@@ -383,7 +383,7 @@ startSession();
                         <div class="chef-content">
                             <h4 class="chef-name">Chef Priya</h4>
                             <p class="chef-role">Sous Chef</p>
-                            <p class="chef-description">Chef Priya brings creativity and innovation to our traditional recipes while maintaining their authentic flavors. Her expertise in regional Indian cuisine adds depth to our menu.</p>
+                            <p class="chef-description">Chef Priya brings creativity and innovation to our traditional recipes while maintaining their authentic flavors. Her expertise in regional Pakistani cuisine adds depth to our menu.</p>
                             <div class="chef-specialties">
                                 <span class="chef-specialty">Regional</span>
                                 <span class="chef-specialty">Innovation</span>
@@ -407,7 +407,7 @@ startSession();
                         <div class="chef-content">
                             <h4 class="chef-name">Chef Amit</h4>
                             <p class="chef-role">Pastry Chef</p>
-                            <p class="chef-description">Specializing in traditional Indian desserts, Chef Amit creates sweet endings that perfectly complement our savory dishes. His expertise in sweets and desserts is unmatched.</p>
+                            <p class="chef-description">Specializing in traditional Pakistani desserts, Chef Amit creates sweet endings that perfectly complement our savory dishes. His expertise in sweets and desserts is unmatched.</p>
                             <div class="chef-specialties">
                                 <span class="chef-specialty">Desserts</span>
                                 <span class="chef-specialty">Sweets</span>
