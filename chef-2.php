@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
 .page-cover-subtitle {
     font-size: 1.2rem;
     font-weight: 700;
-    color:whitesmoke;
+    color: #FF5722;
     letter-spacing: 2px;
     text-transform: uppercase;
 }

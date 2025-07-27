@@ -51,7 +51,7 @@ startSession();
         <section class="page-cover-modern">
             <div class="container-fluid">
                 <div class="page-cover-content" data-aos="fade-up" data-aos-duration="1000">
-                    <span class="page-cover-icon"><i class="fa fa-envelope"></i></span>
+                    <!-- <span class="page-cover-icon"><i class="fa fa-envelope"></i></span> -->
                     <h1 class="page-cover-title">Contact Us</h1>
                     <p class="page-cover-subtitle">Get In Touch</p>
                     <span class="page-cover-icon"><i class="fa fa-envelope"></i></span>
