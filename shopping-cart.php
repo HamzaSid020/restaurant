@@ -178,17 +178,8 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
         </section>
 
-        <!--=============== FOOTER ===============-->
-        <div class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <p>&copy; 2024 ChachuKiBiryani. All rights reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- end canvas -->
+    <!--=============== FOOTER ===============-->
+        <?php include 'includes/footer.php'; ?>
 
     <!-- Page Scripts Starts -->
     <script src="js/jquery.min.js"></script>

@@ -61,6 +61,7 @@ startSession();
                 <div class="hero-buttons">
                     <a href="#menu" class="btn-hero-primary">Explore Menu</a>
                     <a href="#about" class="btn-hero-secondary">Our Story</a>
+                    <div class = "logos"><img src = "images/doordashlogo.png"> <span><img src="images/ubereatslogo.png"></span></div>
                 </div>
             </div>
         </section>

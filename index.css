@@ -21,7 +21,10 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     overflow: hidden;
 }
-
+.logos img{
+    width: 170px;
+    height:auto;
+}
 .hero-bg {
     position: absolute;
     top: 0;
@@ -1207,4 +1210,17 @@ html {
 
 .menu .tab-content {
     display: none;
+}
+/* Mobile fix: Show full image on smaller screens */
+@media (max-width: 768px) {
+  .hero-bg {
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: 100vw; /* Add space for the contained image if needed */
+  }
 }
